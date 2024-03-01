@@ -17,6 +17,9 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 Route::post('forget-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('forget.password.post');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.reset');
 Route::get('tasks',[TaskController::class,'index']);
+Route::post('tasks', [TaskController::class, 'store']);
+Route::put('tasks/{id}',[TaskController::class,'update']);
+
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('users', UserController::class);
