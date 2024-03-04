@@ -186,6 +186,30 @@ export default [
                     }
                 ]
             },
+//-------------------------------------------------------------------------------------------------------------------------
+//espacio vista tareas falta añadir editar
+            {
+                name: 'tasks',
+                path: 'tasks',
+                meta: { breadCrumb: 'Tareas'},
+                children: [
+                    {
+                        name: 'task.index',
+                        path: '',
+                        component: () => import('../views/admin/tasks/Index.vue'),
+                        meta: { breadCrumb: 'Ver tareas' }
+                    },
+                
+                    {
+                        name: 'task.create',
+                        path: 'create',
+                        component: () => import('../views/admin/tasks/create.vue'),
+                        meta: { breadCrumb: 'Crear tareas'}
+                    }
+                 
+                 ]
+            },
+//----------------------------------------------------------------------------------------------------------------------------
 
             {
                 name: 'permissions',
