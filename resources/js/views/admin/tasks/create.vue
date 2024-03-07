@@ -4,7 +4,7 @@
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title">Añade una tarea nueva</h5>
             </div>
- <!--Prueba para git-->
+ 
  
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -57,7 +57,7 @@
  </template>
  
  
- <script setup>
+ <!-- <script setup>
     import { ref } from "vue";
 
     const tarea=ref({});
@@ -76,7 +76,27 @@
 
 
 
- </script>
+ </script> -->
+
+
+<script setup>
+  
+  import {ref, onMounted} from "vue"
+
+  const tasks=ref()
+
+  onMounted(()=>{
+
+     axios.get('/api/tasks')
+          .then(response =>{
+            //console.log(response);
+            tasks.value = response.data;
+          })
+
+  })
+  
+</script>
+
  
  
  <style>

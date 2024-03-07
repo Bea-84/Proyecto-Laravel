@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('especialidads', function (Blueprint $table) {
             $table->string('dia');
             $table->string('hora');
-            $table->unsignedBigInteger('id_instructor');
-            $table->foreign('id_alumno')->references('id')->on('instructors');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

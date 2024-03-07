@@ -1,0 +1,50 @@
+
+<template>
+   <div class="grid">
+       <div class="col-12">
+           <div class="card">
+               <div class="card-body">
+                   <div class="d-flex justify-content-between pb-2 mb-2">
+                       <h5 class="card-title">Todos los niveles</h5>
+                       <div>
+                        
+                           <button class="btn btn-success" type="button">Nuevo nivel</button>
+                       </div>
+                   </div>
+                   
+                   <DataTable :value="niveles" tableStyle="min-width: 50rem">
+                        <Column field="nombre" header="Nombre" sortable ></Column>
+                        <Column field="descripcion" header="Descripcion" sortable ></Column>
+                        <Column field="user_id" header="Usuario ID" sortable ></Column>
+                    </DataTable>
+               </div>
+           </div>
+       </div>
+   </div>
+</template>
+
+
+<script setup>
+  
+  import {ref, onMounted} from "vue"
+
+  const niveles=ref()
+
+  onMounted(()=>{
+
+     axios.get('/api/nivel')
+          .then(response =>{
+            console.log(response);
+            niveles.value = response.data;
+          })
+
+  })
+  
+</script>
+
+
+<style>
+
+
+</style>
+

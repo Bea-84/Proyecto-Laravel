@@ -196,7 +196,7 @@ export default [
                     {
                         name: 'task.index',
                         path: '',
-                        component: () => import('../views/admin/tasks/Index.vue'),
+                        component: () => import('../views/admin/tasks/index.vue'),
                         meta: { breadCrumb: 'Ver tareas' }
                     },
                 
@@ -210,6 +210,27 @@ export default [
                  ]
             },
 //----------------------------------------------------------------------------------------------------------------------------
+
+//espacio vista nivel
+
+{
+    name: 'nivel',
+    path: 'nivel',
+    meta: { breadCrumb: 'Niveles'},
+    children: [
+        {
+            name: 'nivel.index',
+            path: '',
+            component: () => import('../views/admin/nivel/index.vue'),
+            meta: { breadCrumb: 'Ver niveles' }
+        },
+    
+       
+     
+     ]
+},
+
+//-----------------------------------------------------------------------------------------------------------------------------
 
             {
                 name: 'permissions',
