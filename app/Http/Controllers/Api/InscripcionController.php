@@ -8,6 +8,9 @@ use App\Models\Inscripcion;
 
 class InscripcionController extends Controller
 {
-     //Función que nos devuelve todas los niveles que hay en la BBDD por get request ponemos url
-    
+     //Función que nos devuelve todas las inscripciones que hay en la BBDD por get request ponemos url
+     public function index(){
+          $inscripcion = Inscripcion::all(); 
+          return $inscripcion;
+     }
 }
