@@ -186,6 +186,26 @@ export default [
                     }
                 ]
             },
+
+//---------------------------------------------------------------------------------------------------------------
+//espacio ruta vistas asistencia
+
+{
+    name: 'asistencia',
+    path: 'asistencia',
+    meta: { breadCrumb: 'Asistencias'},
+    children: [
+        {
+            name: 'asistencia.index',
+            path: '',
+            component: () => import('../views/admin/asistencia/index.vue'),
+            meta: { breadCrumb: 'Ver asistencias' }
+        },
+    
+       
+     
+     ]
+},
 //-------------------------------------------------------------------------------------------------------------------------
 //espacio vista tareas falta añadir editar
             {

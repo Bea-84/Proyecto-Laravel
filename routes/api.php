@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\NivelController;
+use App\Http\Controllers\Api\AsistenciaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,9 @@ Route::put('tasks/{id}',[TaskController::class,'update']);
 
 
 Route::get('nivel',[NivelController::class,'index']);
+
+Route::get('asistencia', [AsistenciaController::class, 'index']);
+
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
