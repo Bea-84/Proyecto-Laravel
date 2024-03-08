@@ -13,10 +13,10 @@
                     </div>
                     
                     <DataTable :value="asistencias" tableStyle="min-width: 50rem">
-                         <Column field="id" header="Id" sortable ></Column>
-                         <Column field="asistencia" header="Asistencia" sortable ></Column>
-                         <Column field="fecha" header="Fecha clase" sortable ></Column>
-                         <Colum fiel="user_id" header="Id alumno" sortable></Colum>
+                         <Column field="id" header="Id"  ></Column>
+                         <Column field="asistencia" header="Asistencia"  ></Column>
+                         <Column field="fecha" header="Fecha clase"  ></Column>
+                         <Colum fiel="user_id" header="Id alumno" ></Colum>
                      </DataTable>
                 </div>
             </div>

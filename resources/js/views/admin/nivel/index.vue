@@ -13,9 +13,10 @@
                    </div>
                    
                    <DataTable :value="niveles" tableStyle="min-width: 50rem">
-                        <Column field="nombre" header="Nombre" sortable ></Column>
-                        <Column field="descripcion" header="Descripcion" sortable ></Column>
-                        <Column field="user_id" header="Usuario ID" sortable ></Column>
+                        <Column field="id" header="id"  ></Column>
+                        <Column field="nombre" header="Nombre"  ></Column>
+                        <Column field="descripcion" header="Descripcion"  ></Column>
+                        <Column field="user_id" header="Usuario ID" ></Column>
                     </DataTable>
                </div>
            </div>

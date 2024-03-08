@@ -57,8 +57,11 @@
  </template>
  
  
- <!-- <script setup>
+ <script setup>
     import { ref } from "vue";
+    import { useRouter } from 'vue-router'
+
+    const router = useRouter()
 
     const tarea=ref({});
 
@@ -66,6 +69,7 @@
        axios.post('/api/tasks',tarea.value)
             .then(response =>{
                 console.log(response);
+                router.push({ name: 'task.index' })
             })
             .catch(error=>{
                 console.log(error);
@@ -76,26 +80,10 @@
 
 
 
- </script> -->
+ </script> 
 
 
-<script setup>
-  
-  import {ref, onMounted} from "vue"
 
-  const tasks=ref()
-
-  onMounted(()=>{
-
-     axios.get('/api/tasks')
-          .then(response =>{
-            //console.log(response);
-            tasks.value = response.data;
-          })
-
-  })
-  
-</script>
 
  
  

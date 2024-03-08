@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between pb-2 mb-2">
-                        <h5 class="card-title">Todos los niveles</h5>
+                        <h5 class="card-title">Inscripciones</h5>
                         <div>
                          
                             <button class="btn btn-success" type="button">Nueva inscripcion</button>
@@ -12,10 +12,10 @@
                     </div>
                     
                     <DataTable :value="inscripcions" tableStyle="min-width: 50rem">
-                         <Column field="id" header="id" sortable ></Column>
-                         <Column field="fecha" header="Fecha" sortable ></Column>
-                         <Column field="forma_de_pago" header="Forma Pago" sortable ></Column>
-                         <Column field="user_id" header="Usuario ID" sortable ></Column>
+                         <Column field="id" header="id"  ></Column>
+                         <Column field="fecha" header="Fecha"  ></Column>
+                         <Column field="forma_de_pago" header="Forma Pago"  ></Column>
+                         <Column field="user_id" header="Usuario ID" ></Column>
                      </DataTable>
                 </div>
             </div>
