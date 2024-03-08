@@ -230,6 +230,23 @@ export default [
      ]
 },
 
+//espacio vista inscripcions
+
+{
+    name: 'inscripcion',
+    path: 'inscripcion',
+    meta: { breadCrumb: 'Inscripciones'},
+    children: [
+        {
+            name: 'inscripcion.index',
+            path: '',
+            component: () => import('../views/admin/inscripcion/index.vue'),
+            meta: { breadCrumb: 'Ver inscripciones' }
+        },
+    
+     ]
+},
+
 //-----------------------------------------------------------------------------------------------------------------------------
 
             {
