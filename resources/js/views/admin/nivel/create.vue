@@ -45,7 +45,7 @@
                     <input v-model="nivel.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
-                <Dropdown v-model="nivel.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Select a Country" class="w-full md:w-14rem">
+                <Dropdown v-model="nivel.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
                 </Dropdown>
             
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir Nivel</button>

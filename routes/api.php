@@ -26,8 +26,11 @@ Route::put('tasks/{id}',[TaskController::class,'update']);
 
 Route::get('nivel',[NivelController::class,'index']);
 Route::post('nivel', [NivelController::class, 'store']);
+//--------------------------------------------------------------------------------------------------------------------------------
 Route::get('inscripcion',[InscripcionController::class,'index']);
+//----------------------------------------------------------------------------------------------------------------------------------
 Route::get('asistencia', [AsistenciaController::class, 'index']);
+Route::post('asistencia',[AsistenciaController::class,'store']);
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {

@@ -201,6 +201,13 @@ export default [
             component: () => import('../views/admin/asistencia/index.vue'),
             meta: { breadCrumb: 'Ver asistencias' }
         },
+
+        {
+            name: 'asistencia.create',
+            path: 'create',
+            component: () => import('../views/admin/asistencia/create.vue'),
+            meta: { breadCrumb: 'Crear nueva asistencia'}
+        }
     
        
      
