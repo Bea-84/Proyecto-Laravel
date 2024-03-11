@@ -28,6 +28,7 @@ Route::get('nivel',[NivelController::class,'index']);
 Route::post('nivel', [NivelController::class, 'store']);
 //--------------------------------------------------------------------------------------------------------------------------------
 Route::get('inscripcion',[InscripcionController::class,'index']);
+Route::post('inscripcion', [InscripcionController::class, 'store']);
 //----------------------------------------------------------------------------------------------------------------------------------
 Route::get('asistencia', [AsistenciaController::class, 'index']);
 Route::post('asistencia',[AsistenciaController::class,'store']);

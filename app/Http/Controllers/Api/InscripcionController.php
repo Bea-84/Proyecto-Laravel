@@ -13,4 +13,25 @@ class InscripcionController extends Controller
           $inscripcion = Inscripcion::all(); 
           return $inscripcion;
      }
+
+//Función que crea un nivel nuevo que se guarda en la BBDD por post request ponemos url
+    public function store( Request $request){
+
+     //Validar datos que tienen que estar obligatorios
+     $request->validate([
+         'fecha'=>'required',
+         'forma_de_pago'=>'required',
+     ]);
+
+     $data=$request->all();
+
+     $inscripcion = Inscripcion::create($data);
+     $response=[
+         'success'=>true,
+         'message'=>'Inscripcion creada',
+         'data'=>$inscripcion
+     ];
+
+     return response()->json($response);
+ }
 }

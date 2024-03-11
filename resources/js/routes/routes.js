@@ -268,12 +268,19 @@ export default [
 {
     name: 'inscripcion',
     path: 'inscripcion',
-    meta: { breadCrumb: 'Inscripciones'},
+    meta: { breadCrumb: 'Inscripcion'},
     children: [
         {
             name: 'inscripcion.index',
             path: '',
             component: () => import('../views/admin/inscripcion/index.vue'),
+            meta: { breadCrumb: 'Ver inscripciones' }
+        },
+
+        {
+            name: 'inscripcion.create',
+            path: 'create',
+            component: () => import('../views/admin/inscripcion/create.vue'),
             meta: { breadCrumb: 'Ver inscripciones' }
         },
     

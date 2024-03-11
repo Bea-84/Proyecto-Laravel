@@ -7,7 +7,8 @@
                         <h5 class="card-title">Inscripciones</h5>
                         <div>
                          
-                            <button class="btn btn-success" type="button">Nueva inscripcion</button>
+                            <router-link :to="{name: 'inscripcion.create'}" class="btn btn-success" type="button">Nueva Inscripcion</router-link>
+                           
                         </div>
                     </div>
                     
