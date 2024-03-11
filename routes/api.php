@@ -25,6 +25,7 @@ Route::put('tasks/{id}',[TaskController::class,'update']);
 
 
 Route::get('nivel',[NivelController::class,'index']);
+Route::post('nivel', [NivelController::class, 'store']);
 Route::get('inscripcion',[InscripcionController::class,'index']);
 Route::get('asistencia', [AsistenciaController::class, 'index']);
 

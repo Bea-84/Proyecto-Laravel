@@ -8,7 +8,8 @@
                        <h5 class="card-title">Todos los niveles</h5>
                        <div>
                         
-                           <button class="btn btn-success" type="button">Nuevo nivel</button>
+                        <router-link :to="{name: 'nivel.create'}" class="btn btn-success" type="button">Nuevo Nivel</router-link>
+                         
                        </div>
                    </div>
                    

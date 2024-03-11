@@ -245,7 +245,12 @@ export default [
             meta: { breadCrumb: 'Ver niveles' }
         },
     
-       
+        {
+            name: 'nivel.create',
+            path: 'create',
+            component: () => import('../views/admin/nivel/create.vue'),
+            meta: { breadCrumb: 'Crear niveles'}
+        }
      
      ]
 },
