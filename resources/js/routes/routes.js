@@ -288,6 +288,25 @@ export default [
 },
 
 //-----------------------------------------------------------------------------------------------------------------------------
+//espacio vistas especialidad
+{
+    name: 'especialidad',
+    path: 'especialidad',
+    meta: { breadCrumb: 'Especialidad'},
+    children: [
+        {
+            name: 'especialidad.index',
+            path: '',
+            component: () => import('../views/admin/especialidad/index.vue'),
+            meta: { breadCrumb: 'Ver resultados tabla especialidad' }
+        },
+
+       
+    
+     ]
+},
+
+//------------------------------------------------------------------------------------------------------------------------------
 
             {
                 name: 'permissions',
