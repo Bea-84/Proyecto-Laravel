@@ -301,6 +301,13 @@ export default [
             meta: { breadCrumb: 'Ver resultados tabla especialidad' }
         },
 
+        {
+            name: 'especialidad.create',
+            path: 'create',
+            component: () => import('../views/admin/especialidad/create.vue'),
+            meta: { breadCrumb: 'Crear especialidad'}
+        }
+
        
     
      ]

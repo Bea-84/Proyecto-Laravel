@@ -35,6 +35,7 @@ Route::get('asistencia', [AsistenciaController::class, 'index']);
 Route::post('asistencia',[AsistenciaController::class,'store']);
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('especialidad',[EspecialidadController::class,'index']);
+Route::post('especialidad',[EspecialidadController::class,'store']);
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
