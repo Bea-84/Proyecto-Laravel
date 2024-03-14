@@ -290,7 +290,14 @@ export default [
             name: 'inscripcion.create',
             path: 'create',
             component: () => import('../views/admin/inscripcion/create.vue'),
-            meta: { breadCrumb: 'Ver inscripciones' }
+            meta: { breadCrumb: 'Crear inscripciones' }
+        },
+
+        {
+            name: 'inscripcion.edit',
+            path: 'inscripcion/edit/:id',
+            component: () => import('../views/admin/inscripcion/edit.vue'),
+            meta: { breadCrumb: 'Editar inscripción' }
         },
     
      ]
