@@ -14,7 +14,7 @@ class InscripcionController extends Controller
           return $inscripcion;
      }
 
-//Función que crea un nivel nuevo que se guarda en la BBDD por post request ponemos url
+    //Función que crea un nivel nuevo que se guarda en la BBDD por post request ponemos url
     public function store( Request $request){
 
      //Validar datos que tienen que estar obligatorios
@@ -34,4 +34,30 @@ class InscripcionController extends Controller
 
      return response()->json($response);
  }
+
+    //Función actualizar datos de una tarea por put request ponemos url/ id tarea
+    public function update(Request $request, $id){
+
+        //Validar datos que tienen que estar obligatorios
+        $request->validate([
+        'fecha'=>'required',
+        'hora'=>'required'
+        
+    ]);
+
+    $data=$request->all();
+
+    $inscripcion = Inscripcion::find($id);
+    $inscripcion->update($data);
+    
+    $response=[
+        'success'=>true,
+        'message'=>'Inscripción actualizada',
+        'data'=>$task
+    ];
+
+    return response()->json($response);
+    }
 }
+
+
