@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\AsistenciaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\InscripcionController;
 use App\Http\Controllers\Api\EspecialidadController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

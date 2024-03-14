@@ -34,6 +34,4 @@ class EspecialidadController extends Controller
   
         return response()->json($response);
     }
-  }
-
-
+}
