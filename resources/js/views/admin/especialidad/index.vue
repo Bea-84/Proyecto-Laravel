@@ -8,7 +8,7 @@
                         <h5 class="card-title">Tabla especialidad</h5>
                         <div>
                          
-                         <!--<router-link :to="{name: 'nivel.create'}" class="btn btn-success" type="button">Nuevo especialidad</router-link>-->
+                         <router-link :to="{name: 'especialidad.create'}" class="btn btn-success" type="button">Nuevo especialidad</router-link>
                           
                         </div>
                     </div>
