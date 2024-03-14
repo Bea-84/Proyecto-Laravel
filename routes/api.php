@@ -12,7 +12,8 @@ use App\Http\Controllers\Api\NivelController;
 use App\Http\Controllers\Api\AsistenciaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\InscripcionController;
-use App\Http\Controller\Api\EspecialidadController;
+use App\Http\Controllers\Api\EspecialidadController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
