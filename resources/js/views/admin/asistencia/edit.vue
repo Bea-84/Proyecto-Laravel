@@ -2,13 +2,16 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Añade nuevo dato de asistencia</h5>
+                <h5 class="card-title">Editar nuevo dato de asistencia</h5>
             </div>
+ 
+ 
+           
                <!--Var dumpt vue-->
                {{ asistencia }} 
 
                <!--Enviar form a script-->
-            <form @submit.prevent="addasistencia">
+            <form @submit.prevent="guardarCambios">
                
  
  
@@ -32,7 +35,7 @@
                 <Dropdown v-model="asistencia.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
                 </Dropdown>
             
-                <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir Asistencia</button>
+                <button type="submit" class="btn btn-primary mt-4 mb-4">Guardar</button>
  
  
             </form>
@@ -43,29 +46,37 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { useRouter } from 'vue-router'
-import useUsers from "../../../composables/users"
 
 
-const {users, getUsers} = useUsers()
-const router = useRouter()
-const asistencia=ref({});
+const id = $route.params.id
+const asistencia = ref({});
 
-function addasistencia(){
-   axios.post('/api/asistencia',asistencia.value)
-        .then(response =>{
-            console.log(response);
-            router.push({ name: 'asistencia.index' })
+// Obtener datos de la asistencia para editar
+onMounted(() => {
+    axios.get(`/api/asistencia/${id}`)
+        .then(response => {
+            asistencia.value = response.data;
         })
-        .catch(error=>{
-            console.log(error);
-        }) 
-}
+        .catch(error => {
+            console.error("Error al obtener los datos de la asistencia:", error);
+        });
+});
 
-onMounted(()=> {
-    getUsers();
-})
-
-
-
+// Función para guardar cambios
+const guardarCambios = () => {
+    axios.put(`/api/asistencia/${id}`, asistencia.value)
+        .then(response => {
+            console.log("Asistencia actualizada:", response.data);
+            // Redireccionar a la vista de lista de asistencias u otra vista
+        })
+        .catch(error => {
+            console.error("Error al actualizar la asistencia:", error);
+        });
+};
 </script>
+
+  
+
+ 
+ 
+ 

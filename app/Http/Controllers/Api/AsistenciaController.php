@@ -34,4 +34,29 @@ class AsistenciaController extends Controller
 
       return response()->json($response);
   }
+
+    //Función editar datos de asistencia por put request ponemos url/ id tarea
+    public function update(Request $request, $id){
+
+      //Validar datos que tienen que estar obligatorios
+      $request->validate([
+        'asistencia'=>'required',
+        'fecha'=>'required',
+        'user_id'=>'required',
+        
+    ]);
+
+   $data=$request->all();
+
+   $asistencia = Asistencia::find($id);
+   $asistencia->update($data);
+   
+   $response=[
+       'success'=>true,
+       'message'=>'Asistencia actualizada',
+       'data'=>$asistencia
+   ];
+
+   return response()->json($response);
+}
 }

@@ -34,6 +34,7 @@ Route::post('inscripcion', [InscripcionController::class, 'store']);
 //----------------------------------------------------------------------------------------------------------------------------------
 Route::get('asistencia', [AsistenciaController::class, 'index']);
 Route::post('asistencia',[AsistenciaController::class,'store']);
+Route::put('asistencia/{id}',[AsistenciaController::class,'update']);
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('especialidad',[EspecialidadController::class,'index']);
 Route::post('especialidad',[EspecialidadController::class,'store']);
