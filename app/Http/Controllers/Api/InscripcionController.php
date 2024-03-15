@@ -53,7 +53,7 @@ class InscripcionController extends Controller
     $response=[
         'success'=>true,
         'message'=>'Inscripción actualizada',
-        'data'=>$task
+        'data'=>$inscripcion
     ];
 
     return response()->json($response);
