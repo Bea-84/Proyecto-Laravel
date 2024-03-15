@@ -41,7 +41,7 @@ class InscripcionController extends Controller
         //Validar datos que tienen que estar obligatorios
         $request->validate([
         'fecha'=>'required',
-        'hora'=>'required'
+        'forma_de_pago'=>'required'
         
     ]);
 

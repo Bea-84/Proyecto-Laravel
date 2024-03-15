@@ -72,12 +72,12 @@ onMounted(() => {
 const guardar = () => {
     axios.put(`/api/inscripcion/${id}`, inscripcion.value)
         .then(response => {
-            console.log("inscripción actualizada:", response.data);
-            // Redireccionar a la vista de lista de inscripción u otra vista
-            router.push({ name: 'inscripcion.index' })
+            console.log("Inscripcion actualizada:", response.data);
+            // Redireccionar a la vista de lista de inscripcion u otra vista
+            router.push({ name: 'inscripcion.index' });
         })
         .catch(error => {
-            console.error("Error al actualizar la inscripción:", error);
+            console.error("Error al actualizar la inscripcion:", error);
         });
 };
 </script>
