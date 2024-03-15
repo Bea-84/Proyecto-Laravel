@@ -6,7 +6,7 @@
             </div>
             
                <!--Var dumpt vue-->
-               {{ inscripción }} 
+               {{ inscripcion }} 
 
                <!--Enviar form a script-->
             <form @submit.prevent="guardar">
@@ -42,16 +42,26 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import useUsers from "../../../composables/users"
 
 
-const id = $route.params.id
-const asistencia = ref({});
+const {users, getUsers} = useUsers()
+const router = useRouter();
+const route = useRoute(); // Usar useRoute() para acceder a los parámetros de la ruta
+const id = route.params.id; // Obtener el ID de la ruta
+const inscripcion = ref ({});
+
+onMounted(()=> {
+        getUsers();
+    })
+    
 
 // Obtener datos de la asistencia para editar
 onMounted(() => {
     axios.get(`/api/inscripcion/${id}`)
         .then(response => {
-            asistencia.value = response.data;
+            inscripcion.value = response.data.data;
         })
         .catch(error => {
             console.error("Error al obtener inscripción:", error);
@@ -64,6 +74,7 @@ const guardar = () => {
         .then(response => {
             console.log("inscripción actualizada:", response.data);
             // Redireccionar a la vista de lista de inscripción u otra vista
+            router.push({ name: 'inscripcion.index' })
         })
         .catch(error => {
             console.error("Error al actualizar la inscripción:", error);

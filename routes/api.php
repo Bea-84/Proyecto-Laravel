@@ -32,6 +32,7 @@ Route::post('nivel', [NivelController::class, 'store']);
 Route::get('inscripcion',[InscripcionController::class,'index']);
 Route::post('inscripcion', [InscripcionController::class, 'store']);
 Route::put('inscripcion/{id}', [InscripcionController::class, 'update']);
+Route::get('inscripcion/{id}',[InscripcionController::class,'show']);//esto es para conseguir los datos por su id 
 //----------------------------------------------------------------------------------------------------------------------------------
 Route::get('asistencia', [AsistenciaController::class, 'index']);
 Route::post('asistencia',[AsistenciaController::class,'store']);

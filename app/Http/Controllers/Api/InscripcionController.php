@@ -58,6 +58,31 @@ class InscripcionController extends Controller
 
     return response()->json($response);
     }
-}
+
+    //Función para buscar dato por su id
+    public function show($id) {
+        // Buscar la asistencia por su ID
+        $inscripcion = Inscripcion::find($id);
+    
+        // Verificar si se encontró la asistencia
+        if (!$inscripcion) {
+            $response = [
+                'success' => false,
+                'message' => 'Inscripcion no encontrada',
+                'data' => null
+            ];
+            return response()->json($response, 404);
+        }
+    
+        // Si se encontró la asistencia, retornarla en la respuesta JSON
+        $response = [
+            'success' => true,
+            'message' => 'Inscripcion encontrada',
+            'data' => $inscripcion
+        ];
+        return response()->json($response);
+    }
+    
+  }
 
 
