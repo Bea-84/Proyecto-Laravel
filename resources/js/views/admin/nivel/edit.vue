@@ -5,8 +5,7 @@
                 <h5 class="card-title">Editar nivel</h5>
             </div>
  
-               <!--Var dumpt vue-->
-               {{ nivel }} 
+            
 
                <!--Enviar form a script-->
             <form @submit.prevent="guardarCambios">
@@ -29,9 +28,18 @@
                 </div>
                 
                 <Dropdown v-model="nivel.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
+                
                 </Dropdown>
             
-                <button type="submit" class="btn btn-primary mt-4 mb-4">Guardar</button>
+    <Toast />
+
+    <ConfirmPopup> </ConfirmPopup>
+    <div class="card flex flex-wrap gap-2 justify-content-center">
+        <Button @click="confirm1($event)" label="Guardar" outlined></Button>
+        
+    </div>
+
+                
  
  
             </form>
@@ -44,6 +52,13 @@
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from 'vue-router';
 import useUsers from "../../../composables/users"
+
+import { useConfirm } from "primevue/useconfirm";
+import { useToast } from "primevue/usetoast";
+
+const confirm = useConfirm();
+const toast = useToast();
+
 
 const {users, getUsers} = useUsers()
 const router = useRouter();
@@ -80,4 +95,31 @@ const guardarCambios = () => {
             console.error("Error al actualizar el nivel:", error);
         });
 };
+
+//Función para popup
+const confirm1 = (event) => {
+    console.log(event);
+
+    confirm.require({
+        target: event.currentTarget,
+        message: 'Estas seguro que deseas modificar este dato?',
+        icon: 'pi pi-exclamation-triangle',
+        rejectClass: 'p-button-secondary p-button-outlined p-button-sm',
+        acceptClass: 'p-button-sm',
+        rejectLabel: 'No',
+        acceptLabel: 'Si',
+        accept: () => {
+            toast.add({ severity: 'info', summary: 'Confirmado', detail: 'Dato modificado', life: 3000 });
+            guardarCambios()
+        },
+        reject: () => {
+
+           
+            toast.add({ severity: 'error', summary: 'Cancelado', detail: 'Cambios no guardados', life: 3000 });
+        }
+    });
+};
+
+
+
 </script> 

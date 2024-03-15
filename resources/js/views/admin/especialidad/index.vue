@@ -13,7 +13,7 @@
                         </div>
                     </div>
 
-                    {{ especialidad }}
+                    
                     
                     <DataTable :value="especialidad" tableStyle="min-width: 50rem">
                          <Column field="id" header="id"  ></Column>

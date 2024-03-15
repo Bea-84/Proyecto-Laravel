@@ -4,8 +4,7 @@
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title">Añade nuevo dato de asistencia</h5>
             </div>
-               <!--Var dumpt vue-->
-               {{ asistencia }} 
+               
 
                <!--Enviar form a script-->
             <form @submit.prevent="addasistencia">

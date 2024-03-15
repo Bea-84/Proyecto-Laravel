@@ -53,7 +53,7 @@ class NivelController extends Controller
  
     $response=[
         'success'=>true,
-        'message'=>'Asistencia actualizada',
+        'message'=>'Nivel actualizado',
         'data'=>$nivel
     ];
 
@@ -78,7 +78,7 @@ class NivelController extends Controller
         // Si se encontró el nivel, retornarla en la respuesta JSON
         $response = [
             'success' => true,
-            'message' => 'Asistencia encontrada',
+            'message' => 'Nivel encontrado',
             'data' => $nivel
         ];
         return response()->json($response);

@@ -5,8 +5,7 @@
                 <h5 class="card-title">Añade una especialidad nueva</h5>
             </div>
  
-               <!--Var dumpt vue-->
-               {{ especialidad }} 
+               
 
                <!--Enviar form a script-->
             <form @submit.prevent="addEspecialidad">

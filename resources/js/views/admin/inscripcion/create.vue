@@ -5,8 +5,7 @@
                 <h5 class="card-title">Añade una nueva inscripción</h5>
             </div>
  
-               <!--Var dumpt vue-->
-               {{ inscripcion }} 
+             
 
                <!--Enviar form a script-->
             <form @submit.prevent="addInscripcion">

@@ -5,8 +5,7 @@
                 <h5 class="card-title">Añade un nuevo nivel</h5>
             </div>
  
-               <!--Var dumpt vue-->
-               {{ nivel }} 
+              
 
                <!--Enviar form a script-->
             <form @submit.prevent="addNivel">
