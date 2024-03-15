@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Editar nuevo dato de asistencia</h5>
+                <h5 class="card-title">Editar dato de asistencia</h5>
             </div>
  
  
@@ -46,16 +46,27 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useRouter, useRoute } from 'vue-router';
+import useUsers from "../../../composables/users"
 
+const {users, getUsers} = useUsers()
+const router = useRouter();
+const route = useRoute(); // Usar useRoute() para acceder a los parámetros de la ruta
+const id = route.params.id; // Obtener el ID de la ruta
 
-const id = $route.params.id
 const asistencia = ref({});
+
+onMounted(()=> {
+    getUsers();
+})
 
 // Obtener datos de la asistencia para editar
 onMounted(() => {
     axios.get(`/api/asistencia/${id}`)
         .then(response => {
-            asistencia.value = response.data;
+            asistencia.value = response.data.data;
+            console.log('response.data');
+            console.log(response.data.data);
         })
         .catch(error => {
             console.error("Error al obtener los datos de la asistencia:", error);
@@ -68,6 +79,7 @@ const guardarCambios = () => {
         .then(response => {
             console.log("Asistencia actualizada:", response.data);
             // Redireccionar a la vista de lista de asistencias u otra vista
+            router.push({ name: 'asistencia.index' });
         })
         .catch(error => {
             console.error("Error al actualizar la asistencia:", error);
