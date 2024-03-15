@@ -18,6 +18,15 @@
                         <Column field="nombre" header="Nombre"  ></Column>
                         <Column field="descripcion" header="Descripcion"  ></Column>
                         <Column field="user_id" header="Usuario ID" ></Column>
+                        <Column header="Acciones">
+                         <template #body="slotProps">
+                         <!-- Botón para editar nivel que le pasaremos a la vista edit los datos a través de su id-->
+                         <router-link
+                                :to="{ name: 'nivel.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
+                            </router-link>
+                         
+                         </template>
+                         </Column>
                     </DataTable>
                </div>
            </div>

@@ -60,7 +60,7 @@ class AsistenciaController extends Controller
       return response()->json($response);
     }
 
-    //Función para buscar dato por su id
+    //Función para buscar dato por su id y mostrar
     public function show($id) {
       // Buscar la asistencia por su ID
       $asistencia = Asistencia::find($id);

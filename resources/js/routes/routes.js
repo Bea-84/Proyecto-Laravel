@@ -266,6 +266,15 @@ export default [
             path: 'create',
             component: () => import('../views/admin/nivel/create.vue'),
             meta: { breadCrumb: 'Crear niveles'}
+        },
+        {
+            name: 'nivel.edit',
+            path: 'edit/:id',
+            component: () => import('../views/admin/nivel/edit.vue'),
+            meta: {
+                breadCrumb: 'Edit nivel',
+                linked: false,
+            }
         }
      
      ]

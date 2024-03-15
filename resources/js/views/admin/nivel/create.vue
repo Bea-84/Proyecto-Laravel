@@ -5,29 +5,12 @@
                 <h5 class="card-title">Añade un nuevo nivel</h5>
             </div>
  
- 
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                <strong></strong>
-            </div>
- 
- 
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                <strong></strong>
-            </div>
                <!--Var dumpt vue-->
                {{ nivel }} 
 
                <!--Enviar form a script-->
             <form @submit.prevent="addNivel">
-                <div class="form-group mb-2">
-                    <label>Id</label><span class="text-danger"> *</span>
-                    <!--input añadimos v- model para vue-->
-                    <input v-model="nivel.id" type="number" class="form-control" placeholder="Id">
-                </div>
- 
- 
+                
                 <div class="form-group mb-2">
                     <label>nombre</label><span class="text-danger"> *</span>
                     <textarea v-model="nivel.nombre" class="form-control" type="text" placeholder="nombre"></textarea>
