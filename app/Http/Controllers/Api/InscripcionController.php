@@ -82,6 +82,14 @@ class InscripcionController extends Controller
         ];
         return response()->json($response);
     }
+
+    //Función para eliminar un nivel de la BBDD
+    public function destroy($id){
+
+        $inscripcion = Inscripcion::find($id);
+        $inscripcion->delete();
+        return response()->json(['success' => true, 'message' => 'Nivel eliminado correctamente']);
+    }
     
   }
 

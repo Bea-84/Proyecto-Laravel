@@ -27,6 +27,12 @@
                          <router-link
                                 :to="{ name: 'especialidad.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
                             </router-link>
+
+                               <!--Botón para eliminar nivel-->
+                         <Toast />
+
+                        <ConfirmPopup> </ConfirmPopup>
+                        <Button @click="confirm1($event,slotProps.data.id, slotProps.index)" label="Eliminar" outlined class="btn btn-primary"></Button>
                          
                          </template>
                         </Column>
@@ -40,9 +46,15 @@
  
  <script setup>
   
-   import {ref, onMounted} from "vue"
+  import {ref, onMounted} from "vue"
+   import { useConfirm } from "primevue/useconfirm";
+   import { useToast } from "primevue/usetoast";
 
-   const especialidad=ref()
+  const confirm = useConfirm();
+  const toast = useToast();
+ 
+  const especialidad=ref()
+   
 
    onMounted(()=>{
 
@@ -54,6 +66,51 @@
 
    })
  
+//Función eliminar especialidad
+const deleteEspecialidad = (id, index) => {
+       
+       axios.delete(`/api/especialidad/${id}`)
+           .then(response => {
+               console.log("Especialidad eliminada:", response.data);
+               // Mostrar index del array sin el dato eliminado
+               especialidad.value.splice(index, 1);
+               
+           })
+           .catch(error => {
+               console.error("Error al eliminar la especialidad:", error);
+           });
+   };
+
+   //Función para popup
+   const confirm1 = (event,id,index) => {
+       console.log(event);
+
+       confirm.require({
+           target: event.currentTarget,
+           message: 'Estas seguro que deseas eliminar este dato?',
+           icon: 'pi pi-exclamation-triangle',
+           rejectClass: 'p-button-secondary p-button-outlined p-button-sm',
+           acceptClass: 'p-button-sm',
+           rejectLabel: 'No',
+           acceptLabel: 'Si',
+           accept: () => {
+               toast.add({ severity: 'info', summary: 'Confirmado', detail: 'Dato eliminado', life: 3000 });
+               deleteEspecialidad(id,index)
+           },
+           reject: () => {
+
+           
+               toast.add({ severity: 'error', summary: 'Cancelado', detail: 'Cambios no guardados', life: 3000 });
+           }
+       });
+   };
+ 
 </script>
+
+
+<style>
+
+
+</style>
  
  

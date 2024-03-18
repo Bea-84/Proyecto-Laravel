@@ -36,6 +36,7 @@ Route::get('inscripcion',[InscripcionController::class,'index']);
 Route::post('inscripcion', [InscripcionController::class, 'store']);
 Route::put('inscripcion/{id}', [InscripcionController::class, 'update']);
 Route::get('inscripcion/{id}',[InscripcionController::class,'show']);//esto es para conseguir los datos por su id 
+Route::delete('inscripcion/{id}', [InscripcionController::class, 'destroy']);//esto es para eliminar los datos por su id
 //----------------------------------------------------------------------------------------------------------------------------------
 Route::get('asistencia', [AsistenciaController::class, 'index']);
 Route::post('asistencia',[AsistenciaController::class,'store']);
@@ -45,7 +46,8 @@ Route::get('asistencia/{id}',[AsistenciaController::class,'show']);//esto es par
 Route::get('especialidad',[EspecialidadController::class,'index']);
 Route::post('especialidad',[EspecialidadController::class,'store']);
 Route::put('especialidad/{id}', [EspecialidadController::class, 'update']);
-Route::get('especialidad/{id}',[EspecialidadController::class,'show']);//esto es para conseguir los datos por su id 
+Route::get('especialidad/{id}',[EspecialidadController::class,'show']);//esto es para conseguir los datos por su id
+Route::delete('especialidad/{id}', [EspecialidadController::class, 'destroy']);//esto es para eliminar los datos por su id 
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {

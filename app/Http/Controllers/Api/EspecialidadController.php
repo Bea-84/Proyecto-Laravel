@@ -83,6 +83,14 @@ class EspecialidadController extends Controller
         ];
         return response()->json($response);
     }
+
+    //Función para eliminar un nivel de la BBDD
+    public function destroy($id){
+
+        $especialidad = Especialidad::find($id);
+        $especialidad->delete();
+        return response()->json(['success' => true, 'message' => 'Especialidad eliminada correctamente']);
+    }
     
   }
 
