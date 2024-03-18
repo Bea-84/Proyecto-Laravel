@@ -30,6 +30,7 @@ Route::get('nivel',[NivelController::class,'index']);
 Route::post('nivel', [NivelController::class, 'store']);
 Route::put('nivel/{id}',[NivelController::class,'update']);
 Route::get('nivel/{id}',[NivelController::class,'show']);//esto es para conseguir los datos por su id 
+Route::delete('nivel/{id}', [NivelController::class, 'destroy']);//esto es para eliminar los datos por su id
 //--------------------------------------------------------------------------------------------------------------------------------
 Route::get('inscripcion',[InscripcionController::class,'index']);
 Route::post('inscripcion', [InscripcionController::class, 'store']);

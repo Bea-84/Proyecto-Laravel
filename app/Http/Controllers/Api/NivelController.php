@@ -83,4 +83,13 @@ class NivelController extends Controller
         ];
         return response()->json($response);
     }
+
+    //Función para eliminar un nivel de la BBDD
+    public function destroy($id){
+
+        $nivel = Nivel::find($id);
+        $nivel->delete();
+        return response()->json(['success' => true, 'message' => 'Nivel eliminado correctamente']);
+    }
+    
 }

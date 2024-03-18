@@ -22,9 +22,14 @@
                          <template #body="slotProps">
                          <!-- Botón para editar nivel que le pasaremos a la vista edit los datos a través de su id-->
                          <router-link
-                                :to="{ name: 'nivel.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
+                                :to="{ name: 'nivel.edit', params: { id: slotProps.data.id } }" class="btn btn-primary mr-2"> Edit
                             </router-link>
-                         
+                            <!--Botón para eliminar nivel-->
+                            <Toast />
+
+                            <ConfirmPopup> </ConfirmPopup>
+                            <Button @click="confirm1($event,slotProps.data.id, slotProps.index)" label="Eliminar" outlined class="btn btn-primary"></Button>
+                     
                          </template>
                          </Column>
                     </DataTable>
@@ -41,6 +46,12 @@
 
   const niveles=ref()
 
+  import { useConfirm } from "primevue/useconfirm";
+  import { useToast } from "primevue/usetoast";
+
+  const confirm = useConfirm();
+  const toast = useToast();
+
   onMounted(()=>{
 
      axios.get('/api/nivel')
@@ -50,6 +61,45 @@
           })
 
   })
+
+    //Función eliminar nivel
+    const deleteNivel = (id, index) => {
+       
+        axios.delete(`/api/nivel/${id}`)
+            .then(response => {
+                console.log("Nivel eliminado:", response.data);
+                // Mostrar index del array sin el dato eliminado
+                niveles.value.splice(index, 1);
+                
+            })
+            .catch(error => {
+                console.error("Error al eliminar el nivel:", error);
+            });
+    };
+
+    //Función para popup
+    const confirm1 = (event,id,index) => {
+        console.log(event);
+
+        confirm.require({
+            target: event.currentTarget,
+            message: 'Estas seguro que deseas eliminar este dato?',
+            icon: 'pi pi-exclamation-triangle',
+            rejectClass: 'p-button-secondary p-button-outlined p-button-sm',
+            acceptClass: 'p-button-sm',
+            rejectLabel: 'No',
+            acceptLabel: 'Si',
+            accept: () => {
+                toast.add({ severity: 'info', summary: 'Confirmado', detail: 'Dato eliminado', life: 3000 });
+                deleteNivel(id,index)
+            },
+            reject: () => {
+
+            
+                toast.add({ severity: 'error', summary: 'Cancelado', detail: 'Cambios no guardados', life: 3000 });
+            }
+        });
+    };
   
 </script>
 
