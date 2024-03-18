@@ -41,6 +41,7 @@ Route::get('asistencia', [AsistenciaController::class, 'index']);
 Route::post('asistencia',[AsistenciaController::class,'store']);
 Route::put('asistencia/{id}',[AsistenciaController::class,'update']);
 Route::get('asistencia/{id}',[AsistenciaController::class,'show']);//esto es para conseguir los datos por su id 
+Route::delete('asistencia/{id}', [AsistenciaController::class, 'destroy']);//esto es para eliminar los datos por su id
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('especialidad',[EspecialidadController::class,'index']);
 Route::post('especialidad',[EspecialidadController::class,'store']);

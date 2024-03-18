@@ -83,5 +83,13 @@ class AsistenciaController extends Controller
       ];
       return response()->json($response);
   }
+
+   //Función para eliminar un dato asistencia de la BBDD
+   public function destroy($id){
+
+    $asistencia = Asistencia::find($id); 
+    $asistencia->delete();
+    return response()->json(['success' => true, 'message' => 'Dato asistencia eliminado correctamente']);
+}
   
 }
