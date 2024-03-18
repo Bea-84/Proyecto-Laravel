@@ -336,10 +336,20 @@ export default [
             path: 'create',
             component: () => import('../views/admin/especialidad/create.vue'),
             meta: { breadCrumb: 'Crear especialidad'}
+        },
+
+        {
+            name: 'especialidad.edit',
+            path: 'edit/:id',
+            component: () => import('../views/admin/especialidad/edit.vue'),
+            meta: {
+                breadCrumb: 'Edit especialidad',
+                linked: false,
+            }
         }
 
        
-    
+
      ]
 },
 

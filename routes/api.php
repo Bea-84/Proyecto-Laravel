@@ -43,6 +43,8 @@ Route::get('asistencia/{id}',[AsistenciaController::class,'show']);//esto es par
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('especialidad',[EspecialidadController::class,'index']);
 Route::post('especialidad',[EspecialidadController::class,'store']);
+Route::put('especialidad/{id}', [EspecialidadController::class, 'update']);
+Route::get('especialidad/{id}',[EspecialidadController::class,'show']);//esto es para conseguir los datos por su id 
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {

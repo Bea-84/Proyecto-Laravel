@@ -35,5 +35,55 @@ class EspecialidadController extends Controller
         return response()->json($response);
     }
 
-  
-}
+     //Función actualizar datos de una tarea por put request ponemos url/ id tarea
+     public function update(Request $request, $id){
+
+        //Validar datos que tienen que estar obligatorios
+        $request->validate([
+        'dia'=>'required',
+        'hora'=>'required',
+        'user_id'=>'required',
+        
+    ]);
+
+    $data=$request->all();
+
+    $especialidad = Especialidad::find($id);
+    $especialidad->update($data);
+    
+    $response=[
+        'success'=>true,
+        'message'=>'Especialidad actualizada',
+        'data'=>$especialidad
+    ];
+
+    return response()->json($response);
+    }
+
+    //Función para buscar dato por su id
+    public function show($id) {
+        // Buscar la asistencia por su ID
+        $especialidad = Especialidad::find($id);
+    
+        // Verificar si se encontró la asistencia
+        if (!$especialidad) {
+            $response = [
+                'success' => false,
+                'message' => 'Especialidad no encontrada',
+                'data' => null
+            ];
+            return response()->json($response, 404);
+        }
+    
+        // Si se encontró la especialidad, retornarla en la respuesta JSON
+        $response = [
+            'success' => true,
+            'message' => 'Especialidad encontrada',
+            'data' => $especialidad
+        ];
+        return response()->json($response);
+    }
+    
+  }
+
+
