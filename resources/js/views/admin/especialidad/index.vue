@@ -20,6 +20,16 @@
                          <Column field="dia" header="Dia"  ></Column>
                          <Column field="hora" header="Hora"  ></Column>
                          <Column field="user_id" header="Usuario ID" ></Column>
+                         <Column header="Acciones">
+                         <template #body="slotProps">
+
+                             <!-- Botón para editar especialidad que le pasaremos a la vista edit los datos a través de su id-->
+                         <router-link
+                                :to="{ name: 'especialidad.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
+                            </router-link>
+                         
+                         </template>
+                        </Column>
                      </DataTable>
                 </div>
             </div>
