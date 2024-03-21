@@ -12,13 +12,13 @@
                
                 <div class="form-group mb-2">
                     <label>Dia</label><span class="text-danger"> *</span>
-                    <input v-model="especialidad.dia" class="form-control" type="date" placeholder="Dia"/>
+                    <input v-model="especialidad.dia" class="form-control" type="text" placeholder="Dia"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
                     <label>Hora</label><span class="text-danger">*</span>
-                    <input v-model="especialidad.hora" class="form-control" type="time" name="Hora"/>
+                    <input v-model="especialidad.hora" class="form-control" type="text" name="Hora"/>
                 </div>
  
  
