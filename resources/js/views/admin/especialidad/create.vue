@@ -5,61 +5,51 @@
                 <h5 class="card-title">Añade una especialidad nueva</h5>
             </div>
  
-                {{ especialidad }}
+              
 
                <!--Enviar form a script-->
             <form @submit.prevent="addEspecialidad">
                 
                 <div>Día:</div>
-                
-                <div class="flex flex-wrap gap-3">
-                    <div class="flex align-items-center">
-                        <RadioButton  v-model="especialidad.dia"  name="dia" value="Lunes" />
-                        <label  class="ml-2"> Lunes </label>
+                <div class="card flex justify-content-center">
+                    <div class="flex flex-column gap-3">
+                        <div
+                            v-for="dia in dias"
+                            :key=dia.id
+                            class="flex align-items-center"
+                        >
+                            <RadioButton
+                                v-model=especialidad.dia
+                                :value=dia.id
+                                @input="change($event.target.value)"
+                                name="diaSemana"
+                            />
+                            <label :for=dia.id class="ml-2">{{ dia.diaSemana }}</label>
+                        </div>
                     </div>
-                    <div class="flex align-items-center">
-                        <RadioButton v-model="especialidad.dia"  name="dia" value="Martes" />
-                        <label class="ml-2"> Martes </label>
-                    </div>
-                    <div class="flex align-items-center">
-                        <RadioButton  v-model="especialidad.dia"  name="dia" value="Miercoles" />
-                        <label  class="ml-2"> Miercoles </label>
-                    </div>
-                    <div class="flex align-items-center">
-                        <RadioButton  v-model="especialidad.dia"  name="dia" value="Jueves" />
-                        <label  class="ml-2"> Jueves </label>
-                    </div>
-                    <div class="flex align-items-center">
-                    <RadioButton  v-model="especialidad.dia"  name="dia" value="Viernes" />
-                    <label  class="ml-2"> Viernes </label>
                 </div>
-                </div>
+
                 <br>
 
-                <div>Hora:</div>
+                <div>Horario:</div>
+                <div class="card flex justify-content-center">
+                    <div class="flex flex-column gap-3">
+                        <div
+                            v-for="horario in horarios"
+                            :key=horario.id
+                            class="flex align-items-center"
+                        >
+                            <RadioButton
+                                v-model=especialidad.hora
+                                :value="horario.hora_inicio + '-' + horario.hora_fin" 
+                                name="horario"
+                            />
+                            <label :for="horario.id" class="ml-2">{{ horario.hora_inicio + '-' + horario.hora_fin }}</label>
+                        </div>
+                    </div>
+                </div>
 
-             <div class="flex flex-wrap gap-3">
-                <div class="flex align-items-center">
-                    <RadioButton  v-model="especialidad.hora" name="hora" value="10:00-11:00" />
-                    <label  class="ml-2"> 10:00-11:00 </label>
-                </div>
-                <div class="flex align-items-center">
-                    <RadioButton  v-model="especialidad.hora"  name="hora" value="16:30-17:30" />
-                    <label class="ml-2"> 16:30-17:30 </label>
-                </div>
-                <div class="flex align-items-center">
-                    <RadioButton  v-model="especialidad.hora"  name="hora" value="17:30-18:30" />
-                    <label class="ml-2"> 17:30-18:30 </label>
-                </div>
-                <div class="flex align-items-center">
-                    <RadioButton  v-model="especialidad.hora"  name="hora" value="18:30-19:30" />
-                    <label  class="ml-2"> 18:30-19:30 </label>
-                </div>
-                <div class="flex align-items-center">
-                <RadioButton  v-model="especialidad.hora"  name="hora" value="20:30-21:30" />
-                <label  class="ml-2"> 20:30-21:30 </label>
-              </div>
-              </div>
+                
                 
               <br>
  
@@ -88,11 +78,12 @@
     import { useRouter } from 'vue-router'
     import useUsers from "../../../composables/users"
     
-
-
     const {users, getUsers} = useUsers()
     const router = useRouter()
     const especialidad=ref({});
+    const dias = ref([ ]);
+    const horarios = ref([]);
+    
 
     function addEspecialidad(){
        axios.post('/api/especialidad',especialidad.value)
@@ -107,7 +98,37 @@
 
     onMounted(()=> {
         getUsers();
+         // Obtener los días de la API 
+         axios.get('/api/dia')
+            .then(response => {
+                console.log(response);
+                dias.value = response.data; 
+            })
+            .catch(error => {
+                console.error('Error al obtener datos:', error);
+            });
+           
+           
+            
+             
     })
+    
+    //Función para conseguir horarios después de haber seleccionado el dia de la semana
+    function change( value) {
+         //Obtener los horarios de la API solo por el id del dia selaccionado
+        axios.get('/api/horario/dia/'+value)
+            .then(response => {
+                console.log(response);
+                horarios.value = response.data; 
+            })
+            .catch(error => {
+                console.error('Error al obtener datos:', error);
+            });
+  }
+
+    
+
+
     
 
 </script>

@@ -16,10 +16,9 @@
                     
                     
                     <DataTable :value="especialidad" tableStyle="min-width: 50rem">
-                         <Column field="id" header="id"  ></Column>
-                         <Column field="dia" header="Dia"  ></Column>
-                         <Column field="hora" header="Hora"  ></Column>
-                         <Column field="user_id" header="Usuario ID" ></Column>
+                         <Column field="dia" header="Id_dia_semana"></Column>
+                         <Column field="hora" header="Hora clase"  ></Column>
+                         <Column field="user_id" header="ID alumno" ></Column>
                          <Column header="Acciones">
                          <template #body="slotProps">
 
@@ -54,6 +53,7 @@
   const toast = useToast();
  
   const especialidad=ref()
+  
    
 
    onMounted(()=>{
@@ -63,7 +63,6 @@
              console.log(response);
              especialidad.value = response.data;
            })
-
    })
  
 //Función eliminar especialidad
@@ -104,6 +103,8 @@ const deleteEspecialidad = (id, index) => {
            }
        });
    };
+
+   
  
 </script>
 

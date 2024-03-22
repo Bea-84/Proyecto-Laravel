@@ -11,19 +11,19 @@
             <form @submit.prevent="guardar">
                
                 <div class="form-group mb-2">
-                    <label>Dia</label><span class="text-danger"> *</span>
+                    <label>Id_Dia_Semana</label><span class="text-danger"> *</span>
                     <input v-model="especialidad.dia" class="form-control" type="text" placeholder="Dia"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>Hora</label><span class="text-danger">*</span>
+                    <label>Horario clase</label><span class="text-danger">*</span>
                     <input v-model="especialidad.hora" class="form-control" type="text" name="Hora"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>User_id</label><span class="text-danger">*</span>
+                    <label>Id alumno</label><span class="text-danger">*</span>
                     <input v-model="especialidad.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -55,6 +55,7 @@ import { useToast } from "primevue/usetoast";
 
 const confirm = useConfirm();
 const toast = useToast();
+
 
 
 const {users, getUsers} = useUsers()

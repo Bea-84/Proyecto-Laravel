@@ -13,6 +13,8 @@ use App\Http\Controllers\Api\AsistenciaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\InscripcionController;
 use App\Http\Controllers\Api\EspecialidadController;
+use App\Http\Controllers\Api\DiaController;
+use App\Http\Controllers\Api\HorarioController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +51,14 @@ Route::post('especialidad',[EspecialidadController::class,'store']);
 Route::put('especialidad/{id}', [EspecialidadController::class, 'update']);
 Route::get('especialidad/{id}',[EspecialidadController::class,'show']);//esto es para conseguir los datos por su id
 Route::delete('especialidad/{id}', [EspecialidadController::class, 'destroy']);//esto es para eliminar los datos por su id 
+//--------------------------------------------------------------------------------------------------------------------------------------
+//ruta para conseguir datos de tabla dias
+Route::get('dia', [DiaController::class, 'index']);
+//ruta para conseguir datos tabla horarios
+Route::get('horario', [HorarioController::class, 'index']);
+Route::get('horario/dia/{id}', [HorarioController::class, 'showday']);//con esto solo los seleccionados los horarios del dia seleccionado
+
+
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
