@@ -1,5 +1,6 @@
 
 <template>
+    
     <ul class="layout-menu">
         <template v-for="(item, i) in model" :key="item">
             <app-menu-item v-if="!item.separator" :item="item" :index="i"></app-menu-item>
@@ -31,16 +32,27 @@ const model = ref([
         ]
     },
     {
-        label: 'Ejercicios',
+        label: 'Niveles',
         items: [
-            { label: 'Ejercicios', icon: 'pi pi-fw pi-id-card', to: '/admin/exercises', permision: 'exercise-list' },
-            { label: 'Categorias', icon: 'pi pi-fw pi-id-card', to: '/admin/categories', permision: 'category-list' }
+            {label:'Niveles',icon:' pi pi-fw pi-book',to:'/admin/nivel',permision:'all'}
         ]
     },
     {
-        label: 'Posts',
+        label: 'Inscripciones',
         items: [
-            { label: 'Posts', icon: 'pi pi-fw pi-id-card', to: '/admin/posts', permision: 'post-list' }
+            {label:'Inscripciones',icon:'pi pi-fw pi-pencil',to:'/admin/inscripcion',permision:'all'}
+        ]
+    },
+    {
+        label: 'Asistencia',
+        items: [
+            {label:'Asistencia',icon:'pi pi-fw pi-bars',to:'/admin/asistencia',permision:'all'}
+        ]
+    },
+    {
+        label: 'Especialidad',
+        items: [
+            {label:'Especialidad',icon:'pi pi-fw pi-flag',to:'/admin/especialidad',permision:'all'}
         ]
     }
 ]);
