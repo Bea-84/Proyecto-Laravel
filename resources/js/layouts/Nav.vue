@@ -16,6 +16,12 @@
                         <li class="nav-item">
                             <router-link :to="{ name : 'public-posts.index'}" class="nav-link">Trayectoria J.M.Guerrero</router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link :to="{ name : 'tarifas'}" class="nav-link">Tarifas</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="{ name : 'horarios'}" class="nav-link">Horarios</router-link>
+                        </li>
                     <template v-if="!user?.name">
                         <li class="nav-item">
                             <router-link class="nav-link" to="/login"
