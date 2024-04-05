@@ -1,7 +1,7 @@
 <template>
     <div class="layout-topbar">
         <router-link to="/" class="layout-topbar-logo">
-            <img src="public/images/Logo.jpg" alt="logo" />
+            <h2>Zona de combate</h2>
             <span></span>
         </router-link>
 
