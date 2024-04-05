@@ -51,6 +51,16 @@ export default [
                 component: () => import('../views/posts/index.vue'),
             },
             {
+                path: 'tarifas',
+                name: 'tarifas',
+                component: () => import('../views/tarifas/tarifas.vue'),
+            },
+            {
+                path: 'horarios',
+                name: 'horarios',
+                component: () => import('../views/horarios/horario.vue'),
+            },
+            {
                 path: 'posts/:id',
                 name: 'public-posts.details',
                 component: () => import('../views/posts/details.vue'),
