@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\InscripcionController;
 use App\Http\Controllers\Api\EspecialidadController;
 use App\Http\Controllers\Api\DiaController;
 use App\Http\Controllers\Api\HorarioController;
+use App\Http\Controllers\Api\TarifaController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
