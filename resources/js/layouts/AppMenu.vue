@@ -50,9 +50,9 @@ const model = ref([
         ]
     },
     {
-        label: 'Especialidad',
+        label: 'Clases',
         items: [
-            {label:'Especialidad',icon:'pi pi-fw pi-flag',to:'/admin/especialidad',permision:'all'}
+            {label:'Clase',icon:'pi pi-fw pi-flag',to:'/admin/clase',permision:'all'}
         ]
     }
 ]);

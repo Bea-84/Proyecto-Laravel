@@ -42,7 +42,7 @@ class NivelController extends Controller
     $request->validate([
       'nombre'=>'required',
       'descripcion'=>'required',
-      'user_id'=>'required',
+      
       
     ]);
 

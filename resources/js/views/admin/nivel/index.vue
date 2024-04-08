@@ -17,7 +17,6 @@
                         <Column field="id" header="id"  ></Column>
                         <Column field="nombre" header="Nombre"  ></Column>
                         <Column field="descripcion" header="Descripcion"  ></Column>
-                        <Column field="user_id" header="Usuario ID" ></Column>
                         <Column header="Acciones">
                          <template #body="slotProps">
                          <!-- Botón para editar nivel que le pasaremos a la vista edit los datos a través de su id-->

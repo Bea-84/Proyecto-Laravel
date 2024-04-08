@@ -330,30 +330,30 @@ export default [
 //-----------------------------------------------------------------------------------------------------------------------------
 //espacio vistas especialidad
 {
-    name: 'especialidad',
-    path: 'especialidad',
-    meta: { breadCrumb: 'Especialidad'},
+    name: 'clase',
+    path: 'clase',
+    meta: { breadCrumb: 'Clase'},
     children: [
         {
-            name: 'especialidad.index',
+            name: 'clase.index',
             path: '',
-            component: () => import('../views/admin/especialidad/index.vue'),
-            meta: { breadCrumb: 'Ver resultados tabla especialidad' }
+            component: () => import('../views/admin/clase/index.vue'),
+            meta: { breadCrumb: 'Ver resultados tabla clases' }
         },
 
         {
-            name: 'especialidad.create',
+            name: 'clase.create',
             path: 'create',
-            component: () => import('../views/admin/especialidad/create.vue'),
-            meta: { breadCrumb: 'Crear especialidad'}
+            component: () => import('../views/admin/clase/create.vue'),
+            meta: { breadCrumb: 'Crear clase'}
         },
 
         {
-            name: 'especialidad.edit',
+            name: 'clase.edit',
             path: 'edit/:id',
-            component: () => import('../views/admin/especialidad/edit.vue'),
+            component: () => import('../views/admin/clase/edit.vue'),
             meta: {
-                breadCrumb: 'Edit especialidad',
+                breadCrumb: 'Edit clase',
                 linked: false,
             }
         }

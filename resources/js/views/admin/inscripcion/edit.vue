@@ -29,6 +29,14 @@
                 
                 <Dropdown v-model="inscripcion.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
                 </Dropdown>
+
+                <div class="form-gorup mb-2">
+                    <label>nivel_user</label><span class="text-danger">*</span>
+                    <input v-model="inscripcion.nivel_user" class="form-control" type="text" name="id"/>
+                </div>
+
+                <Dropdown v-model="inscripcion.nivel_user" :options="nivel" filter optionLabel="nombre" optionValue="id" placeholder="Select a Id" class="w-full md:w-14rem">
+                </Dropdown>
             
                 <Toast />
 
@@ -55,6 +63,7 @@ import { useToast } from "primevue/usetoast";
 
 const confirm = useConfirm();
 const toast = useToast();
+const nivel=ref()
 
 
 const {users, getUsers} = useUsers()
@@ -65,6 +74,12 @@ const inscripcion = ref ({});
 
 onMounted(()=> {
         getUsers();
+
+        axios.get('/api/nivel')
+        .then(response =>{
+            console.log(response);
+            nivel.value = response.data;
+        });
     })
     
 
