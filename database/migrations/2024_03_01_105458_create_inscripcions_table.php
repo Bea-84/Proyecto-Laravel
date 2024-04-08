@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->dateTime('fecha');
             $table->string('forma_de_pago');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('user_id');
+            $table->unsignedBigInteger('nivel_user');
+            $table->foreign('nivel_user')->references('id')->on('nivel')->onDelete('cascade');
             $table->timestamps();
         });
     }

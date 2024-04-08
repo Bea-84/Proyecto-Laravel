@@ -17,6 +17,7 @@
                          <Column field="fecha" header="Fecha"  ></Column>
                          <Column field="forma_de_pago" header="Forma Pago"  ></Column>
                          <Column field="user_id" header="Id alumno" ></Column>
+                         <Column field="nivel_user" header="Nivel alumno"></Column>
                          <Column header="Acciones">
                          <template #body="slotProps">
                           <!-- Botón para editar inscripcion que le pasaremos a la vista edit los datos a través de su id-->

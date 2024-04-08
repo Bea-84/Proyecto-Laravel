@@ -21,15 +21,6 @@
                     <input v-model="nivel.descripcion" class="form-control" type="text" name="descripción"/>
                 </div>
  
- 
-                <div class="form-gorup mb-2">
-                    <label>user_id</label><span class="text-danger">*</span>
-                    <input v-model="nivel.user_id" class="form-control" type="text" name="user_id"/>
-                </div>
-                
-                <Dropdown v-model="nivel.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
-                </Dropdown>
-            
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir Nivel</button>
  
  
@@ -43,10 +34,10 @@
  <script setup>
     import { ref, onMounted } from "vue";
     import { useRouter } from 'vue-router'
-    import useUsers from "../../../composables/users"
+    
 
 
-    const {users, getUsers} = useUsers()
+    
     const router = useRouter()
     const nivel=ref({});
 
@@ -61,9 +52,7 @@
             }) 
     }
 
-    onMounted(()=> {
-        getUsers();
-    })
+    
     
     
 

@@ -9,5 +9,5 @@ class Nivel extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','nombre','descripcion','user_id'];
+    protected $fillable = ['id','nombre','descripcion'];
 }

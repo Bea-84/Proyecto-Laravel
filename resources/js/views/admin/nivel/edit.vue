@@ -22,14 +22,6 @@
                     </div>
     
     
-                    <div class="form-gorup mb-2">
-                        <label>user_id</label><span class="text-danger">*</span>
-                        <input v-model="nivel.user_id" class="form-control" type="text" name="user_id"/>
-                    </div>
-                    
-                    <Dropdown v-model="nivel.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
-                    
-                    </Dropdown>
                 
         <Toast />
 
@@ -51,7 +43,7 @@
     <script setup>
     import { ref, onMounted } from "vue";
     import { useRouter, useRoute } from 'vue-router';
-    import useUsers from "../../../composables/users"
+
 
     import { useConfirm } from "primevue/useconfirm";
     import { useToast } from "primevue/usetoast";
@@ -60,16 +52,14 @@
     const toast = useToast();
 
 
-    const {users, getUsers} = useUsers()
+    
     const router = useRouter();
     const route = useRoute(); // Usar useRoute() para acceder a los parámetros de la ruta
     const id = route.params.id; // Obtener el ID de la ruta
 
     const nivel = ref({});
 
-    onMounted(()=> {
-        getUsers();
-    })
+    
 
     // Obtener datos de la asistencia para editar
     onMounted(() => {
