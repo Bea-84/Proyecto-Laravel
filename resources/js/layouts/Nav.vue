@@ -1,7 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm navbar-custom">
         <div class="container">
-            <router-link to="/" class="navbar-brand">Zona de Combate</router-link>
+            <router-link to="/" class="navbar-brand"><img src="images/logo_redondo.png"></router-link>
             <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </a>
@@ -48,6 +48,29 @@
         </div>
     </nav>
 </template>
+
+<style>
+    .navbar-custom {
+        height: 150px;
+        font-size: large;
+    }
+
+    .nav-link {
+        color: whitesmoke;
+        margin-left: 25px;
+    }
+    .nav-link:hover {
+        color: red;
+    }
+
+    .nav-link:visited {
+        color: whitesmoke;
+    }
+
+    .nav-link:active {
+        color: red;
+    }
+</style>
 
 <script setup>
 import { useStore} from "vuex";
