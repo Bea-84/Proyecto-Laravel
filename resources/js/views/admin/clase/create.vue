@@ -2,13 +2,13 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Añade una especialidad nueva</h5>
+                <h5 class="card-title">Añade una clase nueva</h5>
             </div>
  
               
 
                <!--Enviar form a script-->
-            <form @submit.prevent="addEspecialidad">
+            <form @submit.prevent="addClase">
                 
                 <div>Día:</div>
                 <div class="card flex justify-content-center">
@@ -19,7 +19,7 @@
                             class="flex align-items-center"
                         >
                             <RadioButton
-                                v-model=especialidad.dia
+                                v-model=clase.dia
                                 :value=dia.id
                                 @input="change($event.target.value)"
                                 name="diaSemana"
@@ -40,7 +40,7 @@
                             class="flex align-items-center"
                         >
                             <RadioButton
-                                v-model=especialidad.hora
+                                v-model=clase.hora
                                 :value="horario.hora_inicio + '-' + horario.hora_fin" 
                                 name="horario"
                             />
@@ -55,13 +55,13 @@
  
                 <div class="form-gorup mb-2">
                     <label>User_id</label><span class="text-danger">*</span>
-                    <input v-model="especialidad.user_id" class="form-control" type="text" name="user_id"/>
+                    <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
-                <Dropdown v-model="especialidad.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
+                <Dropdown v-model="clase.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
                 </Dropdown>
             
-                <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir Especialidad</button>
+                <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir clase</button>
  
  
  
@@ -80,16 +80,16 @@
     
     const {users, getUsers} = useUsers()
     const router = useRouter()
-    const especialidad=ref({});
+    const clase=ref({});
     const dias = ref([ ]);
     const horarios = ref([]);
     
 
-    function addEspecialidad(){
-       axios.post('/api/especialidad',especialidad.value)
+    function addClase(){
+       axios.post('/api/clase',clase.value)
             .then(response =>{
                 console.log(response);
-                router.push({ name: 'especialidad.index' })
+                router.push({ name: 'clase.index' })
             })
             .catch(error=>{
                 console.log(error);

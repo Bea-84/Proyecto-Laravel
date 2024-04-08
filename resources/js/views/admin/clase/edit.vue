@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Editar especialidad</h5>
+                <h5 class="card-title">Editar clase</h5>
             </div>
             
                
@@ -12,22 +12,22 @@
                
                 <div class="form-group mb-2">
                     <label>Id_Dia_Semana</label><span class="text-danger"> *</span>
-                    <input v-model="especialidad.dia" class="form-control" type="text" placeholder="Dia"/>
+                    <input v-model="clase.dia" class="form-control" type="text" placeholder="Dia"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
                     <label>Horario clase</label><span class="text-danger">*</span>
-                    <input v-model="especialidad.hora" class="form-control" type="text" name="Hora"/>
+                    <input v-model="clase.hora" class="form-control" type="text" name="Hora"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
                     <label>Id alumno</label><span class="text-danger">*</span>
-                    <input v-model="especialidad.user_id" class="form-control" type="text" name="user_id"/>
+                    <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
-                <Dropdown v-model="especialidad.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
+                <Dropdown v-model="clase.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
                 </Dropdown>
             
                 <Toast />
@@ -62,34 +62,34 @@ const {users, getUsers} = useUsers()
 const router = useRouter();
 const route = useRoute(); // Usar useRoute() para acceder a los parámetros de la ruta
 const id = route.params.id; // Obtener el ID de la ruta
-const especialidad = ref ({});
+const clase = ref ({});
 
 onMounted(()=> {
         getUsers();
     })
     
 
-// Obtener datos de la especialidad para editar
+// Obtener datos de la clase para editar
 onMounted(() => {
-    axios.get(`/api/especialidad/${id}`)
+    axios.get(`/api/clase/${id}`)
         .then(response => {
-            especialidad.value = response.data.data;
+            clase.value = response.data.data;
         })
         .catch(error => {
-            console.error("Error al obtener especialidad:", error);
+            console.error("Error al obtener clase:", error);
         });
 });
 
 // Función para guardar cambios
 const guardar = () => {
-    axios.put(`/api/especialidad/${id}`, especialidad.value)
+    axios.put(`/api/clase/${id}`, clase.value)
         .then(response => {
-            console.log("Especialidad actualizada:", response.data);
-            // Redireccionar a la vista de lista de especialidad u otra vista
-            router.push({ name: 'especialidad.index' });
+            console.log("Clase actualizada:", response.data);
+            // Redireccionar a la vista de lista de clase u otra vista
+            router.push({ name: 'clase.index' });
         })
         .catch(error => {
-            console.error("Error al actualizar la especialidad:", error);
+            console.error("Error al actualizar la clase:", error);
         });
 };
 

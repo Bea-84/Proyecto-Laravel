@@ -5,29 +5,29 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between pb-2 mb-2">
-                        <h5 class="card-title">Tabla especialidad</h5>
+                        <h5 class="card-title">Tabla clases</h5>
                         <div>
                          
-                         <router-link :to="{name: 'especialidad.create'}" class="btn btn-success" type="button">Nuevo especialidad</router-link>
+                         <router-link :to="{name: 'clase.create'}" class="btn btn-success" type="button">Nuevo clase</router-link>
                           
                         </div>
                     </div>
 
                     
                     
-                    <DataTable :value="especialidad" tableStyle="min-width: 50rem">
+                    <DataTable :value="clase" tableStyle="min-width: 50rem">
                          <Column field="dia" header="Id_dia_semana"></Column>
                          <Column field="hora" header="Hora clase"  ></Column>
                          <Column field="user_id" header="ID alumno" ></Column>
                          <Column header="Acciones">
                          <template #body="slotProps">
 
-                             <!-- Botón para editar especialidad que le pasaremos a la vista edit los datos a través de su id-->
+                             <!-- Botón para editar clase que le pasaremos a la vista edit los datos a través de su id-->
                          <router-link
-                                :to="{ name: 'especialidad.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
+                                :to="{ name: 'clase.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
                             </router-link>
 
-                               <!--Botón para eliminar nivel-->
+                               
                          <Toast />
 
                         <ConfirmPopup> </ConfirmPopup>
@@ -52,31 +52,31 @@
   const confirm = useConfirm();
   const toast = useToast();
  
-  const especialidad=ref()
+  const clase=ref()
   
    
 
    onMounted(()=>{
 
-      axios.get('/api/especialidad')
+      axios.get('/api/clase')
            .then(response =>{
              console.log(response);
-             especialidad.value = response.data;
+             clase.value = response.data;
            })
    })
  
-//Función eliminar especialidad
-const deleteEspecialidad = (id, index) => {
+//Función eliminar clase
+const deleteClase = (id, index) => {
        
-       axios.delete(`/api/especialidad/${id}`)
+       axios.delete(`/api/clase/${id}`)
            .then(response => {
-               console.log("Especialidad eliminada:", response.data);
+               console.log("Clase eliminada:", response.data);
                // Mostrar index del array sin el dato eliminado
-               especialidad.value.splice(index, 1);
+               clase.value.splice(index, 1);
                
            })
            .catch(error => {
-               console.error("Error al eliminar la especialidad:", error);
+               console.error("Error al eliminar la clase:", error);
            });
    };
 
@@ -94,7 +94,7 @@ const deleteEspecialidad = (id, index) => {
            acceptLabel: 'Si',
            accept: () => {
                toast.add({ severity: 'info', summary: 'Confirmado', detail: 'Dato eliminado', life: 3000 });
-               deleteEspecialidad(id,index)
+               deleteClase(id,index)
            },
            reject: () => {
 

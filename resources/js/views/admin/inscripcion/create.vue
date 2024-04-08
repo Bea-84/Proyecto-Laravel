@@ -33,10 +33,10 @@
 
                 <div class="form-gorup mb-2">
                     <label>nivel_user</label><span class="text-danger">*</span>
-                    <input v-model="nivel.id" class="form-control" type="text" name="id"/>
+                    <input v-model="inscripcion.nivel_user" class="form-control" type="text" name="id"/>
                 </div>
 
-                <Dropdown v-model="nivel.id" :options="nivel.data" filter optionLabel="name" optionValue="id" placeholder="Select a Id" class="w-full md:w-14rem">
+                <Dropdown v-model="inscripcion.nivel_user" :options="nivel" filter optionLabel="nombre" optionValue="id" placeholder="Select a Id" class="w-full md:w-14rem">
                 </Dropdown>
 
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir Inscripcion</button>
@@ -58,6 +58,7 @@
     const {users, getUsers} = useUsers()
     const router = useRouter()
     const inscripcion=ref({});
+    const nivel=ref()
 
     function addInscripcion(){
        axios.post('/api/inscripcion',inscripcion.value)
@@ -69,11 +70,16 @@
                 console.log(error);
             }) 
     }
-
+    //Función para obtener usuarios
     onMounted(()=> {
         getUsers();
+
+        axios.get('/api/nivel')
+        .then(response =>{
+            console.log(response);
+            nivel.value = response.data;
+        });
+
     })
-    
-    
 
 </script>
