@@ -5,7 +5,7 @@
             <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0">
                     <LocaleSwitcher />
                 </ul>
@@ -49,29 +49,6 @@
     </nav>
 </template>
 
-<style>
-    .navbar-custom {
-        height: 150px;
-        font-size: large;
-    }
-
-    .nav-link {
-        color: whitesmoke;
-        margin-left: 25px;
-    }
-    .nav-link:hover {
-        color: red;
-    }
-
-    .nav-link:visited {
-        color: whitesmoke;
-    }
-
-    .nav-link:active {
-        color: red;
-    }
-</style>
-
 <script setup>
 import { useStore} from "vuex";
 import useAuth from "@/composables/auth";
@@ -82,3 +59,5 @@ import LocaleSwitcher from "../components/LocaleSwitcher.vue";
     const user = computed(() => store.getters["auth/user"])
     const { processing, logout } = useAuth();
 </script>
+
+<link rel="stylesheet" src="/resources/css/main_page_nav_bar.css" type="text/css">

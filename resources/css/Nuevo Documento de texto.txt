@@ -1,0 +1,21 @@
+.navbar-custom {
+    height: 150px;
+    font-size: large;
+}
+
+.nav-link {
+    color: whitesmoke;
+    margin-left: 25px;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+.nav-link:visited {
+    color: whitesmoke;
+}
+
+.nav-link:active {
+    color: red;
+}
