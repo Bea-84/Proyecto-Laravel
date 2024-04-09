@@ -13,6 +13,7 @@
 <script setup>
 </script>
 
+
 <style scoped>
 body {
     font-family: 'Nunito', sans-serif;
