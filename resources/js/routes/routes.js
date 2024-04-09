@@ -328,7 +328,7 @@ export default [
 },
 
 //-----------------------------------------------------------------------------------------------------------------------------
-//espacio vistas especialidad
+//espacio vistas clase
 {
     name: 'clase',
     path: 'clase',

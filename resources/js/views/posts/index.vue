@@ -24,7 +24,7 @@
     <div class="video-container">
         <figure>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/RXcMS0ioBMw?si=_zJE9SzWKbCykAK2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <figcaption style="text-align: center;">
+            <figcaption style="text-align: center; color: white;">
             Campeonato de Cataluña profesional 2009
             </figcaption>
         </figure>
@@ -51,7 +51,7 @@
     <div class="video-container">
         <figure>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ohjkihw8yUk?si=kOGbyN0eughThmUn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <figcaption style="text-align: center;">Combate internacional entre J.M.Guerrero vs Alban Girouard</figcaption>
+            <figcaption style="text-align: center; color: white;">Combate internacional entre J.M.Guerrero vs Alban Girouard</figcaption>
         </figure>
     </div>
     <hr class="horizontal-line">
@@ -76,7 +76,7 @@
     <div class="video-container">
         <figure>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pl8xv3hkz70?si=pCDz7GH4ayf-UbGe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <figcaption style="text-align: center;">Combate entre J.M.Guerrero vs Xavi Moya</figcaption>
+            <figcaption style="text-align: center; color: white;">Combate entre J.M.Guerrero vs Xavi Moya</figcaption>
         </figure>
     </div>
     <hr class="horizontal-line">
@@ -104,7 +104,7 @@
   <div class="video-container">
     <figure>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/gDVBk5Bs4HA?si=A-ZCSMLZiAppXyFu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption style="text-align: center;">Campeonato unión Europea paso supermedios</figcaption>
+      <figcaption style="text-align: center; color: white;">Campeonato unión Europea paso supermedios</figcaption>
     </figure>
   </div>
 
@@ -148,22 +148,28 @@
 <style scoped>
 .titulo {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: white;
 }
  
  .principal p {
         margin-left: 250px; 
         margin-right: 250px; 
         text-align: justify;
+        color: white; /* Color del texto */
     }
     .horizontal-line {
         border: none; 
-        border-top: 2px solid black; 
+        border-top: 2px solid white; 
         margin-left: 250px; 
         margin-right: 250px; 
     }
     .video-container {
        display: flex;
        justify-content: center; 
+    }
+    .principal {
+    background-color: black; /* Color de fondo */
     }
 </style>

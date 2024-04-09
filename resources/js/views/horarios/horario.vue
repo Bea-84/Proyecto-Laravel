@@ -1,17 +1,93 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center my-5">
-            <div class="col-md-6">
-                <div class="card border-0 shadow-sm">
-                   Horarios
-                </div>
-            </div>
-        </div>
+    <div class="schedule-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Horario</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10:00-11:00</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+          </tr>
+          <tr>
+            <td>16:30-17:30</td>
+            <td></td>
+            <td>Boxeo</td>
+            <td></td>
+            <td>Boxeo</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>17:30-18:30</td>
+            <td></td>
+            <td>Boxeo School Boys</td>
+            <td></td>
+            <td>Boxeo School Boys</td>
+            <td>Boxeo</td>
+          </tr>
+          <tr>
+            <td>18:30-19:30</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+          </tr>
+          <tr>
+            <td>20:30-21:30</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td>Boxeo</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</template>
+  </template>
+  
+  <script setup>
+  
+  </script>
+  
+    <style scoped>
+    .schedule-table {
+    margin-top: 100px; /* Margen en la parte superior */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    }
 
-<script setup>
+    .schedule-table table {
+    width: 80%; /* Ancho de la tabla */
+    border-collapse: collapse;
+    color: black; /* Color del texto */
+    }
 
+    .schedule-table th,
+    .schedule-table td {
+    border: 1px solid black; /* Color de las líneas */
+    padding: 40px; /* Aumenta el tamaño del padding */
+    text-align: center;
+    }
 
+    .schedule-table th {
+    background-color: black; /* Fondo negro para las celdas de encabezado */
+    color: white; /* Color del texto del encabezado */
+    }
 
-</script>
+    
+    </style>
+
+  

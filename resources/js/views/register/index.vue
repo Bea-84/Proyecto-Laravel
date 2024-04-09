@@ -56,7 +56,7 @@
 
                                 <!-- Buttons -->
                                 <div class="flex items-center justify-end mt-4">
-                                    <button class="btn btn-primary" :class="{ 'opacity-25': processing }" :disabled="processing">
+                                    <button class="btn btn-custom" :class="{ 'opacity-25': processing }" :disabled="processing">
                                         {{ $t('register') }}
                                     </button>
                                 </div>
@@ -70,9 +70,14 @@
 </template>
 
 <script setup>
-
 import useAuth from '@/composables/auth'
-
 const { registerForm, validationErrors, processing, submitRegister } = useAuth();
-
 </script>
+
+<style scoped>
+.btn-custom {
+    background-color: black;
+    color: white;
+}
+</style>
+

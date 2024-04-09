@@ -16,7 +16,7 @@
                     
                     
                     <DataTable :value="clase" tableStyle="min-width: 50rem">
-                         <Column field="dia" header="Id_dia_semana"></Column>
+                         <Column field="dia" header="Dia"></Column>
                          <Column field="hora" header="Hora clase"  ></Column>
                          <Column field="user_id" header="ID alumno" ></Column>
                          <Column header="Acciones">

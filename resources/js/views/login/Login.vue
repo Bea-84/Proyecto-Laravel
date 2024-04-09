@@ -1,3 +1,4 @@
+
 <template>
     <div class="container">
         <div class="row justify-content-center my-5">
@@ -40,12 +41,12 @@
 
                                 <!-- Buttons -->
                                 <div class="flex items-center justify-end mt-4">
-                                    <button class="btn btn-primary" :class="{ 'opacity-25': processing }" :disabled="processing">
+                                    <button class="btn btn-custom" :class="{ 'opacity-25': processing }" :disabled="processing">
                                         {{ $t('login') }}
                                     </button>
                                 </div>
                             </div>
-                            <router-link :to="{name: 'auth.forgot-password'}">{{ $t('forgot_password')}}</router-link>
+                            <router-link :to="{name: 'auth.forgot-password'}" class="forgot-password-link">{{ $t('forgot_password')}}</router-link>
                         </form>
                     </div>
                 </div>
@@ -55,9 +56,16 @@
 </template>
 
 <script setup>
-
 import useAuth from '@/composables/auth'
-
 const { loginForm, validationErrors, processing, submitLogin } = useAuth();
-
 </script>
+
+<style scoped>
+.btn-custom {
+    background-color: black;
+    color: white;
+}
+.forgot-password-link {
+    color: black;
+}
+</style>
