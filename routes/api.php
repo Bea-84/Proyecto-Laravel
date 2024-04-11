@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\ClaseController;
 use App\Http\Controllers\Api\DiaController;
 use App\Http\Controllers\Api\HorarioController;
 use App\Http\Controllers\Api\TarifaController;
+use App\Http\Controllers\Api\EstadoController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
