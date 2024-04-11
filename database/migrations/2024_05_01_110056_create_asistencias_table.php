@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-            $table->string('asistencia');
-            $table->string('fecha');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('id_registroClase');
+            $table->unsignedBigInteger('id_resultadoAsistencia');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_registroClase')->references('id')->on('clases')->onDelete('cascade');
+            $table->foreign('id_resultadoAsistencia')->references('id')->on('estados')->onDelete('cascade');
             $table->timestamps();
         });
     }

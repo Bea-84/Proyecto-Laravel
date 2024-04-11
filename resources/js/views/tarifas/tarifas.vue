@@ -53,10 +53,14 @@
     padding: 20px; /* Espaciado interior */
   }
   
-  .card-logo {
-    display: block;
-    margin: 0 auto; /* Centrar horizontalmente */
-  }
+    
+    .card-logo {
+      display: block;
+      margin: 0 auto; /* Centrar horizontalmente */
+      max-width: 100%; /* Asegurar que la imagen no sobrepase el ancho del contenedor */
+      height: auto; /* Mantener la relación de aspecto */
+      object-fit: contain; /* Ajustar la imagen dentro del contenedor sin distorsionar */
+    }
 
     /* Color del texto dentro de las tarjetas */
     .card-container .p,
