@@ -61,33 +61,36 @@
   
   </script>
   
-    <style scoped>
+      <style scoped>
     .schedule-table {
-    margin-top: 100px; /* Margen en la parte superior */
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
+      margin-top: 100px; /* Margen en la parte superior */
+      width: 100%;
+      overflow-x: auto; /* Agrega barras de desplazamiento horizontal en pantallas pequeñas */
     }
 
     .schedule-table table {
-    width: 80%; /* Ancho de la tabla */
-    border-collapse: collapse;
-    color: black; /* Color del texto */
+      width: 100%; /* Ancho de la tabla */
+      border-collapse: collapse;
+      color: black; /* Color del texto */
     }
 
     .schedule-table th,
     .schedule-table td {
-    border: 1px solid black; /* Color de las líneas */
-    padding: 40px; /* Aumenta el tamaño del padding */
-    text-align: center;
+      border: 1px solid black; /* Color de las líneas */
+      padding: 10px; /* Ajusta el tamaño del padding */
+      text-align: center;
     }
 
     .schedule-table th {
-    background-color: black; /* Fondo negro para las celdas de encabezado */
-    color: white; /* Color del texto del encabezado */
+      background-color: black; /* Fondo negro para las celdas de encabezado */
+      color: white; /* Color del texto del encabezado */
     }
 
-    
+    @media screen and (max-width: 768px) {
+      .schedule-table table {
+        width: auto; /* Ajusta el ancho automáticamente */
+      }
+    }
     </style>
 
   

@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\ClaseController;
 use App\Http\Controllers\Api\DiaController;
 use App\Http\Controllers\Api\HorarioController;
 use App\Http\Controllers\Api\TarifaController;
+use App\Http\Controllers\Api\EstadoController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -42,10 +43,6 @@ Route::get('inscripcion/{id}',[InscripcionController::class,'show']);//esto es p
 Route::delete('inscripcion/{id}', [InscripcionController::class, 'destroy']);//esto es para eliminar los datos por su id
 //----------------------------------------------------------------------------------------------------------------------------------
 Route::get('asistencia', [AsistenciaController::class, 'index']);
-Route::post('asistencia',[AsistenciaController::class,'store']);
-Route::put('asistencia/{id}',[AsistenciaController::class,'update']);
-Route::get('asistencia/{id}',[AsistenciaController::class,'show']);//esto es para conseguir los datos por su id 
-Route::delete('asistencia/{id}', [AsistenciaController::class, 'destroy']);//esto es para eliminar los datos por su id
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('clase',[ClaseController::class,'index']);
 Route::post('clase',[ClaseController::class,'store']);
