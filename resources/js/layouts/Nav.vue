@@ -1,13 +1,14 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm navbar-custom">
         <div class="container">
-            <router-link to="/" class="navbar-brand"><img src="images/logo_redondo.png"></router-link>
+            <router-link to="/" class="navbar-brand"><img src="images/logo_redondo.png" alt="logo" class="rounded_logo"></router-link>
             <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </a>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <!--<div class="collapse navbar-collapse " id="navbarSupportedContent"></div>-->
+            <div style="background-color: black;" class="collapse navbar-collapse " id="navbarSupportedContent"> <!--Añadido color negro de color de fondo del menú desplegable-->
                 <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0">
-                    <LocaleSwitcher />
+                    <!--<LocaleSwitcher />-->  <!--Selector de idioma-->
                 </ul>
                 <ul class="navbar-nav mt-2 mt-lg-0 ms-auto">
                         <li class="nav-item">
@@ -60,4 +61,4 @@ import LocaleSwitcher from "../components/LocaleSwitcher.vue";
     const { processing, logout } = useAuth();
 </script>
 
-<link rel="stylesheet" src="/resources/css/main_page_nav_bar.css" type="text/css">
+<link rel="stylesheet" src="/resources/css/main_page_nav_menu.css" type="text/css">

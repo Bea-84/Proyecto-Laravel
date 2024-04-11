@@ -19,3 +19,10 @@
 .nav-link:active {
     color: red;
 }
+
+/*Cambia el tamaño del logo según el tamaño de la pantalla*/
+@media (max-width: 768px) {
+    .rounded_logo {
+        max-width: 75px;
+    }
+}
