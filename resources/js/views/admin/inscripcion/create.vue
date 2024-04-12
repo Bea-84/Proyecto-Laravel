@@ -12,19 +12,19 @@
                 
  
                 <div class="form-group mb-2">
-                    <label>fecha</label><span class="text-danger"> *</span>
+                    <label>Fecha</label><span class="text-danger"> </span>
                     <input v-model="inscripcion.fecha" class="form-control" type="datetime-local" placeholder="fecha"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>forma_de_pago</label><span class="text-danger">*</span>
+                    <label>Forma_de_pago</label><span class="text-danger"></span>
                     <input v-model="inscripcion.forma_de_pago" class="form-control" type="text" name="forma de pago"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>user_id</label><span class="text-danger">*</span>
+                    <label>User_id</label><span class="text-danger"></span>
                     <input v-model="inscripcion.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -32,7 +32,7 @@
                 </Dropdown>
 
                 <div class="form-gorup mb-2">
-                    <label>nivel_user</label><span class="text-danger">*</span>
+                    <label>Nivel_user</label><span class="text-danger"></span>
                     <input v-model="inscripcion.nivel_user" class="form-control" type="text" name="id"/>
                 </div>
 

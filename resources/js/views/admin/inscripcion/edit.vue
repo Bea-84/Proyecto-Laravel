@@ -11,19 +11,19 @@
             <form @submit.prevent="guardar">
                
                 <div class="form-group mb-2">
-                    <label>Fecha</label><span class="text-danger"> *</span>
+                    <label>Fecha</label><span class="text-danger"> </span>
                     <input v-model="inscripcion.fecha" class="form-control" type="text" placeholder="Fecha"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>Forma de pago</label><span class="text-danger">*</span>
+                    <label>Forma de pago</label><span class="text-danger"></span>
                     <textarea v-model="inscripcion.forma_de_pago" class="form-control" type="text" name="forma_de_pago"></textarea>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>User_id</label><span class="text-danger">*</span>
+                    <label>User_id</label><span class="text-danger"></span>
                     <input v-model="inscripcion.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -31,7 +31,7 @@
                 </Dropdown>
 
                 <div class="form-gorup mb-2">
-                    <label>nivel_user</label><span class="text-danger">*</span>
+                    <label>Nivel_user</label><span class="text-danger"></span>
                     <input v-model="inscripcion.nivel_user" class="form-control" type="text" name="id"/>
                 </div>
 
@@ -83,7 +83,7 @@ onMounted(()=> {
     })
     
 
-// Obtener datos de la asistencia para editar
+// Obtener datos de la inscripción para editar
 onMounted(() => {
     axios.get(`/api/inscripcion/${id}`)
         .then(response => {

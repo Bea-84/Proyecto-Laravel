@@ -13,8 +13,8 @@
                     </div>
                     
                    <DataTable :value="inscripciones" tableStyle="min-width: 50rem">
-                         <Column field="id" header="id"  ></Column>
-                         <Column field="fecha" header="Fecha"  ></Column>
+                         <Column field="id" header="Id inscripción"  ></Column>
+                         <Column field="fecha" header="Fecha inscripción"  ></Column>
                          <Column field="forma_de_pago" header="Forma Pago"  ></Column>
                          <Column field="user_id" header="Id alumno" ></Column>
                          <Column field="nivel_user" header="Nivel alumno"></Column>
