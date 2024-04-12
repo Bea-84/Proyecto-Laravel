@@ -11,13 +11,13 @@
             <form @submit.prevent="addNivel">
                 
                 <div class="form-group mb-2">
-                    <label>nombre</label><span class="text-danger"> *</span>
+                    <label>Nombre:</label><span class="text-danger"> </span>
                     <textarea v-model="nivel.nombre" class="form-control" type="text" placeholder="nombre"></textarea>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>descripcion</label><span class="text-danger">*</span>
+                    <label>Descripcion:</label><span class="text-danger"></span>
                     <input v-model="nivel.descripcion" class="form-control" type="text" name="descripción"/>
                 </div>
  

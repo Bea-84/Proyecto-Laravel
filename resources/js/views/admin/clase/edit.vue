@@ -11,19 +11,19 @@
             <form @submit.prevent="guardar">
                
                 <div class="form-group mb-2">
-                    <label>Id_Dia_Semana</label><span class="text-danger"> *</span>
+                    <label>Id_Dia_Semana</label><span class="text-danger"> </span>
                     <input v-model="clase.dia" class="form-control" type="text" placeholder="Dia"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>Horario clase</label><span class="text-danger">*</span>
+                    <label>Horario clase</label><span class="text-danger"></span>
                     <input v-model="clase.hora" class="form-control" type="text" name="Hora"/>
                 </div>
  
  
                 <div class="form-gorup mb-2">
-                    <label>Id alumno</label><span class="text-danger">*</span>
+                    <label>Id alumno</label><span class="text-danger"></span>
                     <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -63,6 +63,7 @@ const router = useRouter();
 const route = useRoute(); // Usar useRoute() para acceder a los parámetros de la ruta
 const id = route.params.id; // Obtener el ID de la ruta
 const clase = ref ({});
+
 
 onMounted(()=> {
         getUsers();

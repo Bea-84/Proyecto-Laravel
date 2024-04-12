@@ -14,7 +14,7 @@
                    </div>
                    
                    <DataTable :value="niveles" tableStyle="min-width: 50rem">
-                        <Column field="id" header="id"  ></Column>
+                        <Column field="id" header="Id nivel"  ></Column>
                         <Column field="nombre" header="Nombre"  ></Column>
                         <Column field="descripcion" header="Descripcion"  ></Column>
                         <Column header="Acciones">
