@@ -31,12 +31,12 @@
  
  
                 <div class="form-gorup mb-2">
-                    <label>Hora inicio:</label><span class="text-danger">*</span>
+                    <label>Hora inicio:</label><span class="text-danger"></span>
                     <input v-model="horario.hora_inicio" class="form-control" type="time" name="Hora inicio"/>
                 </div>
 
                 <div class="form-gorup mb-2">
-                    <label>Hora fin:</label><span class="text-danger">*</span>
+                    <label>Hora fin:</label><span class="text-danger"></span>
                     <input v-model="horario.hora_fin" class="form-control" type="time" name="Hora fin"/>
                 </div>
  

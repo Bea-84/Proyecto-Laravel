@@ -54,7 +54,7 @@
               <br>
  
                 <div class="form-gorup mb-2">
-                    <label>User_id</label><span class="text-danger">*</span>
+                    <label>User_id:</label><span class="text-danger"></span>
                     <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -107,10 +107,7 @@
             .catch(error => {
                 console.error('Error al obtener datos:', error);
             });
-           
-           
-            
-             
+              
     })
     
     //Función para conseguir horarios después de haber seleccionado el dia de la semana

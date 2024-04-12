@@ -10,7 +10,7 @@ class ClaseController extends Controller
 {
      //Función que nos devuelve resultados tabla clases
      public function index(){
-        $clases = Clase::all(); 
+        $clases = Clase:: with('dia')->get();
         return $clases;
     }
 

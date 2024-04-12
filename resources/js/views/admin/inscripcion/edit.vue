@@ -12,7 +12,7 @@
                
                 <div class="form-group mb-2">
                     <label>Fecha</label><span class="text-danger"> </span>
-                    <input v-model="inscripcion.fecha" class="form-control" type="text" placeholder="Fecha"/>
+                    <input v-model="inscripcion.fecha" class="form-control" type="datetime-local" placeholder="Fecha"/>
                 </div>
  
  

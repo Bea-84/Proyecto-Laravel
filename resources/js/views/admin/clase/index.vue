@@ -12,11 +12,9 @@
                           
                         </div>
                     </div>
-
-                    
                     
                     <DataTable :value="clase" tableStyle="min-width: 50rem">
-                         <Column field="dia" header="Dia"></Column>
+                         <Column field="dia.diaSemana" header="Dia"></Column>
                          <Column field="hora" header="Hora clase"  ></Column>
                          <Column field="user_id" header="ID alumno" ></Column>
                          <Column header="Acciones">
@@ -53,6 +51,7 @@
   const toast = useToast();
  
   const clase=ref()
+  const dias = ref([ ]);
   
    
 
@@ -64,6 +63,21 @@
              clase.value = response.data;
            })
    })
+
+   
+   onMounted(()=> {
+        
+         // Obtener los días de la API 
+         axios.get('/api/dia')
+            .then(response => {
+                console.log(response);
+                dias.value = response.data; 
+            })
+            .catch(error => {
+                console.error('Error al obtener datos:', error);
+            });
+                  
+    })
  
 //Función eliminar clase
 const deleteClase = (id, index) => {

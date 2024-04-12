@@ -10,9 +10,25 @@
                <!--Enviar form a script-->
             <form @submit.prevent="guardar">
                
-                <div class="form-group mb-2">
-                    <label>Id_Dia_Semana</label><span class="text-danger"> </span>
-                    <input v-model="clase.dia" class="form-control" type="text" placeholder="Dia"/>
+                
+
+                <div>Día:</div>
+                <div class="card flex justify-content-center">
+                    <div class="flex flex-column gap-3">
+                        <div
+                            v-for="dia in dias"
+                            :key=dia.id
+                            class="flex align-items-center"
+                        >
+                            <RadioButton
+                                v-model=clase.dia
+                                :value=dia.id
+                                @input="change($event.target.value)"
+                                name="diaSemana"
+                            />
+                            <label :for=dia.id class="ml-2">{{ dia.diaSemana }}</label>
+                        </div>
+                    </div>
                 </div>
  
  
@@ -20,6 +36,8 @@
                     <label>Horario clase</label><span class="text-danger"></span>
                     <input v-model="clase.hora" class="form-control" type="text" name="Hora"/>
                 </div>
+
+                
  
  
                 <div class="form-gorup mb-2">
@@ -63,6 +81,26 @@ const router = useRouter();
 const route = useRoute(); // Usar useRoute() para acceder a los parámetros de la ruta
 const id = route.params.id; // Obtener el ID de la ruta
 const clase = ref ({});
+
+
+const dias = ref([ ]);
+
+//Obtener dator tabla día semana
+onMounted(()=> {
+        
+        // Obtener los días de la API 
+        axios.get('/api/dia')
+           .then(response => {
+               console.log(response);
+               dias.value = response.data; 
+           })
+           .catch(error => {
+               console.error('Error al obtener datos:', error);
+           });
+                 
+   })
+
+ 
 
 
 onMounted(()=> {
