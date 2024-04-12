@@ -52,11 +52,14 @@ Route::delete('clase/{id}', [ClaseController::class, 'destroy']);//esto es para 
 //--------------------------------------------------------------------------------------------------------------------------------------
 //ruta para conseguir datos de tabla dias
 Route::get('dia', [DiaController::class, 'index']);
+//-----------------------------------------------------------------------------------------------------------------------------------------
 //ruta para conseguir datos tabla horarios
 Route::get('horario', [HorarioController::class, 'index']);
 Route::get('horario/dia/{id}', [HorarioController::class, 'showday']);//con esto solo los seleccionados los horarios del dia seleccionado
-
-
+Route::post('horario', [HorarioController::class, 'store']);
+Route::put('horario/{id}', [HorarioController::class, 'update']);
+Route::get('horario/{id}',[HorarioController::class,'show']);//esto es para conseguir los datos por su id
+Route::delete('horario/{id}', [HorarioController::class, 'destroy']);//esto es para eliminar los datos por su id 
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {

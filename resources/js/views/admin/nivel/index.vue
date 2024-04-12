@@ -5,10 +5,10 @@
            <div class="card">
                <div class="card-body">
                    <div class="d-flex justify-content-between pb-2 mb-2">
-                       <h5 class="card-title">Todos los niveles</h5>
+                       <h5 class="card-title">Ver todos los niveles</h5>
                        <div>
                         
-                        <router-link :to="{name: 'nivel.create'}" class="btn btn-success" type="button">Nuevo Nivel</router-link>
+                        <router-link :to="{name: 'nivel.create'}" class="btn btn-success" type="button">Añadir Nuevo Nivel</router-link>
                          
                        </div>
                    </div>
@@ -21,13 +21,13 @@
                          <template #body="slotProps">
                          <!-- Botón para editar nivel que le pasaremos a la vista edit los datos a través de su id-->
                          <router-link
-                                :to="{ name: 'nivel.edit', params: { id: slotProps.data.id } }" class="btn btn-primary mr-2"> Edit
+                                :to="{ name: 'nivel.edit', params: { id: slotProps.data.id } }" class="btn btn-primary mr-2"> Edit nivel
                             </router-link>
                             <!--Botón para eliminar nivel-->
                             <Toast />
 
                             <ConfirmPopup> </ConfirmPopup>
-                            <Button @click="confirm1($event,slotProps.data.id, slotProps.index)" label="Eliminar" outlined class="btn btn-primary"></Button>
+                            <Button @click="confirm1($event,slotProps.data.id, slotProps.index)"  class="btn btn-primary">Eliminar nivel</Button>
                      
                          </template>
                          </Column>

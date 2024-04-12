@@ -214,6 +214,36 @@ export default [
      ]
 },
 //-------------------------------------------------------------------------------------------------------------------------
+//espacio ruta vistas horarios gym
+        {
+            name: 'horario',
+            path: 'horario',
+            meta: { breadCrumb: 'Horario'},
+            children: [
+                {
+                    name: 'horario.index',
+                    path: '',
+                    component: () => import('../views/admin/horario/index.vue'),
+                    meta: { breadCrumb: 'Ver horarios' }
+                },
+                {
+                    name: 'horario.create',
+                    path: 'create',
+                    component: () => import('../views/admin/horario/create.vue'),
+                    meta: { breadCrumb: 'Crear horarios'}
+                },
+                {
+                    name: 'horario.edit',
+                    path: 'edit/:id',
+                    component: () => import('../views/admin/horario/edit.vue'),
+                    meta: {
+                        breadCrumb: 'Edit horario',
+                        linked: false,
+                    }
+                }
+            ]
+        },
+//-------------------------------------------------------------------------------------------------------------------------
 //espacio vista tareas falta añadir editar
             {
                 name: 'tasks',

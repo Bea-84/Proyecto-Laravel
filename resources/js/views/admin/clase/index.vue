@@ -8,7 +8,7 @@
                         <h5 class="card-title">Tabla clases</h5>
                         <div>
                          
-                         <router-link :to="{name: 'clase.create'}" class="btn btn-success" type="button">Nuevo clase</router-link>
+                         <router-link :to="{name: 'clase.create'}" class="btn btn-success" type="button">Añadir Nueva clase</router-link>
                           
                         </div>
                     </div>
@@ -24,14 +24,14 @@
 
                              <!-- Botón para editar clase que le pasaremos a la vista edit los datos a través de su id-->
                          <router-link
-                                :to="{ name: 'clase.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit
+                                :to="{ name: 'clase.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit clase
                             </router-link>
 
                                
                          <Toast />
 
                         <ConfirmPopup> </ConfirmPopup>
-                        <Button @click="confirm1($event,slotProps.data.id, slotProps.index)" label="Eliminar" outlined class="btn btn-primary"></Button>
+                        <Button @click="confirm1($event,slotProps.data.id, slotProps.index)"  class="btn btn-primary">Eliminar clase</Button>
                          
                          </template>
                         </Column>

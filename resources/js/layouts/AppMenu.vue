@@ -50,6 +50,12 @@ const model = ref([
         ]
     },
     {
+        label: 'Horario',
+        items: [
+            {label:'Horario',icon:'pi pi-fw pi-calendar',to:'/admin/horario',permision:'all'}
+        ]
+    },
+    {
         label: 'Clases',
         items: [
             {label:'Clase',icon:'pi pi-fw pi-flag',to:'/admin/clase',permision:'all'}
