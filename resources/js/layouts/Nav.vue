@@ -3,10 +3,10 @@
         <div class="container">
             <router-link to="/" class="navbar-brand"><img src="images/logo_redondo.png" alt="logo" class="rounded_logo"></router-link>
             <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon navbar-dark"></span>
             </a>
             <!--<div class="collapse navbar-collapse " id="navbarSupportedContent"></div>-->
-            <div style="background-color: black;" class="collapse navbar-collapse " id="navbarSupportedContent"> <!--Añadido color negro de color de fondo del menú desplegable-->
+            <div style="background-color: black; z-index: 999;" class="collapse navbar-collapse " id="navbarSupportedContent"> <!--Añadido color negro de color de fondo del menú desplegable y z-index: 999 para que el desplegable esté siempre en primer plano-->
                 <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0">
                     <!--<LocaleSwitcher />-->  <!--Selector de idioma-->
                 </ul>
