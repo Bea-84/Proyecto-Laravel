@@ -44,23 +44,12 @@ const model = ref([
         ]
     },
     {
-        label: 'Asistencia',
-        items: [
-            {label:'Asistencia',icon:'pi pi-fw pi-bars',to:'/admin/asistencia',permision:'all'}
-        ]
-    },
-    {
         label: 'Horario',
         items: [
             {label:'Horario',icon:'pi pi-fw pi-calendar',to:'/admin/horario',permision:'all'}
         ]
-    },
-    {
-        label: 'Clases',
-        items: [
-            {label:'Clase',icon:'pi pi-fw pi-flag',to:'/admin/clase',permision:'all'}
-        ]
     }
+    
 ]);
 </script>
 

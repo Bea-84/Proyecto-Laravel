@@ -208,7 +208,7 @@ export default [
         {
             name: 'asistencia.index',
             path: '',
-            component: () => import('../views/admin/asistencia/index.vue'),
+            component: () => import('../views/alumno/asistencia/index.vue'),
             meta: { breadCrumb: 'Ver asistencias' }
         }
      ]
@@ -348,21 +348,21 @@ export default [
         {
             name: 'clase.index',
             path: '',
-            component: () => import('../views/admin/clase/index.vue'),
+            component: () => import('../views/alumno/clase/index.vue'),
             meta: { breadCrumb: 'Ver resultados tabla clases' }
         },
 
         {
             name: 'clase.create',
             path: 'create',
-            component: () => import('../views/admin/clase/create.vue'),
+            component: () => import('../views/alumno/clase/create.vue'),
             meta: { breadCrumb: 'Crear clase'}
         },
 
         {
             name: 'clase.edit',
             path: 'edit/:id',
-            component: () => import('../views/admin/clase/edit.vue'),
+            component: () => import('../views/alumno/clase/edit.vue'),
             meta: {
                 breadCrumb: 'Edit clase',
                 linked: false,
