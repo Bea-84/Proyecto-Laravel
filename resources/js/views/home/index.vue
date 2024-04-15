@@ -8,9 +8,11 @@
             </div>
         </div>
     </div>
+    <AppFooter />
 </template>
 
 <script setup>
+import AppFooter from '../../layouts/AppFooter.vue';
 </script>
 
 <style scoped>
@@ -19,7 +21,7 @@ body {
 }
 
 .background-image{
-width: 100%;
-object-fit: contain;
+    width: 100%;
+    object-fit: contain;
 }
 </style>

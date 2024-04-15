@@ -42,7 +42,8 @@
   
   <style scoped>
   .card-container {
-    display: flex;
+    flex-wrap: wrap; /*Hace que las tarifas se vean una debajo de otra cuando el tamaño de la pantalla se reduce a tamaño de teléfono móvil*/
+    display: flex; /*El contenedor se comporta como un bloque, es decir, ocupa todo el espacio horizontal disponible*/
     gap: 40px; /* Espacio entre las tarjetas */
     justify-content: center; /* Centrar horizontalmente */
     margin-top: 100px; /* Margen en la parte superior */
@@ -54,19 +55,19 @@
   }
   
     
-    .card-logo {
-      display: block;
-      margin: 0 auto; /* Centrar horizontalmente */
-      max-width: 100%; /* Asegurar que la imagen no sobrepase el ancho del contenedor */
-      height: auto; /* Mantener la relación de aspecto */
-      object-fit: contain; /* Ajustar la imagen dentro del contenedor sin distorsionar */
-    }
+  .card-logo {
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+    max-width: 100%; /* Asegurar que la imagen no sobrepase el ancho del contenedor */
+    height: auto; /* Mantener la relación de aspecto */
+    object-fit: contain; /* Ajustar la imagen dentro del contenedor sin distorsionar */
+  }
 
-    /* Color del texto dentro de las tarjetas */
-    .card-container .p,
-    .card-container div {
+  /* Color del texto dentro de las tarjetas */
+  .card-container .p,
+  .card-container div {
     color: black;
-    }
+  }
   
   body {
     background-color: black; /* Fondo de la página negro */
