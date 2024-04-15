@@ -44,6 +44,21 @@
                             <li><a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a></li>
                         </ul>
                     </li>
+                       <!-- Opción de Perfil con menú desplegable -->
+                       <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Perfil
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <router-link class="dropdown-item" :to="{ name: 'clase.create' }">Registro de Clase</router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item" :to="{ name: 'asistencia.index' }">Ver Registro de Asistencia</router-link>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Fin de opción de Perfil -->
                 </ul>
             </div>
         </div>

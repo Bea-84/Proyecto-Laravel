@@ -28,8 +28,7 @@
                         </div>
                     </div>
                 </div>
- 
- 
+
                 <div class="form-gorup mb-2">
                     <label>Hora inicio:</label><span class="text-danger"></span>
                     <input v-model="horario.hora_inicio" class="form-control" type="time" name="Hora inicio"/>
