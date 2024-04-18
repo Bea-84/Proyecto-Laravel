@@ -8,7 +8,9 @@
             </a>
             
             <!--<div class="collapse navbar-collapse" id="navbarSupportedContent"></div>-->
-            <div  type="button"  data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false" style="background-color: black; z-index: 999;" class="collapse navbar-collapse " id="navbarSupportedContent"> <!--Añadido color negro de color de fondo del menú desplegable y z-index: 999 para que el desplegable esté siempre en primer plano-->
+            <!-- <div  type="button"  data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false" style="background-color: black; z-index: 999;" class="collapse navbar-collapse " id="navbarSupportedContent"> Añadido color negro de color de fondo del menú desplegable y z-index: 999 para que el desplegable esté siempre en primer plano -->
+             
+            <div style="background-color: black; z-index: 999;" class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0">
                     <!--<LocaleSwitcher />-->  <!--Selector de idioma-->
                 </ul>
