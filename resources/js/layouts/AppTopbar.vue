@@ -1,7 +1,7 @@
 <template>
     <div class="layout-topbar">
         <router-link to="/" class="layout-topbar-logo">
-            <!--<h2>Zona de combate</h2>-->
+            
             <span></span>
         </router-link>
 
@@ -20,15 +20,6 @@
 
                 <i class="pi pi-user"></i>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
-                    <li>
-                        <router-link :to="{ name: 'profile.index' }" class="dropdown-item">Perfil</router-link>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Preferencias</a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
                     <li>
                         <a class="dropdown-item" :class="{ 'opacity-25': processing }" :disabled="processing"
                             href="javascript:void(0)" @click="logout">Cerrar sessión</a>

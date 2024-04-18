@@ -7,9 +7,6 @@
                 <span class="navbar-toggler-icon navbar-dark"></span>
             </a>
             
-            <!--<div class="collapse navbar-collapse" id="navbarSupportedContent"></div>-->
-            <!-- <div  type="button"  data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false" style="background-color: black; z-index: 999;" class="collapse navbar-collapse " id="navbarSupportedContent"> Añadido color negro de color de fondo del menú desplegable y z-index: 999 para que el desplegable esté siempre en primer plano -->
-             
             <div style="background-color: black; z-index: 999;" class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0">
                     <!--<LocaleSwitcher />-->  <!--Selector de idioma-->
@@ -42,8 +39,7 @@
                             {{ user.name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><router-link class="dropdown-item" to="/admin">Admin</router-link></li>
-                            <li><router-link to="/admin/posts" class="dropdown-item">Post</router-link></li>
+                            <li><router-link class="dropdown-item" to="/admin">Zona admin</router-link></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a></li>
                         </ul>
@@ -51,16 +47,23 @@
                        <!-- Opción de Perfil con menú desplegable -->
                        <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Perfil
+                            Mi Perfil
+                        </a>
+                        <li v-if="user?.name" class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bienvenid@ {{ user.name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
-                                <router-link class="dropdown-item" :to="{ name: 'clase.create' }">Registro de Clase</router-link>
+                                <router-link class="dropdown-item" :to="{ name: 'clase.index' }">Registro de Clase</router-link>
                             </li>
                             <li>
                                 <router-link class="dropdown-item" :to="{ name: 'asistencia.index' }">Ver Registro de Asistencia</router-link>
                             </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a></li>
                         </ul>
+                    </li>
                     </li>
                     <!-- Fin de opción de Perfil -->
                 </ul>

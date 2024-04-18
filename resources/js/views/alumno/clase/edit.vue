@@ -11,8 +11,8 @@
             <form @submit.prevent="guardar">
                
                 
-
-                <div>Día:</div>
+                <div class="border border-white p-3 bg-dark text-white">
+                <div>Modifica Día:</div>
                 <div class="card flex justify-content-center">
                     <div class="flex flex-column gap-3">
                         <div
@@ -30,29 +30,31 @@
                         </div>
                     </div>
                 </div>
+                </div>
  
- 
+                <div class="border border-white p-3 bg-dark text-white">
                 <div class="form-gorup mb-2">
-                    <label>Horario clase</label><span class="text-danger"></span>
+                    <label>Modifica Horario clase</label>
                     <input v-model="clase.hora" class="form-control" type="text" name="Hora"/>
+                </div>
                 </div>
 
                 
- 
- 
+                <div class="border border-white p-3 bg-dark text-white">
                 <div class="form-gorup mb-2">
-                    <label>Id alumno</label><span class="text-danger"></span>
+                    <label>Id alumno</label>
                     <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
                 <Dropdown v-model="clase.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
                 </Dropdown>
+                </div>
             
                 <Toast />
 
 <ConfirmPopup> </ConfirmPopup>
 <div class="card flex flex-wrap gap-2 justify-content-center">
-    <Button @click="confirm1($event)" label="Guardar" outlined></Button>
+    <Button @click="confirm1($event)" label="Guardar" outlined class="btn border-dark"></Button>
     
 </div>
  

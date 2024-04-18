@@ -5,31 +5,31 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between pb-2 mb-2">
-                        <h5 class="card-title">Tabla clases</h5>
+                        <h5 class="card-title font-weight-bold text-uppercase">Tabla clases registradas</h5>
+                       
                         <div>
-                         
-                         <router-link :to="{name: 'clase.create'}" class="btn btn-success" type="button">Añadir Nueva clase</router-link>
-                          
+                            <router-link :to="{name: 'clase.create'}" class="btn btn-dark" type="button">Añadir Nueva clase</router-link>
                         </div>
+
                     </div>
                     
-                    <DataTable :value="clase" tableStyle="min-width: 50rem">
-                         <Column field="dia.diaSemana" header="Dia"></Column>
-                         <Column field="hora" header="Hora clase"  ></Column>
-                         <Column field="user_id" header="ID alumno" ></Column>
-                         <Column header="Acciones">
+                    <DataTable :value="clase" tableStyle="min-width: 50rem" class="table-dark">
+                         <Column field="dia.diaSemana" header="Dia" class="text-black"></Column>
+                         <Column field="hora" header="Hora clase" class="text-black" ></Column>
+                         <Column field="user_id" header="ID alumno" class="text-black"></Column>
+                         <Column header="Acciones" class="text-black">
                          <template #body="slotProps">
 
                              <!-- Botón para editar clase que le pasaremos a la vista edit los datos a través de su id-->
                          <router-link
-                                :to="{ name: 'clase.edit', params: { id: slotProps.data.id } }" class="btn btn-primary"> Edit clase
+                                :to="{ name: 'clase.edit', params: { id: slotProps.data.id } }" class="btn btn-dark"> Edit clase
                             </router-link>
 
                                
                          <Toast />
 
                         <ConfirmPopup> </ConfirmPopup>
-                        <Button @click="confirm1($event,slotProps.data.id, slotProps.index)"  class="btn btn-primary">Eliminar clase</Button>
+                        <Button @click="confirm1($event,slotProps.data.id, slotProps.index)"  class="btn btn-dark">Eliminar clase</Button>
                          
                          </template>
                         </Column>
