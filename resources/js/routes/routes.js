@@ -2,14 +2,16 @@ import Cookies from 'js-cookie'
 import store from "../store";
 
 const AuthenticatedLayout = () => import('../layouts/Authenticated.vue')
-const GuestLayout = ()  => import('../layouts/Guest.vue');
+const GuestLayout = () => import('../layouts/Guest.vue');
+const AuthenticatedUser = () => import('../layouts/AuthenticatedUser.vue')
 
-const PostsIndex  = ()  => import('../views/admin/posts/Index.vue');
-const PostsCreate  = ()  => import('../views/admin/posts/Create.vue');
-const PostsEdit  = ()  => import('../views/admin/posts/Edit.vue');
-const ExercisesIndex  = ()  => import('../views/admin/exercises/Index.vue');
-const ExercisesCreate  = ()  => import('../views/admin/exercises/Create.vue');
-const ExercisesEdit  = ()  => import('../views/admin/exercises/Edit.vue');
+
+const PostsIndex = () => import('../views/admin/posts/Index.vue');
+const PostsCreate = () => import('../views/admin/posts/Create.vue');
+const PostsEdit = () => import('../views/admin/posts/Edit.vue');
+const ExercisesIndex = () => import('../views/admin/exercises/Index.vue');
+const ExercisesCreate = () => import('../views/admin/exercises/Create.vue');
+const ExercisesEdit = () => import('../views/admin/exercises/Edit.vue');
 
 function requireLogin(to, from, next) {
     let isLogin = false;
@@ -39,7 +41,7 @@ export default [
         // redirect: { name: 'login' },
         component: GuestLayout,
         children: [
-           
+
             {
                 path: '/',
                 name: 'home',
@@ -153,7 +155,7 @@ export default [
             {
                 name: 'exercises',
                 path: 'exercises',
-                meta: { breadCrumb: 'Exercises'},
+                meta: { breadCrumb: 'Exercises' },
                 children: [
                     {
                         name: 'exercises.index',
@@ -165,8 +167,10 @@ export default [
                         name: 'exercises.create',
                         path: 'create',
                         component: ExercisesCreate,
-                        meta: { breadCrumb: 'Add new exercise' ,
-                        linked: false, }
+                        meta: {
+                            breadCrumb: 'Add new exercise',
+                            linked: false,
+                        }
                     },
                     {
                         name: 'exercises.edit',
@@ -179,11 +183,11 @@ export default [
                     }
                 ]
             },
-        
+
             {
                 name: 'categories',
                 path: 'categories',
-                meta: { breadCrumb: 'Categories'},
+                meta: { breadCrumb: 'Categories' },
                 children: [
                     {
                         name: 'categories.index',
@@ -195,9 +199,9 @@ export default [
                         name: 'categories.create',
                         path: 'create',
                         component: () => import('../views/admin/categories/Create.vue'),
-                        meta: { 
-                            breadCrumb: 'Add new category' ,
-                            linked: false, 
+                        meta: {
+                            breadCrumb: 'Add new category',
+                            linked: false,
                         }
                     },
                     {
@@ -212,59 +216,49 @@ export default [
                 ]
             },
 
-//---------------------------------------------------------------------------------------------------------------
-//espacio ruta vistas asistencia
+         
+            //-------------------------------------------------------------------------------------------------------------------------
 
-{
-    name: 'asistencia',
-    path: 'asistencia',
-    meta: { breadCrumb: 'Asistencias'},
-    children: [
-        {
-            name: 'asistencia.index',
-            path: '',
-            component: () => import('../views/alumno/asistencia/index.vue'),
-            meta: { breadCrumb: 'Ver asistencias' }
-        }
-     ]
-},
-//-------------------------------------------------------------------------------------------------------------------------
-
-//espacio ruta vistas horarios gym
-        {
-            name: 'horario',
-            path: 'horario',
-            meta: { breadCrumb: 'Horario'},
-            children: [
-                {
-                    name: 'horario.index',
-                    path: '',
-                    component: () => import('../views/admin/horario/index.vue'),
-                    meta: { breadCrumb: 'Ver horarios' }
-                },
-                {
-                    name: 'horario.create',
-                    path: 'create',
-                    component: () => import('../views/admin/horario/create.vue'),
-                    meta: { breadCrumb: 'Crear horarios'}
-                },
-                {
-                    name: 'horario.edit',
-                    path: 'edit/:id',
-                    component: () => import('../views/admin/horario/edit.vue'),
-                    meta: {
-                        breadCrumb: 'Edit horario',
-                        linked: false,
+            //espacio ruta vistas horarios gym
+            {
+                name: 'horario',
+                path: 'horario',
+                meta: { breadCrumb: 'Horario' },
+                children: [
+                    {
+                        name: 'horario.index',
+                        path: '',
+                        component: () => import('../views/admin/horario/index.vue'),
+                        meta: { breadCrumb: 'Ver horarios' }
+                    },
+                    {
+                        name: 'horario.create',
+                        path: 'create',
+                        component: () => import('../views/admin/horario/create.vue'),
+                        meta: { breadCrumb: 'Crear horarios' }
+                    },
+                    {
+                        name: 'horario.edit',
+                        path: 'edit/:id',
+                        component: () => import('../views/admin/horario/edit.vue'),
+                        meta: {
+                            breadCrumb: 'Edit horario',
+                            linked: false,
+                        }
                     }
-                }
-            ]
-        },
-//-------------------------------------------------------------------------------------------------------------------------
-//espacio vista tareas falta añadir editar
+                ]
+            },
+          
+
+                 
+               
+            //----------------------------------------------------------------------------------------------------------------------
+
+            //espacio vista tareas falta añadir editar
             {
                 name: 'tasks',
                 path: 'tasks',
-                meta: { breadCrumb: 'Tareas'},
+                meta: { breadCrumb: 'Tareas' },
                 children: [
                     {
                         name: 'task.index',
@@ -272,130 +266,94 @@ export default [
                         component: () => import('../views/admin/tasks/index.vue'),
                         meta: { breadCrumb: 'Ver tareas' }
                     },
-                
+
                     {
                         name: 'task.create',
                         path: 'create',
                         component: () => import('../views/admin/tasks/create.vue'),
-                        meta: { breadCrumb: 'Crear tareas'}
+                        meta: { breadCrumb: 'Crear tareas' }
                     }
-                 
-                 ]
+
+                ]
             },
-//----------------------------------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------------------------------
 
-//espacio vista nivel
+            //espacio vista nivel
 
-{
-    name: 'nivel',
-    path: 'nivel',
-    meta: { breadCrumb: 'Niveles'},
-    children: [
-        {
-            name: 'nivel.index',
-            path: '',
-            component: () => import('../views/admin/nivel/index.vue'),
-            meta: { breadCrumb: 'Ver niveles' }
-        },
-    
-        {
-            name: 'nivel.create',
-            path: 'create',
-            component: () => import('../views/admin/nivel/create.vue'),
-            meta: { breadCrumb: 'Crear niveles'}
-        },
-        {
-            name: 'nivel.edit',
-            path: 'edit/:id',
-            component: () => import('../views/admin/nivel/edit.vue'),
-            meta: {
-                breadCrumb: 'Edit nivel',
-                linked: false,
-            }
-        }
-     
-     ]
-},
+            {
+                name: 'nivel',
+                path: 'nivel',
+                meta: { breadCrumb: 'Niveles' },
+                children: [
+                    {
+                        name: 'nivel.index',
+                        path: '',
+                        component: () => import('../views/admin/nivel/index.vue'),
+                        meta: { breadCrumb: 'Ver niveles' }
+                    },
 
-//-----------------------------------------------------------------------------------------------------------------------------------
-//espacio vista inscripcions
+                    {
+                        name: 'nivel.create',
+                        path: 'create',
+                        component: () => import('../views/admin/nivel/create.vue'),
+                        meta: { breadCrumb: 'Crear niveles' }
+                    },
+                    {
+                        name: 'nivel.edit',
+                        path: 'edit/:id',
+                        component: () => import('../views/admin/nivel/edit.vue'),
+                        meta: {
+                            breadCrumb: 'Edit nivel',
+                            linked: false,
+                        }
+                    }
 
-{
-    name: 'inscripcion',
-    path: 'inscripcion',
-    meta: { breadCrumb: 'Inscripcion'},
-    children: [
-        {
-            name: 'inscripcion.index',
-            path: '',
-            component: () => import('../views/admin/inscripcion/index.vue'),
-            meta: { breadCrumb: 'Ver inscripciones' }
-        },
+                ]
+            },
 
-        {
-            name: 'inscripcion.create',
-            path: 'create',
-            component: () => import('../views/admin/inscripcion/create.vue'),
-            meta: { breadCrumb: 'Crear inscripciones' }
-        },
+            //-----------------------------------------------------------------------------------------------------------------------------------
+            //espacio vista inscripcions
 
-        {
-            name: 'inscripcion.edit',
-            path: 'edit/:id',
-            component: () => import('../views/admin/inscripcion/edit.vue'),
-            meta: {
-                breadCrumb: 'Edit inscripcion',
-                linked: false,
-            }
-        }
+            {
+                name: 'inscripcion',
+                path: 'inscripcion',
+                meta: { breadCrumb: 'Inscripcion' },
+                children: [
+                    {
+                        name: 'inscripcion.index',
+                        path: '',
+                        component: () => import('../views/admin/inscripcion/index.vue'),
+                        meta: { breadCrumb: 'Ver inscripciones' }
+                    },
 
-        
-    
-     ]
-},
+                    {
+                        name: 'inscripcion.create',
+                        path: 'create',
+                        component: () => import('../views/admin/inscripcion/create.vue'),
+                        meta: { breadCrumb: 'Crear inscripciones' }
+                    },
 
-//-----------------------------------------------------------------------------------------------------------------------------
-//espacio vistas clase
-{
-    name: 'clase',
-    path: 'clase',
-    meta: { breadCrumb: 'Clase'},
-    children: [
-        {
-            name: 'clase.index',
-            path: '',
-            component: () => import('../views/alumno/clase/index.vue'),
-            meta: { breadCrumb: 'Ver resultados tabla clases' }
-        },
+                    {
+                        name: 'inscripcion.edit',
+                        path: 'edit/:id',
+                        component: () => import('../views/admin/inscripcion/edit.vue'),
+                        meta: {
+                            breadCrumb: 'Edit inscripcion',
+                            linked: false,
+                        }
+                    }
 
-        {
-            name: 'clase.create',
-            path: 'create',
-            component: () => import('../views/alumno/clase/create.vue'),
-            meta: { breadCrumb: 'Crear clase'}
-        },
 
-        {
-            name: 'clase.edit',
-            path: 'edit/:id',
-            component: () => import('../views/alumno/clase/edit.vue'),
-            meta: {
-                breadCrumb: 'Edit clase',
-                linked: false,
-            }
-        }
 
-       
+                ]
+            },
 
-     ]
-},
-
-//------------------------------------------------------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------------------------------------------------------
 
             {
                 name: 'permissions',
                 path: 'permissions',
-                meta: { breadCrumb: 'Permisos'},
+                meta: { breadCrumb: 'Permisos' },
                 children: [
                     {
                         name: 'permissions.index',
@@ -407,16 +365,16 @@ export default [
                         name: 'permissions.create',
                         path: 'create',
                         component: () => import('../views/admin/permissions/Create.vue'),
-                        meta: { 
+                        meta: {
                             breadCrumb: 'Create Permission',
-                            linked: false,  
+                            linked: false,
                         }
                     },
                     {
                         name: 'permissions.edit',
                         path: 'edit/:id',
                         component: () => import('../views/admin/permissions/Edit.vue'),
-                        meta: { 
+                        meta: {
                             breadCrumb: 'Permission Edit',
                             linked: false,
                         }
@@ -468,4 +426,55 @@ export default [
         name: 'NotFound',
         component: () => import("../views/errors/404.vue"),
     },
+    //Espacio para vistas alumno
+    {
+        path: '/alumno',
+        component: AuthenticatedUser,
+        // redirect: {
+        //     name: 'alumno.index'
+        // },
+        beforeEnter: requireLogin,
+        meta: { breadCrumb: 'Dashboard' },
+        children: [
+            //espacio vistas clase alumnos
+            {
+                name: 'clase',
+                path: 'clase',
+                meta: { breadCrumb: 'Clase' },
+                children: [
+                    {
+                        name: 'clase.index',
+                        path: '',
+                        component: () => import('../views/alumno/clase/index.vue'),
+                        meta: { breadCrumb: 'Ver resultados tabla clases' }
+                    },
+
+                    {
+                        name: 'clase.create',
+                        path: 'create',
+                        component: () => import('../views/alumno/clase/create.vue'),
+                        meta: { breadCrumb: 'Crear clase' }
+                    },
+
+                    {
+                        name: 'clase.edit',
+                        path: 'edit/:id',
+                        component: () => import('../views/alumno/clase/edit.vue'),
+                        meta: {
+                            breadCrumb: 'Edit clase',
+                            linked: false,
+                        }
+                    }
+
+
+
+                ]
+            },
+
+        ]
+    }
 ];
+
+
+
+

@@ -49,6 +49,7 @@ const model = ref([
             {label:'Horario',icon:'pi pi-fw pi-calendar',to:'/admin/horario',permision:'all'}
         ]
     }
+   
     
 ]);
 </script>

@@ -21,7 +21,7 @@
                 <i class="pi pi-user"></i>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
                     <li class="nav-item">
-                            <router-link to="/" class="nav-link" aria-current="page">{{ $t('home') }}</router-link>
+                        
                         </li>
                     <li>
                         <a class="dropdown-item" :class="{ 'opacity-25': processing }" :disabled="processing"
@@ -48,6 +48,7 @@ const { onMenuToggle } = useLayout();
 const store = useStore();
 const user = computed(() => store.state.auth.user)
 const { processing, logout } = useAuth();
+
 
 const topbarMenuActive = ref(false);
 

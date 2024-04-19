@@ -9,7 +9,6 @@ use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\NivelController;
-use App\Http\Controllers\Api\AsistenciaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\InscripcionController;
 use App\Http\Controllers\Api\ClaseController;
@@ -41,8 +40,7 @@ Route::post('inscripcion', [InscripcionController::class, 'store']);
 Route::put('inscripcion/{id}', [InscripcionController::class, 'update']);
 Route::get('inscripcion/{id}',[InscripcionController::class,'show']);//esto es para conseguir los datos por su id 
 Route::delete('inscripcion/{id}', [InscripcionController::class, 'destroy']);//esto es para eliminar los datos por su id
-//----------------------------------------------------------------------------------------------------------------------------------
-Route::get('asistencia', [AsistenciaController::class, 'index']);
+
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('clase',[ClaseController::class,'index']);
 Route::post('clase',[ClaseController::class,'store']);
