@@ -61,6 +61,21 @@ export default [
                 component: () => import('../views/horarios/horario.vue'),
             },
             {
+                path: 'avisolegal',
+                name: 'avisolegal',
+                component: () => import('../views/avisolegal/index.vue'),
+            },
+            {
+                path: 'cookies',
+                name: 'cookies',
+                component: () => import('../views/cookies/index.vue'),
+            },
+            {
+                path: 'contacto',
+                name: 'contacto',
+                component: () => import('../views/contacto/index.vue'),
+            },
+            {
                 path: 'posts/:id',
                 name: 'public-posts.details',
                 component: () => import('../views/posts/details.vue'),
@@ -214,6 +229,7 @@ export default [
      ]
 },
 //-------------------------------------------------------------------------------------------------------------------------
+
 //espacio ruta vistas horarios gym
         {
             name: 'horario',

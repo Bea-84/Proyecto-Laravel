@@ -11,7 +11,17 @@ const logoUrl = computed(() => {
 
 <template>
     <div class="layout-footer">
-        <span class="font-medium ml-2">Zona de Combate - 2024</span>
+        <ul>
+            <li>
+                <router-link :to="{ name : 'avisolegal'}" class="nav-link">Aviso legal</router-link>
+            </li>
+            <li>
+                <router-link :to="{ name : 'cookies'}" class="nav-link">Política de cookies</router-link>
+            </li>
+            <li>
+                <router-link :to="{ name : 'contacto'}" class="nav-link">Contacto</router-link>
+            </li>
+        </ul>
     </div>
 </template>
 <style lang="scss" scoped></style>
