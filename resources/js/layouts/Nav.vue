@@ -34,7 +34,7 @@
                             <router-link class="nav-link" to="/register">{{ $t('register') }}</router-link>
                         </li>
                     </template>
-                    <li v-if="user?.name" class="nav-item dropdown">
+                    <li v-if="user?.name && user.roles && user.roles.some(role => role.name === 'admin')" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ user.name }}
                         </a>
@@ -44,14 +44,10 @@
                             <li><a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a></li>
                         </ul>
                     </li>
-                       <!-- Opción de Perfil con menú desplegable -->
-                       <li class="nav-item dropdown">
+                    <!-- Opción de Perfil con menú desplegable -->
+                    <li v-if="user?.name && user.roles && !user.roles.some(role => role.name === 'admin')" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Mi Perfil
-                        </a>
-                        <li v-if="user?.name" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Bienvenid@ {{ user.name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
@@ -63,7 +59,6 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a></li>
                         </ul>
-                    </li>
                     </li>
                     <!-- Fin de opción de Perfil -->
                 </ul>
@@ -77,10 +72,13 @@
 import { useStore} from "vuex";
 import useAuth from "@/composables/auth";
 import {computed} from "vue";
+
 /*import LocaleSwitcher from "../components/LocaleSwitcher.vue";*/
 
     const store = useStore();
     const user = computed(() => store.getters["auth/user"])
     const { processing, logout } = useAuth();
+    
+
 </script>
 
