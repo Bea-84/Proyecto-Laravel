@@ -144,6 +144,7 @@ import AppFooter from '../../layouts/AppFooter.vue';
         margin-right: 10%;
         justify-content: center;
         color: whitesmoke;
+        text-align: justify;
     }
 
     li {
