@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Editar clase</h5>
+                <h5 class="card-title text-uppercase"><strong>Modifica clase</strong></h5>
             </div>
             
                
@@ -11,8 +11,8 @@
             <form @submit.prevent="guardar">
                
                 
-                <div class="border border-white p-3 bg-dark text-white">
-                <div>Modifica Día:</div>
+                <div class="border border-black p-3">
+                <div class="text-black"><strong>Modifica Día:</strong> </div>
                 <div class="card flex justify-content-center">
                     <div class="flex flex-column gap-3">
                         <div
@@ -31,18 +31,20 @@
                     </div>
                 </div>
                 </div>
+                <br>
  
-                <div class="border border-white p-3 bg-dark text-white">
+                <div class="border border-black p-3">
                 <div class="form-gorup mb-2">
-                    <label>Modifica Horario clase</label>
+                    <label class="text-black"><strong>Modifica clase:</strong></label>
                     <input v-model="clase.hora" class="form-control" type="text" name="Hora"/>
                 </div>
                 </div>
+                <br>
 
                 
-                <div class="border border-white p-3 bg-dark text-white">
+                <div class="border border-black p-3">
                 <div class="form-gorup mb-2">
-                    <label>Id alumno</label>
+                    <label class="text-black"><strong>Id alumno:</strong></label>
                     <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -54,7 +56,7 @@
 
 <ConfirmPopup> </ConfirmPopup>
 <div class="card flex flex-wrap gap-2 justify-content-center">
-    <Button @click="confirm1($event)" label="Guardar" outlined class="btn border-dark"></Button>
+    <Button @click="confirm1($event)" label="Guardar" outlined class="btn btn-dark"></Button>
     
 </div>
  

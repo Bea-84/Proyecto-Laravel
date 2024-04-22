@@ -42,7 +42,7 @@ class ClaseController extends Controller
         $request->validate([
         'dia'=>'required',
         'hora'=>'required',
-        'user_id'=>'required',
+       
         
     ]);
 
