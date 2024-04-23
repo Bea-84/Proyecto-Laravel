@@ -1,4 +1,4 @@
-<link rel="stylesheet" src="/resources/css/main_page_nav_menu.css" type="text/css"></link>
+<style src="/resources/css/main_page_nav_menu.css" ></style>
 <template>
     <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm navbar-custom">
         <div class="container">
