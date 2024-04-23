@@ -1,0 +1,21 @@
+.footer-contact {
+    background-color: black;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+h3 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+ul {
+    width: 35%;
+    margin: auto;
+    text-align: left;
+    color: whitesmoke;
+}

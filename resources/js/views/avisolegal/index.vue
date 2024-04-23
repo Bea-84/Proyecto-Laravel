@@ -1,5 +1,9 @@
+<style scoped src="/resources/css/footer_aviso_legal.css"></style>
 <template>
-    <div class="cookies-policy">
+    <div class="legal-notice">
+        <br>
+        <br>
+        <h2>Aviso legal</h2>
         <br>
         <br>
         <h5>RESPONSABLE DEL TRATAMIENTO DE LOS DATOS</h5>
@@ -89,7 +93,7 @@
         <p><strong>Jose Maria Guerrero Torvisco</strong> es el Responsable del tratamiento de los datos personales del Usuario, por lo que se le facilita la siguiente información referente al tratamiento 
         de sus datos:</p>
         <p>Criterios de conservación de los datos: Los datos personales proporcionados se conservarán hasta que no se solicite su suspensión por parte del interesado, ejerciendo sus 
-          derechos sobre los datos, y en cualquier caso en cumplimiento de plazos legales de prescripción que le resulten de aplicación.</p>
+        derechos sobre los datos, y en cualquier caso en cumplimiento de plazos legales de prescripción que le resulten de aplicación.</p>
         <p><strong>Derechos de los interesados:</strong></p>
         <ul>
             <li>Derecho a retirar el consentimiento en cualquier momento.</li>
@@ -128,70 +132,13 @@
     </div>
     <AppFooter />
 </template>
-  
+
 <script setup>
 import AppFooter from '../../layouts/AppFooter.vue';
 </script>
-  
-  <style scoped>
-    h5 {
-        text-align: center;
-        color: whitesmoke;
-    }
 
-    p {
-        margin-left: 10%;
-        margin-right: 10%;
-        justify-content: center;
-        color: whitesmoke;
-        text-align: justify;
-    }
 
-    li {
-        margin-left: 10%;
-        margin-right: 10%;
-        justify-content: center;
-        color: whitesmoke;
-    }
 
-    .cookies-policy {
-        background-color: black;
-    }
     
-
-
-  </style>
-      <!-- <style scoped>
-    .schedule-table {
-      margin-top: 100px; /* Margen en la parte superior */
-      width: 100%;
-      overflow-x: auto; /* Agrega barras de desplazamiento horizontal en pantallas pequeñas */
-    }
-
-    .schedule-table table {
-      width: 100%; /* Ancho de la tabla */
-      border-collapse: collapse;
-      color: black; /* Color del texto */
-    }
-
-    .schedule-table th,
-    .schedule-table td {
-      border: 1px solid black; /* Color de las líneas */
-      padding: 10px; /* Ajusta el tamaño del padding */
-      text-align: center;
-    }
-
-    .schedule-table th {
-      background-color: black; /* Fondo negro para las celdas de encabezado */
-      color: white; /* Color del texto del encabezado */
-    }
-
-    @media screen and (max-width: 768px) {
-      .schedule-table table {
-        width: auto; /* Ajusta el ancho automáticamente */
-      }
-    }
-    </style> -->
-
   
  
