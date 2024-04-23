@@ -18,5 +18,6 @@ class Clase extends Model
       {
           return $this->belongsTo(Dia::class,'dia');
       }
+    
      
 }

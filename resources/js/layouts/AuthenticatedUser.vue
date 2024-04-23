@@ -2,7 +2,7 @@
     <div class="layout-wrapper" :class="containerClass">
         <app-topbar></app-topbar>
         
-        <div class="layout-main-container ">
+        <div class="layout-main-container">
             <div class="layout-main">
                 <Suspense>
                 <router-view></router-view>
@@ -127,4 +127,5 @@ ol {
     align-items: center;
     flex-wrap: nowrap;
 }
+
 </style>
