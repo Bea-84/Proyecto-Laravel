@@ -2,38 +2,39 @@
     <div class="card" >
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Regístrate para una clase.</h5>
+                <h5 class="card-title text-uppercase"><strong>Regístrate a tu siguiente clase</strong></h5>
             </div>
  
                <!--Enviar form a script-->
             <form @submit.prevent="addClase">
                 
-            <div class="border border-white p-3 bg-dark text-white">
-                <div>Selecciona Día:</div>
-                <div class="card flex justify-content-center">
-                    <div class="flex flex-column gap-3">
-                        <div
-                            v-for="dia in dias"
-                            :key=dia.id
-                            class="flex align-items-center"
-                        >
-                            <RadioButton
-                                v-model=clase.dia
-                                :value=dia.id
-                                @input="change($event.target.value)"
-                                name="diaSemana"
-                            />
-                            <label :for=dia.id class="ml-2">{{ dia.diaSemana }}</label>
+                <div class="border border-black p-3  ">
+                    <div class="text-black  "> <strong>Selecciona Día:</strong> </div>
+                    <div class="card flex justify-content-center">
+                        <div class="flex flex-column gap-3">
+                            <div
+                                v-for="dia in dias"
+                                :key=dia.id
+                                class="flex align-items-center"
+                            >
+                                <RadioButton
+                                    v-model=clase.dia
+                                    :value=dia.id
+                                    @input="change($event.target.value)"
+                                    name="diaSemana"
+                                />
+                                <label :for=dia.id class="ml-2">{{ dia.diaSemana }}</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
 
 
                 <br>
 
-                <div class="border border-white p-3 bg-dark text-white">
-                <div>Selecciona Horario:</div>
+                <div class="border border-black p-3">
+                    <div class="text-black  "> <strong>Selecciona Hora:</strong> </div>
                 <div class="card flex justify-content-center">
                     <div class="flex flex-column gap-3">
                         <div
@@ -56,9 +57,9 @@
                 
               <br>
  
-              <div class="border border-white p-3 bg-dark text-white">
+              <div class="border border-black p-3">
                 <div class="form-gorup mb-2">
-                    <label>User_id:</label>
+                    <label class="text-black"><strong>Id usuario:</strong></label>
                     <input v-model="clase.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
@@ -66,7 +67,7 @@
                 </Dropdown>
             
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-light mt-4 mb-4">Añadir clase</button>
+                    <button type="submit" class="btn btn-dark mt-4 mb-4"><strong>Añadir clase</strong></button>
                 </div>
 
                 </div>
