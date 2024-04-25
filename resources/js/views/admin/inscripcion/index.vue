@@ -31,7 +31,7 @@
                          
                             <!--Botón para eliminar nivel-->
                         
-                         <ConfirmPopup> </ConfirmPopup>
+                        
                          <Button @click="confirm1($event,slotProps.data.id, slotProps.index)"  class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                     <path fill="#ffffff"
@@ -49,17 +49,13 @@
  </template>
 
  
- 
- 
  <script setup>
    
-   import {ref, onMounted} from "vue"
-   import { useConfirm } from "primevue/useconfirm";
-   import { useToast } from "primevue/usetoast";
+   import {ref, onMounted,inject} from "vue"
    
-
-  const confirm = useConfirm();
-  const toast = useToast();
+   
+   const swal = inject('$swal')
+  
  
   const inscripciones=ref()
    
@@ -89,29 +85,37 @@
            });
    };
 
-   //Función para popup
-   const confirm1 = (event,id,index) => {
-       console.log(event);
+   
+       //Función para mensaje confirmación
+       const confirm1 = (event,id,index) => {
+        console.log(event);
+        swal({
+            title: 'Estás seguro??',
+            text: 'No podrás revertir esta acción!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            confirmButtonColor: '#ef4444',
+            timer: 20000,
+            timerProgressBar: true,
+            reverseButtons: true
+        })
+            .then(result => {
+                if (result.isConfirmed) {
+                    swal({
+                                icon: 'success',
+                                title: 'Dato eliminado'
+                            })
+                    deleteInscripcion(id,index)
+                }else{
+                    swal({
+                                icon: 'error',
+                                title: 'Error al intentar eliminar el dato'
+                            })
+                }
+            })
 
-       confirm.require({
-           target: event.currentTarget,
-           message: 'Estas seguro que deseas eliminar este dato?',
-           icon: 'pi pi-exclamation-triangle',
-           rejectClass: 'p-button-secondary p-button-outlined p-button-sm',
-           acceptClass: 'p-button-sm',
-           rejectLabel: 'No',
-           acceptLabel: 'Si',
-           accept: () => {
-               toast.add({ severity: 'info', summary: 'Confirmado', detail: 'Dato eliminado', life: 3000 });
-               deleteInscripcion(id,index)
-           },
-           reject: () => {
-
-           
-               toast.add({ severity: 'error', summary: 'Cancelado', detail: 'Cambios no guardados', life: 3000 });
-           }
-       });
-   };
+    };
  
 </script>
 

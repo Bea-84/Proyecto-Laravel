@@ -1,10 +1,10 @@
 <template>
     <div class="layout-topbar">
         <router-link to="/login" class="layout-topbar-logo"  >
-            <img src="images/logo_redondo.png" alt="logo" />
+            <img src="/images/logo_redondo.png" alt="logo" />
             <span></span>
         </router-link>
-
+        
         <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">
             <i class="pi pi-bars"></i>
         </button>
@@ -18,6 +18,15 @@
             <button class="p-link layout-topbar-button layout-topbar-button-c nav-item dropdown " role="button"
                 data-bs-toggle="dropdown">
                 <i class="pi pi-user"></i>
+                <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
+                    <li class="nav-item">
+
+                        </li>
+                    <li>
+                        <a class="dropdown-item" :class="{ 'opacity-25': processing }" :disabled="processing"
+                            href="javascript:void(0)" @click="logout">Cerrar sessión</a>
+                    </li>
+                </ul>
                 <span class="nav-link dropdown-toggle ms-3 me-2" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Hola, {{ user.name }}

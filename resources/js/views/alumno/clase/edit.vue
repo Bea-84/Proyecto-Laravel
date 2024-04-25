@@ -52,9 +52,7 @@
                 </Dropdown>
                 </div>
             
-                <Toast />
 
-<ConfirmPopup> </ConfirmPopup>
 <div class="card flex flex-wrap gap-2 justify-content-center">
     <Button @click="confirm1($event)" label="Guardar" outlined class="btn btn-dark"></Button>
     
@@ -68,15 +66,11 @@
  </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted,inject } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import useUsers from "../../../composables/users"
 
-import { useConfirm } from "primevue/useconfirm";
-import { useToast } from "primevue/usetoast";
-
-const confirm = useConfirm();
-const toast = useToast();
+const swal = inject('$swal')
 
 
 
@@ -137,27 +131,34 @@ const guardar = () => {
 };
 
 
-//Función para popup
-const confirm1 = (event) => {
-    console.log(event);
+  //Función para mensaje confirmación
+  const confirm1 = (event,id,index) => {
+        console.log(event);
+        swal({
+            title: 'Estás seguro??',
+            text: 'No podrás revertir esta acción!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            confirmButtonColor: '#ef4444',
+            timer: 20000,
+            timerProgressBar: true,
+            reverseButtons: true
+        })
+            .then(result => {
+                if (result.isConfirmed) {
+                    swal({
+                                icon: 'success',
+                                title: 'Dato modificado'
+                            })
+                    guardar(id,index)
+                }else{
+                    swal({
+                                icon: 'error',
+                                title: 'Error al intentar modificar el dato'
+                            })
+                }
+            })
 
-    confirm.require({
-        target: event.currentTarget,
-        message: 'Estas seguro que deseas modificar este dato?',
-        icon: 'pi pi-exclamation-triangle',
-        rejectClass: 'p-button-secondary p-button-outlined p-button-sm',
-        acceptClass: 'p-button-sm',
-        rejectLabel: 'No',
-        acceptLabel: 'Si',
-        accept: () => {
-            toast.add({ severity: 'info', summary: 'Confirmado', detail: 'Dato modificado', life: 3000 });
-            guardar()
-        },
-        reject: () => {
-
-           
-            toast.add({ severity: 'error', summary: 'Cancelado', detail: 'Cambios no guardados', life: 3000 });
-        }
-    });
-};
+    };
 </script>
