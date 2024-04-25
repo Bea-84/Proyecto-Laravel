@@ -63,7 +63,7 @@ const topbarMenuClasses = computed(() => {
 
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
 .layout-topbar-button-c,
 .layout-topbar-button-c:hover {
     width: auto;
@@ -72,8 +72,5 @@ const topbarMenuClasses = computed(() => {
     border-radius: 0%;
     padding: 1em;
 }
-.layout-topbar-logo {
-    width: 200px;
-    height: auto;
-}
+
 </style>

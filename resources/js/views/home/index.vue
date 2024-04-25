@@ -3,13 +3,12 @@
     <!--<div class="items-top justify-center min-h-screen bg-gray-900 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">-->
     <div class="items-top justify-center min-h-screen bg-gray-900 dark:bg-gray-900 sm:items-center sm:pt-0">
         <img src="images/portada_boxeo.webp" alt="background" class="background-image"/>
-        <br>
+       
         <div>
             <h3 id="titulo-section">TARIFAS</h3>
         </div>
+
         <section id="tarifas">
-        
-        
     <div class="card-container">
       <Card style="width: 25rem; overflow: hidden">
         <template #header>
@@ -50,6 +49,9 @@
       </Card>
      </div>
         </section>
+
+      
+
         <AppFooter />
        
     </div>
