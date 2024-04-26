@@ -2,7 +2,7 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm navbar-custom">
         <div class="container">
-            <router-link to="/" class="navbar-brand"><img src="images/logo_redondo.png" alt="logo" class="rounded_logo"></router-link>
+            <router-link to="/" class="navbar-brand"><img src="images/logo_redondo.png" alt="logo" class="rounded_logo img-logo"></router-link>
             <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon navbar-dark"></span>
             </a>
@@ -77,3 +77,10 @@ import {computed} from "vue";
 
 </script>
 
+<style scoped>
+.img-logo{
+
+    max-height: 5rem;
+    max-width: 5rem;
+}
+</style>

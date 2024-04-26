@@ -2,7 +2,8 @@
     transition: margin-left $transitionDuration;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 1rem;
     border-top: 1px solid var(--surface-border);
+    background-color: black;
 }

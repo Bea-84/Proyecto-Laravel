@@ -11,6 +11,11 @@ const logoUrl = computed(() => {
 
 <template>
     <div class="layout-footer">
+        <div class="imagen">
+            <img src="/images/logo_redondo.png" alt="logo" class="img-fluid"/>
+        </div>
+        <div class="lista">
+        <h5 class="titulo">Enlaces destacados</h5>
         <ul>
             <li>
                 <router-link :to="{ name : 'avisolegal'}" class="nav-link">Aviso legal</router-link>
@@ -23,9 +28,12 @@ const logoUrl = computed(() => {
             </li>
         </ul>
     </div>
+    </div>
 </template>
 <style lang="scss" scoped>
-    .layout-footer {
-        background-color: black;
+   
+    .titulo {
+        color: white;
     }
+     
 </style>
