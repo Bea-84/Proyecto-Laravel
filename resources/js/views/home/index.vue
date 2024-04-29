@@ -24,7 +24,7 @@
             </p>
           </template>
           <template #footer>
-            <div>Coste de matrícula: 60€</div>
+            <div >Coste de matrícula: 60€</div>
           </template>
         </Card>
       </div>
@@ -57,6 +57,22 @@
     <section class="clases">
       <div class="card-clase">
         <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5"
+          containerStyle="max-width: 640px">
+          <template #item="slotProps">
+            <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%" />
+          </template>
+
+        </Galleria>
+      </div>
+    </section>
+
+    <div class="titulo-certificados">
+      <h3 style="color: white;">CERTIFICADOS</h3>
+    </div>
+
+    <section class="certificados">
+      <div class="card-certificados">
+        <Galleria :value="images2" :responsiveOptions2="responsiveOptions" :numVisible="1"
           containerStyle="max-width: 640px">
           <template #item="slotProps">
             <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%" />
@@ -141,6 +157,32 @@ const responsiveOptions = ref([
   },
 ]);
 
+const images2 = ref([
+  {
+    itemImageSrc: 'images/certificado1.png',
+    alt: 'Description for Image 1',
+    title: 'Title 1',
+  },
+  {
+    itemImageSrc: 'images/certificado2.jpg',
+    alt: 'Description for Image 2',
+    title: 'Title 2',
+  },
+]);
+
+const responsiveOptions2 = ref([
+  {
+    breakpoint: '1300px',
+    numVisible: 2,
+  },
+  {
+    breakpoint: '575px',
+    numVisible: 1,
+  },
+]);
+
+
+
 </script>
 
 <style scoped>
@@ -196,7 +238,7 @@ const responsiveOptions = ref([
   /* Ajustar la imagen dentro del contenedor sin distorsionar */
 }
 
-/* Color del texto dentro de las tarjetas */
+/* Color dic contenedor principal*/
 .bg-color {
   background-color: black !important
 }
@@ -218,7 +260,6 @@ const responsiveOptions = ref([
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: black;
 }
 
 
@@ -227,7 +268,6 @@ const responsiveOptions = ref([
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: black;
 }
 
 .clases {
@@ -243,5 +283,26 @@ const responsiveOptions = ref([
   margin-bottom: 20px;
   width: 600px;
   justify-content: center;
+  border: 1px solid white;
+}
+
+.titulo-certificados {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.certificados {
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.card-certificados {
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 </style>
