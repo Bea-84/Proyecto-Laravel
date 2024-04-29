@@ -31,4 +31,10 @@ class ProfileController extends Controller
 
         return $this->successResponse($user, 'User found');
     }
+
+    //Función para mostrar las clases del alumno que ha entrado a sus vistas
+    public function myclasses(){
+        $user = Auth::user()->with('clases')->get();
+        return $user;
+    }
 }

@@ -48,4 +48,10 @@ class User extends Authenticatable
     {
         $this->notify(new UserResetPasswordNotification($token));
     }
+
+    //Relación de "de muchos a muchos" con tabla clase
+    public function clases()
+    {
+        return $this->belongsToMany(Clase::class,'user_clase');
+    }
 }

@@ -18,6 +18,12 @@ class Clase extends Model
       {
           return $this->belongsTo(Dia::class,'dia');
       }
+      
+      //Relación de "de muchos a muchos" con tabla user
+      public function user()
+      {
+          return $this->belongsToMany(User::class,'user_clase');
+      }
     
      
 }

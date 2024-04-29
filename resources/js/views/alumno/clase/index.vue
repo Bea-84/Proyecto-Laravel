@@ -51,15 +51,11 @@
   
   import {ref, onMounted,inject} from "vue"
   const swal = inject('$swal')
-
  
   const clase=ref()
   const dias = ref([ ]);
   
-   
-
    onMounted(()=>{
-
       axios.get('/api/clase')
            .then(response =>{
              console.log(response);

@@ -5,13 +5,21 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Clase;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ClaseController extends Controller
 {
      //Función que nos devuelve resultados tabla clases
      public function index(){
-        $clases = Clase:: with('dia')->get();
-        return $clases;
+        
+        //Me recoge un usuario para mostrar en las vistas de los usuarios
+        $user = User::with('clases.dia')->where('id',Auth::user()->id)->first();
+        return $user->clases;
+
+        //Me mostrará las clases a la que se han registrado todos los alumnos(admin)
+        //$clases = Clase:: with('dia','user')->get();
+        //return $clases;
     }
 
       //Función que almacena clase en BBDD
