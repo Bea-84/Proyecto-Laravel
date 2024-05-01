@@ -245,7 +245,31 @@ export default [
             },
           
 
-                 
+                  
+            //----------------------------------------------------------------------------------------------------------------------
+
+            //espacio vista productos
+            {
+                name: 'productos',
+                path: 'productos',
+                meta: { breadCrumb: 'Productos' },
+                children: [
+                    {
+                        name: 'productos.index',
+                        path: '',
+                        component: () => import('../views/admin/productos/index.vue'),
+                        meta: { breadCrumb: 'Ver productos' }
+                    },
+
+                    // {
+                    //     name: 'task.create',
+                    //     path: 'create',
+                    //     component: () => import('../views/admin/tasks/create.vue'),
+                    //     meta: { breadCrumb: 'Crear tareas' }
+                    // }
+
+                ]
+            },
                
             //----------------------------------------------------------------------------------------------------------------------
 
