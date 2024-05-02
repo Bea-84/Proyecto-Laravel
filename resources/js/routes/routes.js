@@ -4,6 +4,7 @@ import store from "../store";
 const AuthenticatedLayout = () => import('../layouts/Authenticated.vue')
 const GuestLayout = () => import('../layouts/Guest.vue');
 const AuthenticatedUser = () => import('../layouts/AuthenticatedUser.vue')
+const AuthenticatedAdmin = () => import('../layouts/AuthenticatedAdmin.vue')
 
 
 const PostsIndex = () => import('../views/admin/posts/Index.vue');
@@ -110,7 +111,7 @@ export default [
     },
     {
         path: '/admin',
-        component: AuthenticatedLayout,
+        component: AuthenticatedAdmin,
         // redirect: {
         //     name: 'admin.index'
         // },
