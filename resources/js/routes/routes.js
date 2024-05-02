@@ -262,12 +262,12 @@ export default [
                         meta: { breadCrumb: 'Ver productos' }
                     },
 
-                    // {
-                    //     name: 'task.create',
-                    //     path: 'create',
-                    //     component: () => import('../views/admin/tasks/create.vue'),
-                    //     meta: { breadCrumb: 'Crear tareas' }
-                    // }
+                    {
+                        name: 'productos.create',
+                        path: 'create',
+                        component: () => import('../views/admin/productos/create.vue'),
+                        meta: { breadCrumb: 'Crear productos' }
+                    }
 
                 ]
             },
@@ -291,7 +291,8 @@ export default [
                         name: 'task.create',
                         path: 'create',
                         component: () => import('../views/admin/tasks/create.vue'),
-                        meta: { breadCrumb: 'Crear tareas' }
+                        meta: { breadCrumb: 'Crear tareas'
+                     }
                     }
 
                 ]

@@ -48,6 +48,12 @@ const model = ref([
         items: [
             {label:'Horario',icon:'pi pi-fw pi-calendar',to:'/admin/horario',permision:'all'}
         ]
+    },
+    {
+        label: 'Productos',
+        items: [
+            {label:'Productos',icon:'pi pi-fw pi-wallet',to:'/admin/productos',permision:'all'}
+        ]
     }
    
     

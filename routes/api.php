@@ -43,6 +43,8 @@ Route::get('inscripcion/{id}',[InscripcionController::class,'show']);//esto es p
 Route::delete('inscripcion/{id}', [InscripcionController::class, 'destroy']);//esto es para eliminar los datos por su id
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('producto',[ProductoController::class,'index']);
+Route::post('producto', [ProductoController::class, 'store']);
+Route::put('producto/{id}', [ProductoController::class, 'update']);
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('clase',[ClaseController::class,'index']);
 Route::post('clase',[ClaseController::class,'store']);
