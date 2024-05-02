@@ -17,6 +17,8 @@ use App\Http\Controllers\Api\HorarioController;
 use App\Http\Controllers\Api\TarifaController;
 use App\Http\Controllers\Api\EstadoController;
 use App\Http\Controllers\Api\ProductoController;
+use App\Http\Controllers\Api\ActividadController;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -43,8 +45,17 @@ Route::get('inscripcion/{id}',[InscripcionController::class,'show']);//esto es p
 Route::delete('inscripcion/{id}', [InscripcionController::class, 'destroy']);//esto es para eliminar los datos por su id
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('producto',[ProductoController::class,'index']);
+
 //-------------------------------------------------------------------------------------------------------------------------------------
-Route::get('clase',[ClaseController::class,'index']);
+Route::get('actividad',[ActividadController::class,'index']);//este route es para recoger todos los datos de la tabla actividads para admin
+Route::post('actividad',[ActividadController::class,'store']);
+Route::put('actividad/{id}', [ActividadController::class, 'update']);
+Route::get('actividad/{id}',[ActividadController::class,'show']);//esto es para conseguir los datos por su id
+Route::delete('actividad/{id}', [ActividadController::class, 'destroy']);//esto es para eliminar los datos por su id 
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+Route::get('clase',[ClaseController::class,'index']);//este route es para recoger todos los datos de la tabla clases para admin
+Route::get('miclase',[ClaseController::class,'claseAlumno']);//este route es para recoger las clases de un alumno por su id
 Route::post('clase',[ClaseController::class,'store']);
 Route::put('clase/{id}', [ClaseController::class, 'update']);
 Route::get('clase/{id}',[ClaseController::class,'show']);//esto es para conseguir los datos por su id

@@ -1,7 +1,7 @@
 <template>
     <div class="layout-topbar">
-        <router-link to="/login" class="layout-topbar-logo"  >
-            <img src="/images/logo_redondo.png" alt="logo" />
+        <router-link to="" class="layout-topbar-logo"  >
+            <img class="logo" src="/images/logo_redondo.png" alt="logo" />
             <span></span>
         </router-link>
         

@@ -10,16 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class ClaseController extends Controller
 {
-     //Función que nos devuelve resultados tabla clases
+     //Función que nos devuelve resultados tabla clases para la vista admin
      public function index(){
-        
+        $clases = Clase:: with('dia')->get();
+        return $clases;
+    }
+
+    //Función para recoger las clases de un alumno por su id y mostrarlo en la vista de alumnos
+    public function claseAlumno(){
         //Me recoge un usuario para mostrar en las vistas de los usuarios
         $user = User::with('clases.dia')->where('id',Auth::user()->id)->first();
         return $user->clases;
-
-        //Me mostrará las clases a la que se han registrado todos los alumnos(admin)
-        //$clases = Clase:: with('dia','user')->get();
-        //return $clases;
     }
 
       //Función que almacena clase en BBDD
