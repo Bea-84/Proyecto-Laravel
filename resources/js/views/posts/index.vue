@@ -171,6 +171,7 @@
     display: flex;
     justify-content: center; 
     margin: auto;
+    border: 1px solid white;
 }
 
 .video-wrapper {

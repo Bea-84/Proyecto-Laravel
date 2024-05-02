@@ -51,12 +51,18 @@
   
   import {ref, onMounted,inject} from "vue"
   const swal = inject('$swal')
+  import useUsers from "../../../composables/users"
+    
+  const {users, getUsers} = useUsers()
  
   const clase=ref()
   const dias = ref([ ]);
   
    onMounted(()=>{
-      axios.get('/api/clase')
+
+    getUsers();
+
+      axios.get('/api/miclase')
            .then(response =>{
              console.log(response);
              clase.value = response.data;

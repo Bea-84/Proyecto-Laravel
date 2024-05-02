@@ -245,7 +245,37 @@ export default [
                 ]
             },
           
+            //-------------------------------------------------------------------------------------------------------------------------
 
+            //espacio ruta vistas horarios gym
+            {
+                name: 'actividad',
+                path: 'actividad',
+                meta: { breadCrumb: 'Actividad' },
+                children: [
+                    {
+                        name: 'actividad.index',
+                        path: '',
+                        component: () => import('../views/admin/actividad/index.vue'),
+                        meta: { breadCrumb: 'Ver actividads' }
+                    },
+                    {
+                        name: 'actividad.create',
+                        path: 'create',
+                        component: () => import('../views/admin/actividad/create.vue'),
+                        meta: { breadCrumb: 'Crear actividads' }
+                    },
+                    {
+                        name: 'actividad.edit',
+                        path: 'edit/:id',
+                        component: () => import('../views/admin/actividad/edit.vue'),
+                        meta: {
+                            breadCrumb: 'Edit actividad',
+                            linked: false,
+                        }
+                    }
+                ]
+            },
                   
             //----------------------------------------------------------------------------------------------------------------------
 

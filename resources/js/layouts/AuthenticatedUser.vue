@@ -2,7 +2,7 @@
     <div class="layout-wrapper" :class="containerClass">
         <app-topbar></app-topbar>
         
-        <div class="layout-main-containers">
+        <div class="layout-main-container">
             <div class="layout-main">
                 <Suspense>
                 <router-view></router-view>
@@ -13,8 +13,6 @@
         <div class="layout-mask"></div>
     </div>
 </template>
-
-
 
 <script setup>
 import { computed, watch, ref } from 'vue';
@@ -109,7 +107,13 @@ const isOutsideClicked = (event) => {
 
 </script>
 
-<style lang="scss" >
+<style lang="scss" scopped>
+//estilo para contenedor vistas alumnos
+.layout-main-container{
+    margin-left: 0 !important;
+    padding: 7rem 2rem 2rem 2rem !important;
+}
+
 .p-breadcrumb .p-breadcrumb-list {
     margin: 0 !important; 
     padding: 0;
