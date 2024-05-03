@@ -7,10 +7,8 @@
                         <h5 class="card-title">Vista productos</h5>
                     </div>
                     <div>
-                        
-                        <router-link :to="{name: 'productos.create'}" class="btn btn-success" type="button">Añadir nuevo producto</router-link>
-                         
-                       </div>
+                        <router-link :to="{name: 'productos.create'}" class="btn btn-success" type="button">Añadir nuevo producto</router-link>    
+                    </div>
                     
                     <DataTable :value="producto" tableStyle="min-width: 50rem">
                          <Column field="id" header="Id"></Column>
@@ -47,20 +45,18 @@
 
  <script setup>
   import {ref, onMounted,inject} from "vue"
-
   const swal = inject('$swal')
-
-   const horario=ref()
+  const producto=ref()
 
     onMounted(()=>{
 
     axios.get('/api/producto')
-        .then(response =>{
-        console.log(response);
-        producto.value = response.data;
-        })
+     .then(response =>{
+       console.log(response);
+       producto.value = response.data;
+     })
 
-    })
+})
 
        //Función eliminar producto
        const deleteProducto = (id, index) => {
@@ -110,3 +106,8 @@
     };
 
 </script>
+
+<style>
+
+
+</style>

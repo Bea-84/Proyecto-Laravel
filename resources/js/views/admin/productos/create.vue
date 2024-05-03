@@ -10,20 +10,20 @@
                <!--Enviar form a script-->
             <form @submit.prevent="addProducto">
                 
-                <div class="form-group mb-2">
+                <!-- <div class="form-group mb-2">
                     <label>Id:</label><span class="text-danger"> </span>
                     <textarea v-model="producto.id" class="form-control" type="text" placeholder="id"></textarea>
-                </div>
+                </div> -->
  
  
                 <div class="form-gorup mb-2">
-                    <label>Descripcion:</label><span class="text-danger"></span>
+                    <label>Descripción:</label><span class="text-danger"></span>
                     <input v-model="producto.descripcion" class="form-control" type="text" name="descripción"/>
                 </div>
 
                 <div class="form-group mb-2">
                     <label>Precio:</label><span class="text-danger"> </span>
-                    <textarea v-model="producto.precio" class="form-control" type="text" placeholder="precio"></textarea>
+                    <input v-model="producto.precio" class="form-control" type="text"></input>
                 </div>
  
  
@@ -36,7 +36,33 @@
  
  
             </form>
- 
         </div>
     </div>
  </template>
+
+
+<script setup>
+    import { ref, onMounted } from "vue";
+    import { useRouter } from 'vue-router'
+    const router = useRouter()
+    const producto=ref({});
+
+    function addProducto(){
+       axios.post('/api/producto',producto.value)
+            .then(response =>{
+                console.log(response);
+                router.push({ name: 'producto.index' })
+            })
+            .catch(error=>{
+                console.log(error);
+            }) 
+    }
+    
+
+onMounted(() => {
+
+})
+
+
+
+</script>
