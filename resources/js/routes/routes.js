@@ -505,18 +505,7 @@ export default [
                         path: 'create',
                         component: () => import('../views/alumno/clase/create.vue'),
                         meta: { breadCrumb: 'Crear clase' }
-                    },
-
-                    {
-                        name: 'clase.edit',
-                        path: 'edit/:id',
-                        component: () => import('../views/alumno/clase/edit.vue'),
-                        meta: {
-                            breadCrumb: 'Edit clase',
-                            linked: false,
-                        }
                     }
-
 
 
                 ]

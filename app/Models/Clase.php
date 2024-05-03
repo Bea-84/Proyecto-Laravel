@@ -9,7 +9,7 @@ class Clase extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','actividad_id','fecha','duracion'];
+    protected $fillable = ['id','actividad_id','fecha'];
 
     
       //Al crear las relaciones entre tablas podremos recoger diferentes datos para mostrar en la vista

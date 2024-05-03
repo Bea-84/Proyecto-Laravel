@@ -144,10 +144,10 @@ const isOutsideClicked = (event) => {
 
 </script>
 
-<style lang="scss" >
+<style lang="scss"  scopped>
 //estilo para contenedor vistas admin
 .layout-main-container{
-    margin-left: 300px;
+    margin-left: 300px !important;
     
 }
 
