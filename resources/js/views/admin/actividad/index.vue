@@ -4,11 +4,11 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between pb-2 mb-2">
-                        <h5 class="card-title">Vista tabla hctividads gimnasio</h5>
+                        <h5 class="card-title">Vista tabla actividades gimnasio</h5>
                     </div>
                     <div>
 
-                        <router-link :to="{ name: 'actividad.create' }" class="btn btn-success" type="button">Añadir nuevo
+                        <router-link :to="{ name: 'actividad.create' }" class="btn btn-success " type="button">Añadir nueva
                             Actividad</router-link>
 
                     </div>

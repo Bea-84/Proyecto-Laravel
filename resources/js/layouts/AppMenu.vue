@@ -54,6 +54,12 @@ const model = ref([
         items: [
             {label:'Productos',icon:'pi pi-fw pi-wallet',to:'/admin/productos',permision:'all'}
         ]
+    },
+    {
+        label: 'Actividad',
+        items: [
+            {label:'Actividad',icon:'pi pi-fw pi-heart',to:'/admin/actividad',permision:'all'}
+        ]
     }
    
     
