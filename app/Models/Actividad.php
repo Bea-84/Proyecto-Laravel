@@ -14,7 +14,6 @@ class Actividad extends Model
     protected $table = 'actividades';
 
     
-      //Al crear las relaciones entre tablas podremos recoger diferentes datos para mostrar en la vista
-      //Relación uno a muchos con la tabla Dia
+      
      
 }

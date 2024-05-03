@@ -55,12 +55,8 @@ Route::get('actividad/{id}',[ActividadController::class,'show']);//esto es para 
 Route::delete('actividad/{id}', [ActividadController::class, 'destroy']);//esto es para eliminar los datos por su id 
 
 //-------------------------------------------------------------------------------------------------------------------------------------
-Route::get('clase',[ClaseController::class,'index']);//este route es para recoger todos los datos de la tabla clases para admin
-Route::get('miclase',[ClaseController::class,'claseAlumno']);//este route es para recoger las clases de un alumno por su id
-Route::post('clase',[ClaseController::class,'store']);
-Route::put('clase/{id}', [ClaseController::class, 'update']);
-Route::get('clase/{id}',[ClaseController::class,'show']);//esto es para conseguir los datos por su id
-Route::delete('clase/{id}', [ClaseController::class, 'destroy']);//esto es para eliminar los datos por su id 
+//Espacio para rutas tabla clase desde vistas alumno
+
 //--------------------------------------------------------------------------------------------------------------------------------------
 //ruta para conseguir datos de tabla dias
 Route::get('dia', [DiaController::class, 'index']);

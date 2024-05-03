@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('actividad_id');
             $table->dateTime('fecha');
             $table->unsignedTinyInteger('duracion');
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete('cascade');
             $table->timestamps();
         });
     }

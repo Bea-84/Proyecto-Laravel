@@ -9,14 +9,14 @@ class Clase extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','dia','hora','user_id'];
+    protected $fillable = ['id','actividad_id','fecha','duracion'];
 
     
       //Al crear las relaciones entre tablas podremos recoger diferentes datos para mostrar en la vista
-      //Relación uno a muchos con la tabla Dia
-      public function dia()
+      //Relación uno a muchos con la tabla actividad
+      public function actividad()
       {
-          return $this->belongsTo(Dia::class,'dia');
+          return $this->belongsTo(Actividad::class,'actividad_id');
       }
       
       //Relación de "de muchos a muchos" con tabla user
