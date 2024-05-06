@@ -281,22 +281,33 @@ export default [
 
             //espacio vista productos
             {
-                name: 'productos',
-                path: 'productos',
-                meta: { breadCrumb: 'Productos' },
+                name: 'producto',
+                path: 'producto',
+                meta: { breadCrumb: 'Producto' },
                 children: [
                     {
-                        name: 'productos.index',
+                        name: 'producto.index',
                         path: '',
-                        component: () => import('../views/admin/productos/index.vue'),
+                        component: () => import('../views/admin/producto/index.vue'),
                         meta: { breadCrumb: 'Ver productos' }
                     },
 
                     {
-                        name: 'productos.create',
+                        name: 'producto.create',
                         path: 'create',
-                        component: () => import('../views/admin/productos/create.vue'),
-                        meta: { breadCrumb: 'Crear productos' }
+                        component: () => import('../views/admin/producto/create.vue'),
+                        meta: { breadCrumb: 'Crear producto' }
+                    },
+
+                    {
+                        name: 'producto.edit',
+                        path: 'edit:id',
+                        component: () => import('../views/admin/producto/edit.vue'),
+                        meta: { 
+                            breadCrumb: 'Editar producto',
+                            linked: false,
+                        }
+                         
                     }
 
                 ]

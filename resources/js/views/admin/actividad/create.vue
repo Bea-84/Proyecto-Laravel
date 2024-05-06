@@ -15,7 +15,7 @@
                 </div>
 
 
-                <div class="form-gorup mb-2">
+                <div class="form-group mb-2">
                     <label>Descripcion:</label><span class="text-danger"></span>
                     <textarea v-model="actividad.descripcion" class="form-control" type="text" placeholder="descripcion"></textarea>
                 </div>
