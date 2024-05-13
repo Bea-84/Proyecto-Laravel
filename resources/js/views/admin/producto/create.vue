@@ -23,7 +23,8 @@
 
                 <div class="form-group mb-2">
                     <label>imagen:</label><span class="text-danger"></span>
-                    <input v-model="producto.imagen" class="form-control" type="text" name="imagen" />
+                    <!-- <input v-model="producto.imagen" class="form-control" type="text" name="imagen" /> -->
+                    <FileUpload mode="basic" name="demo[]" url="/api/create" accept="image/*"  @upload="onUpload" />
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir producto</button>
@@ -36,12 +37,13 @@
 
 
 <script setup>
+import FileUpload from 'primevue/fileupload';
 import { ref, onMounted } from "vue";
 import { useRouter } from 'vue-router'
+import { useToast } from "primevue/usetoast";
 const router = useRouter()
 const producto = ref({});
-
-
+const toast = useToast();
 
 function addProducto() {
     axios.post('/api/producto', producto.value)
@@ -52,8 +54,16 @@ function addProducto() {
         .catch(error => {
             console.log(error);
         })
-}
+    }
 
+
+
+
+
+
+const onUpload = () => {
+    toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
+}
 
 
 </script>
