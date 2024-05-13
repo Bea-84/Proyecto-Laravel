@@ -12,14 +12,14 @@
                          
                        </div>
                    </div>
-                   
-                   <DataTable :value="user_clase" tableStyle="min-width: 50rem">
-                        <Column field="pivot.user_id" header="Id usuario"  ></Column>
-                        <Column field="pivot.clase_id" header="Id clase"  ></Column>
+          
+                   <DataTable :value="clase" tableStyle="min-width: 50rem">
+                        <Column field="actividad.nombre" header="Actividad"></Column>
+                        <Column field="fecha" header="Fecha"  ></Column>
                         <Column header="Acciones">
-                        
                         </Column>
                     </DataTable>
+
                </div>
            </div>
        </div>
@@ -31,25 +31,21 @@
   
   import {ref, onMounted,inject} from "vue"
   const swal = inject('$swal')
-  const user_clase=ref()
 
-  import useUsers from "../../../composables/users"
-  const {users, getUsers} = useUsers()
+  const clase=ref()
+  const actividades = ref([])
 
-    //Función para obtener usuarios y clases de tabla intermedia 
-    onMounted(()=> {
-        getUsers();
+  onMounted(()=>{
 
         axios.get('/api/clase')
-          .then(response =>{
-            console.log(response);
-            user_clase.value = response.data;
-          })
+        .then(response =>{
+        console.log(response);
+        clase.value = response.data;
+        })
+
+       
 
     })
-
- 
-
  
 </script>
 

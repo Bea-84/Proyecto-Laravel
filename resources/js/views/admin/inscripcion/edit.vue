@@ -27,15 +27,15 @@
                     <input v-model="inscripcion.user_id" class="form-control" type="text" name="user_id"/>
                 </div>
                 
-                <Dropdown v-model="inscripcion.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona Id usuario" class="w-full md:w-14rem">
+                <Dropdown v-model="inscripcion.user_id" :options="users.data" filter optionLabel="name" optionValue="id" placeholder="Selecciona usuario" class="w-full md:w-14rem">
                 </Dropdown>
 
                 <div class="form-gorup mb-2">
-                    <label>Nivel_user</label><span class="text-danger"></span>
+                    <label>Nivel_id</label><span class="text-danger"></span>
                     <input v-model="inscripcion.nivel_user" class="form-control" type="text" name="id"/>
                 </div>
 
-                <Dropdown v-model="inscripcion.nivel_user" :options="nivel" filter optionLabel="nombre" optionValue="id" placeholder="Select a Id" class="w-full md:w-14rem">
+                <Dropdown v-model="inscripcion.nivel_user" :options="nivel" filter optionLabel="nombre" optionValue="id" placeholder="Selecciona nivel usuario" class="w-full md:w-14rem">
                 </Dropdown>
             
 
