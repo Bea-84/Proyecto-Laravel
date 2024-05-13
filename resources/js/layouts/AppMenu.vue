@@ -52,7 +52,7 @@ const model = ref([
     {
         label: 'Productos',
         items: [
-            {label:'Productos',icon:'pi pi-fw pi-wallet',to:'/admin/productos',permision:'all'}
+            {label:'Productos',icon:'pi pi-fw pi-wallet',to:'/admin/producto',permision:'all'}
         ]
     },
     {

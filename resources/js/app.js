@@ -49,7 +49,7 @@ import DialogService from 'primevue/dialogservice';
 import Dropdown from 'primevue/dropdown';
 //import DynamicDialog from 'primevue/dynamicdialog';
 import Fieldset from 'primevue/fieldset';
-//import FileUpload from 'primevue/fileupload';
+import FileUpload from 'primevue/fileupload';
 import Galleria from 'primevue/galleria';
 import Image from 'primevue/image';
 //import InlineMessage from 'primevue/inlinemessage';
