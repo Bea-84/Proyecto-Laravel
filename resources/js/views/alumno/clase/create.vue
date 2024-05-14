@@ -11,10 +11,15 @@
             <form @submit.prevent="addclase">
                 
                 
-                <div class="card flex justify-content-center">
-                <CascadeSelect v-model="clase.actividad" :options="actividades" optionLabel="actividades" optionGroupLabel="name"
-                 style="min-width: 14rem" placeholder="Selecciona actividad" />
-               </div>
+                <div class="form-gorup mb-2">
+                    <label>Actividad id</label><span class="text-danger"></span>
+                    <input v-model="clase.actividad_id" class="form-control" type="number" name="id"/>
+                </div>
+
+                <Dropdown v-model="clase.actividad_id" :options="actividades" filter optionLabel="nombre" optionValue="id" placeholder="Selecciona actividad" class="w-full md:w-14rem">
+                </Dropdown>
+
+                <br>
 
                 <div class="card flex flex-wrap gap-3 p-fluid">
                    <div class="flex-auto">
@@ -41,6 +46,18 @@
     
     const router = useRouter()
     const clase=ref({});
+    const actividades = ref([])
+    
+
+    onMounted(() => {
+
+        axios.get('/api/actividad')
+            .then(response => {
+                console.log(response);
+                actividades.value = response.data;
+            })
+
+    })
 
     function addclase(){
        axios.post('/api/clase',clase.value)

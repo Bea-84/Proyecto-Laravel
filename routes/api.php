@@ -59,6 +59,7 @@ Route::delete('actividad/{id}', [ActividadController::class, 'destroy']);//esto 
 //-------------------------------------------------------------------------------------------------------------------------------------
 //Espacio para rutas tabla mostrar clases,apuntarse a clases alumnos
 Route::get('clase',[ClaseController::class,'index']);
+Route::post('clase',[ClaseController::class,'store']);
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 //ruta para conseguir datos de tabla dias
