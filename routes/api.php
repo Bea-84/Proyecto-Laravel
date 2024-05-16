@@ -46,7 +46,7 @@ Route::delete('inscripcion/{id}', [InscripcionController::class, 'destroy']);//e
 //-------------------------------------------------------------------------------------------------------------------------------------
 Route::get('producto',[ProductoController::class,'index']);
 Route::post('producto', [ProductoController::class, 'store']);
-Route::put('producto/{id}', [ProductoController::class, 'update']);
+Route::post('producto/{id}', [ProductoController::class, 'update']);
 Route::get('producto/{id}',[ProductoController::class,'show']);//esto es para conseguir los datos por su id 
 Route::delete('producto/{id}', [ProductoController::class, 'destroy']);//esto es para eliminar los datos por su id
 //-------------------------------------------------------------------------------------------------------------------------------------
@@ -60,6 +60,7 @@ Route::delete('actividad/{id}', [ActividadController::class, 'destroy']);//esto 
 //Espacio para rutas tabla mostrar clases,apuntarse a clases alumnos
 Route::get('clase',[ClaseController::class,'index']);
 Route::post('clase',[ClaseController::class,'store']);
+Route::delete('clase/{id}', [ClaseController::class, 'destroy']);//esto es para eliminar los datos por su id 
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 //ruta para conseguir datos de tabla dias

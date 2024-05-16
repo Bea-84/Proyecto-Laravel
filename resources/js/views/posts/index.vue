@@ -20,7 +20,7 @@
         Ya con la edad de <strong>17 años</strong>, José María Guerrero, 
         siendo aún boxeador junior consiguió <strong>la medalla de oro</strong> de los campeonatos de España senior  en el año 1994.
     </p>
-    <hr class="horizontal-line">
+   
     <div class="video-container">
         <figure class="video-wrapper">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/RXcMS0ioBMw?si=_zJE9SzWKbCykAK2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -29,7 +29,7 @@
             </figcaption>
         </figure>
     </div>
-    <hr class="horizontal-line">
+   
     <p class="paragraph">
         Los éxitos de José María guerrero se convertirían en éxitos internacionales gracias a la <strong>medalla de plata</strong> conseguida en el torneo de Lisboa. 
         Torneo que gano por puntos al subcampeón mundial junior de nacionalidad francesa.
@@ -47,14 +47,14 @@
     <p class="paragraph" >
         A la vuelta del mundial, se cuelga <strong>la medalla de oro</strong> del boxam de TORREVIEJA de 1994.
     </p>
-    <hr class="horizontal-line">
+  
     <div class="video-container">
         <figure class="video-wrapper">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ohjkihw8yUk?si=kOGbyN0eughThmUn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <figcaption style="text-align: center; color: white;">Combate internacional entre J.M.Guerrero vs Alban Girouard</figcaption>
         </figure>
     </div>
-    <hr class="horizontal-line">
+  
     <p class="paragraph" >
         En <strong>1995</strong>, se clasifica sexto en el campeonato de Europa júnior de Hungría, perdiendo por decisión médica, 
         cuando iba dos puntos arriba ante Rusia.
@@ -72,14 +72,14 @@
         el mismo año olímpico, el mismo día que comenzaban las olimpiadas,
         le hacen tomar la decisión de <strong>dedicarse al boxeo profesional</strong>.
     </p>
-    <hr class="horizontal-line">
+   
     <div class="video-container">
         <figure class="video-wrapper">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pl8xv3hkz70?si=pCDz7GH4ayf-UbGe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <figcaption style="text-align: center; color: white;">Combate entre J.M.Guerrero vs Xavi Moya</figcaption>
         </figure>
     </div>
-    <hr class="horizontal-line">
+  
     <p class="paragraph">
         En noviembre de <strong>1997</strong>, debuta como profesional ante Marcos Muñoz, 
         enlazando un total de 19 victorias consecutivas, logrando en su combate número 15,
@@ -99,7 +99,7 @@
         Seguidamente boxea en Francia, y en Madrid, logrando ambas victorias, y tras el combate de Madrid, 
         decide colgar los guantes por primera vez a los 26 años.
     </p>
-    <hr class="horizontal-line">
+   
    
   <div class="video-container">
     <figure class="video-wrapper">
@@ -108,7 +108,7 @@
     </figure>
   </div>
 
-  <hr class="horizontal-line">
+ 
     <p class="paragraph">
         A los 2 años de su retirada, el promotor Rubén Solé, le propone volver a boxear para disputar el campeonato de España 
         profesional del peso súper medio.
@@ -160,12 +160,7 @@
     color: white; /* Color del texto */
 }
 
-.horizontal-line {
-    border: none; 
-    border-top: 2px solid white; 
-    margin-left: 5%; 
-    margin-right: 5%; 
-}
+
 
 .video-container {
     display: flex;

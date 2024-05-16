@@ -12,10 +12,15 @@
                     </div>
 
                     <DataTable :value="producto" tableStyle="min-width: 50rem">
-                        <Column field="id" header="Id"></Column>
+                        <Column field="id" header="#"></Column>
+                        <Column field="nombre" header="Nombre"></Column>
                         <Column field="descripcion" header="Descripcion"></Column>
                         <Column field="precio" header="Precio"></Column>
-                        <Column field="imagen" header="Imagen"></Column>
+                        <Column field="imagen" header="Imagen">
+                            <template #body="slotProps">
+                            <img class="imagen" :src="slotProps.data.media[0]?.original_url">
+                            </template>
+                        </Column>
                         <Column header="Acciones">
                             <template #body="slotProps">
                                 <!-- Botón para editar producto que le pasaremos a la vista edit los datos a través de su id-->
@@ -109,4 +114,10 @@ const confirm1 = (event, id, index) => {
 
 </script>
 
-<style></style>
+<style scoped>
+.imagen {
+    width: 100px; /* Ancho deseado */
+    height: 100px; /* Altura deseada */
+    object-fit: cover; /* Para asegurar que la imagen mantenga su relación de aspecto */
+}
+</style>

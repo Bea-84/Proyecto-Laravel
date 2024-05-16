@@ -11,6 +11,11 @@
             <form @submit.prevent="guardarProducto">
 
                 <div class="form-gorup mb-2">
+                    <label>Nombre:</label><span class="text-danger"></span>
+                    <input v-model="producto.nombre" class="form-control" type="text" name="nombre" />
+                </div>
+
+                <div class="form-gorup mb-2">
                     <label>Descripcion:</label><span class="text-danger"></span>
                     <input v-model="producto.descripcion" class="form-control" type="text" name="descripción" />
                 </div>
@@ -20,10 +25,11 @@
                     <input v-model="producto.precio" class="form-control" type="text"></input>
                 </div>
 
+                <div class="form-group mb-2">
+                    <label class="imagen">imagen:</label><span class="text-danger"></span>
+                    <!-- <img class="imagen" :src="slotProps.data.media[0]?.original_url"> -->
+                    <DropZone v-model="producto.img"/>
 
-                <div class="form-gorup mb-2">
-                    <label>imagen:</label><span class="text-danger"></span>
-                    <input v-model="producto.imagen" class="form-control" type="text" name="imagen" />
                 </div>
 
 
@@ -31,9 +37,6 @@
                     <Button @click="confirm1($event)" label="Guardar" outlined></Button>
 
                 </div>
-
-
-
 
             </form>
 
@@ -44,6 +47,7 @@
 <script setup>
 import { ref, onMounted, inject } from "vue";
 import { useRouter, useRoute } from 'vue-router';
+import DropZone from "@/components/DropZone.vue";
 
 const swal = inject('$swal')
 const router = useRouter();
@@ -58,7 +62,7 @@ onMounted(() => {
     axios.get(`/api/producto/` + id)
         .then(response => {
             producto.value = response.data.data;
-
+            producto.value.img= producto.value.media[0]?.original_url
         })
         .catch(error => {
             console.error("Error al obtener los datos de productos:", error);
@@ -67,16 +71,30 @@ onMounted(() => {
 
 // Función para guardar cambios
 const guardarProducto = () => {
-    axios.put(`/api/producto/${id}`, producto.value)
-        .then(response => {
-            console.log("Producto actualizado:", response.data);
-            // Redireccionar a la vista de lista de productos u otra vista
-            router.push({ name: 'producto.index' });
-        })
-        .catch(error => {
-            console.error("Error al actualizar el producto:", error);
-        });
+    // Crear un objeto FormData para enviar datos del formulario
+    let serializedProducto = new FormData();
+    for (let item in producto.value) {
+        if (producto.value.hasOwnProperty(item)) {
+            serializedProducto.append(item, producto.value[item]);
+        }
+    }
+
+    // Realizar la solicitud POST para actualizar el producto
+    axios.post(`/api/producto/${id}`, serializedProducto, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    })
+    .then(response => {
+        console.log("Producto actualizado:", response.data);
+        // Redireccionar a la vista de lista de productos u otra vista
+        router.push({ name: 'producto.index' });
+    })
+    .catch(error => {
+        console.error("Error al actualizar el producto:", error);
+    });
 };
+
 
 //Función para mensaje confirmación
 const confirm1 = (event, id, index) => {

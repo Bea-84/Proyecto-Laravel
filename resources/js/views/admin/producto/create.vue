@@ -5,10 +5,13 @@
                 <h5 class="card-title">Añade un nuevo producto</h5>
             </div>
 
-
-
             <!--Enviar form a script-->
             <form @submit.prevent="addProducto">
+
+                <div class="form-group mb-2">
+                    <label>Nombre:</label><span class="text-danger"></span>
+                    <input v-model="producto.nombre" class="form-control" type="text" name="nombre" />
+                </div>
 
                 <div class="form-group mb-2">
                     <label>Descripción:</label><span class="text-danger"></span>
@@ -22,9 +25,8 @@
 
 
                 <div class="form-group mb-2">
-                    <label>imagen:</label><span class="text-danger"></span>
-                    <!-- <input v-model="producto.imagen" class="form-control" type="text" name="imagen" /> -->
-                    <FileUpload mode="basic" name="demo[]" url="/api/create" accept="image/*"  @upload="onUpload" />
+                    <label class="imagen">imagen:</label><span class="text-danger"></span>
+                    <DropZone v-model="producto.img"/>
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Añadir producto</button>
@@ -37,33 +39,48 @@
 
 
 <script setup>
-import FileUpload from 'primevue/fileupload';
+
+import DropZone from "@/components/DropZone.vue";
 import { ref, onMounted } from "vue";
 import { useRouter } from 'vue-router'
-import { useToast } from "primevue/usetoast";
+
 const router = useRouter()
 const producto = ref({});
-const toast = useToast();
+
+
+
 
 function addProducto() {
-    axios.post('/api/producto', producto.value)
-        .then(response => {
-            console.log(response);
-            router.push({ name: 'producto.index' })
-        })
-        .catch(error => {
-            console.log(error);
-        })
+
+    let serializedProducto= new FormData()
+    for (let item in producto.value) {
+        if (producto.value.hasOwnProperty(item)) {
+            serializedProducto.append(item, producto.value[item])
+        }
+    }
+
+    axios.post('/api/producto', serializedProducto, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    })
+    .then(response => {
+        console.log(response);
+        router.push({ name: 'producto.index' });
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
     }
 
 
-
-
-
-
-const onUpload = () => {
-    toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
-}
-
-
 </script>
+
+<style scoped>
+.imagen {
+    width: 100px; /* Ancho deseado */
+    height: 100px; /* Altura deseada */
+    object-fit: cover; /* Para asegurar que la imagen mantenga su relación de aspecto */
+}
+</style>

@@ -44,6 +44,14 @@ class ClaseController extends Controller
        
             return response()->json($response);
         }
+
+        //Función para eliminar clase
+        public function destroy($id){
+
+            $clase = Clase::find($id); 
+            $clase->delete();
+            return response()->json(['success' => true, 'message' => 'Clase eliminada correctamente']);
+        }
  
 }
 

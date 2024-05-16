@@ -21,15 +21,14 @@
 
                 <br>
 
-                <div class="card flex flex-wrap gap-3 p-fluid">
-                   <div class="flex-auto">
-                   <label for="buttondisplay" class="font-bold block mb-2">Selecciona fecha</label>
-                   <Calendar v-model="clase.fecha" showIcon :showOnFocus="false" inputId="buttondisplay" />
+                <div class="form-group mb-2">
+                    <label>Fecha</label><span class="text-danger"> </span>
+                    <input v-model="clase.fecha" class="form-control" type="datetime-local" placeholder="fecha"/>
                 </div>
      
-                </div>
+                
  
-                <button type="submit" class="btn btn-primary mt-4 mb-4">Apuntarme a esta clase!! </button>
+                <button type="submit" class="btn btn-primary mt-4 mb-4  btn-custom">Apuntarme a esta clase!! </button>
  
  
             </form>
@@ -71,6 +70,16 @@
     }
 
 </script>
+
+<style scoped>
+.btn-custom {
+    background-color: black;
+    color: white;
+}
+
+
+
+</style>
 
    
 

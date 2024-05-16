@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 
 class ProductoController extends Controller {
-     //Función que nos devuelve todos los productos que hay en la BBDD 
+
+
+     //Función que nos devuelve todos los productos que hay en la BBDD y las imágenes de la tabla media
      public function index(){
-        $productos = Producto::all(); 
+        $productos = Producto:: with('media')->get(); 
         return $productos;
      }
 
@@ -18,9 +20,9 @@ class ProductoController extends Controller {
 
       //Validar datos que tienen que estar obligatorios
       $request->validate([
+          'nombre'=>'required',
           'descripcion'=>'required',
-          'precio'=>'required',
-          'imagen'=>'required'
+          'precio'=>'required'
       ]);
 
       $data=$request->all();
@@ -32,6 +34,10 @@ class ProductoController extends Controller {
           'data'=>$producto
       ];
 
+      if ($request->hasFile('img')) {
+        $producto->addMediaFromRequest('img')->preservingOriginal()->toMediaCollection('images-productos');
+      }
+
       return response()->json($response);
      }
     
@@ -41,11 +47,9 @@ class ProductoController extends Controller {
 
         //Validar datos que tienen que estar obligatorios
         $request->validate([
+            'nombre'=>'required',
             'descripcion'=>'required',
-            'precio'=>'required',
-            'imagen'=>'required'
-        
-        
+            'precio'=>'required'
         ]);
 
         $data=$request->all();
@@ -59,6 +63,13 @@ class ProductoController extends Controller {
             'data'=>$producto
         ];
 
+        if($request->hasFile('img')) {
+            $producto->media()->delete();
+            $producto->addMediaFromRequest('img')->preservingOriginal()->toMediaCollection('images-producto');
+        }
+
+        $producto->load('media');
+
         return response()->json($response);
     }
     
@@ -66,7 +77,7 @@ class ProductoController extends Controller {
     //Función para buscar dato por su id y mostrar
     public function show($id) {
         // Buscar la asistencia por su ID
-        $producto = Producto::find($id);
+        $producto = Producto::with('media')->find($id);
 
         // Verificar si se encontró la asistencia
         if (!$producto) {
