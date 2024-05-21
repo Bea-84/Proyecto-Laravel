@@ -67,10 +67,12 @@
             </div>
         </div>
     </div>
+    <AppFooter class="footer"/>
 </template>
 
 <script setup>
-import useAuth from '@/composables/auth'
+import useAuth from '@/composables/auth';
+import AppFooter from '../../layouts/AppFooter.vue';
 const { registerForm, validationErrors, processing, submitRegister } = useAuth();
 </script>
 
@@ -78,6 +80,14 @@ const { registerForm, validationErrors, processing, submitRegister } = useAuth()
 .btn-custom {
     background-color: black;
     color: white;
+}
+
+.container {
+    margin-top: 7%;
+}
+
+.footer {
+    margin-top: 7%;
 }
 </style>
 
