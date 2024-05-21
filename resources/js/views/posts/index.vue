@@ -139,10 +139,11 @@
     </p>
 </div>
 <br>
+<AppFooter />
 </template>
 
 <script setup>
-
+    import AppFooter from '../../layouts/AppFooter.vue';
 </script>
 
 <style scoped>
