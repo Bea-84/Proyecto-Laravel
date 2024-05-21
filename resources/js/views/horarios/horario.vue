@@ -64,7 +64,7 @@
   
       <style scoped>
     .schedule-table {
-      margin-top: 100px; /* Margen en la parte superior */
+      margin-top: 15%; /* Margen en la parte superior */
       width: 100%;
       overflow-x: auto; /* Agrega barras de desplazamiento horizontal en pantallas pequeñas */
     }
@@ -88,7 +88,7 @@
     }
 
     .footer {
-      margin-top: 20%;
+      margin-top: 15%;
     }
 
     @media screen and (max-width: 768px) {
