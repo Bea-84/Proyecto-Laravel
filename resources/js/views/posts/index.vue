@@ -1,5 +1,5 @@
 <template>
-    
+
   <div class="principal">
     <H2 class="titulo">LA TRAYECTORIA DE JOSÉ MARÍA GUERRERO</H2>
     <p class="paragraph">
@@ -149,7 +149,7 @@
 <style scoped>
 .titulo {
     text-align: center;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     padding-top: 20px;
     color: white;
 }
