@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Añadir productos</h5>
+                <h5 class="card-title">Editar productos</h5>
             </div>
 
 
@@ -27,9 +27,7 @@
 
                 <div class="form-group mb-2">
                     <label class="imagen">imagen:</label><span class="text-danger"></span>
-                    <!-- <img class="imagen" :src="slotProps.data.media[0]?.original_url"> -->
                     <DropZone v-model="producto.img"/>
-
                 </div>
 
 
@@ -130,3 +128,11 @@ const confirm1 = (event, id, index) => {
 
 
 </script>
+
+<style scoped>
+.imagen {
+    width: 100px; /* Ancho deseado */
+    height: 100px; /* Altura deseada */
+    object-fit: cover; /* Para asegurar que la imagen mantenga su relación de aspecto */
+}
+</style>

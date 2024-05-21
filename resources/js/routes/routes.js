@@ -54,6 +54,11 @@ export default [
                 component: () => import('../views/posts/index.vue'),
             },
             {
+                path: 'producto',
+                name: 'producto',
+                component: () => import('../views/producto/producto.vue'),
+            },
+            {
                 path: 'horarios',
                 name: 'horarios',
                 component: () => import('../views/horarios/horario.vue'),
