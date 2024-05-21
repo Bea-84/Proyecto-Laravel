@@ -1,6 +1,6 @@
 <template>
     <div class="schedule-table">
-      <table>
+      <table class="tabla">
         <thead>
           <tr>
             <th>Horario</th>
@@ -64,9 +64,17 @@
   
       <style scoped>
     .schedule-table {
-      margin-top: 15%; /* Margen en la parte superior */
-      width: 100%;
+      margin-top: 10%; /* Margen en la parte superior */
+      width: 80%;
+      margin-left: 10%;
       overflow-x: auto; /* Agrega barras de desplazamiento horizontal en pantallas pequeñas */
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .tabla {
+      background-color: white;
+      
     }
 
     .schedule-table table {

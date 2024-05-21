@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center my-5">
             <div class="col-md-6">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-1 shadow-sm">
                     <div class="card-header bg-transparent">{{ $t('register') }}</div>
                     <div class="card-body">
                         <form @submit.prevent="submitRegister">
@@ -67,10 +67,12 @@
             </div>
         </div>
     </div>
+    <AppFooter class="footer"/>
 </template>
 
 <script setup>
-import useAuth from '@/composables/auth'
+import useAuth from '@/composables/auth';
+import AppFooter from '../../layouts/AppFooter.vue';
 const { registerForm, validationErrors, processing, submitRegister } = useAuth();
 </script>
 
@@ -78,6 +80,14 @@ const { registerForm, validationErrors, processing, submitRegister } = useAuth()
 .btn-custom {
     background-color: black;
     color: white;
+}
+
+.container {
+    margin-top: 7%;
+}
+
+.footer {
+    margin-top: 7%;
 }
 </style>
 
