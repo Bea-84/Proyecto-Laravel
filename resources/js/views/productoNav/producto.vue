@@ -18,20 +18,21 @@
                             <img class="imagen" :src="slotProps.data.media[0]?.original_url">
                             </template>
                         </Column>
-                      
+                       
                     </DataTable>
                 </div>
             </div>
         </div>
     </div>
-    <AppFooter/>
+    <AppFooter></AppFooter>
 </template>
 
 <script setup>
 
 import AppFooter from '../../layouts/AppFooter.vue';
+
 import { ref, onMounted, inject } from "vue"
-const swal = inject('$swal')
+
 const producto = ref()
 
 onMounted(() => {
@@ -43,6 +44,7 @@ onMounted(() => {
         })
 
 })
+
 
 
 
