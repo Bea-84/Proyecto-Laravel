@@ -53,19 +53,28 @@
             </div>
         </div>
     </div>
+    <AppFooter class="footer"/>
 </template>
 
 <script setup>
 import useAuth from '@/composables/auth'
+import AppFooter from '../../layouts/AppFooter.vue'; 
 const { loginForm, validationErrors, processing, submitLogin } = useAuth();
 </script>
 
 <style scoped>
+.container {
+    margin-top: 10%;
+}
 .btn-custom {
     background-color: black;
     color: white;
 }
 .forgot-password-link {
     color: black;
+}
+
+.footer {
+    margin-top: 10%;
 }
 </style>
