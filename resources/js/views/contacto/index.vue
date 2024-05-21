@@ -12,9 +12,9 @@
         <ul>
             <li><strong>Dirección:</strong> C/industria 35 1reo C. Entrada por calle Milá 6, 08291 Ripollet, Barcelona</li>
             <br>
-            <li><strong>Teléfono:</strong>691 115 092</li>
+            <li><strong>Teléfono:</strong> 691 115 092</li>
             <br>
-            <li><strong>Email:</strong>info@zonadecombate.es</li>
+            <li><strong>Email:</strong> info@zonadecombate.es</li>
             <br>
             <li><a href="https://web.whatsapp.com/"><img src="images/WhatsApp_icon.png" alt="whatsapp_icon"/></a></li>
         </ul>
