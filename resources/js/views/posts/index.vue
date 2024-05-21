@@ -2,6 +2,9 @@
 
   <div class="principal">
     <H2 class="titulo">LA TRAYECTORIA DE JOSÉ MARÍA GUERRERO</H2>
+    <br>
+    <br>
+    <br>
     <p class="paragraph">
         José María Guerrero Torvisco, nació en la ciudad de Barcelona el 15 de enero de 1977.
         Con <strong>13 años</strong>, en mayo de 1990, empezó a entrenar boxeo,
@@ -149,7 +152,6 @@
 <style scoped>
 .titulo {
     text-align: center;
-    /* margin-top: 40px; */
     padding-top: 20px;
     color: white;
 }
@@ -161,13 +163,13 @@
     color: white; /* Color del texto */
 }
 
-
-
 .video-container {
     display: flex;
     justify-content: center; 
     margin: auto;
     border: 1px solid white;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 .video-wrapper {
@@ -205,8 +207,7 @@
 /* Media Query para pantallas grandes */
 @media screen and (min-width: 1024px) {
     .video-container {
-        max-width: 800px; /* Ancho máximo para pantallas grandes */
-        
+        max-width: 800px; /* Ancho máximo para pantallas grandes */  
     }
 }
 </style>
