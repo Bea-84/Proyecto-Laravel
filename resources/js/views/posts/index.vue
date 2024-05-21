@@ -137,11 +137,10 @@
         
     </p>
     <p class="paragraph">
-        Ahora <strong>entrenador con  1 estrella AIBA de boxeo, </strong>vive con la ilusión de enseñar todo lo que él a aprendido a sus chicos, 
+        Ahora <strong>entrenador con  1 estrella AIBA de boxeo, </strong>vive con la ilusión de enseñar todo lo que él ha aprendido a sus chicos, 
         en los 22 años que ha estado encima de los rings.
     </p>
 </div>
-<br>
 <AppFooter />
 </template>
 
