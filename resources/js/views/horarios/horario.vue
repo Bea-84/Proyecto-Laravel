@@ -55,10 +55,11 @@
         </tbody>
       </table>
     </div>
+    <AppFooter class="footer"/>
   </template>
   
   <script setup>
-  
+    import AppFooter from '../../layouts/AppFooter.vue';
   </script>
   
       <style scoped>
@@ -84,6 +85,10 @@
     .schedule-table th {
       background-color: black; /* Fondo negro para las celdas de encabezado */
       color: white; /* Color del texto del encabezado */
+    }
+
+    .footer {
+      margin-top: 20%;
     }
 
     @media screen and (max-width: 768px) {
