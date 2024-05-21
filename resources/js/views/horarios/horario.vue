@@ -64,7 +64,7 @@
   
       <style scoped>
     .schedule-table {
-      margin-top: 15%; /* Margen en la parte superior */
+      margin-top: 10%; /* Margen en la parte superior */
       width: 100%;
       overflow-x: auto; /* Agrega barras de desplazamiento horizontal en pantallas pequeñas */
     }
