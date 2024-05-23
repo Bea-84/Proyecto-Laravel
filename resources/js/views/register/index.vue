@@ -83,7 +83,7 @@ const { registerForm, validationErrors, processing, submitRegister } = useAuth()
 }
 
 .container {
-    margin-top: 7%;
+    margin-top: 10%;
 }
 
 .footer {
