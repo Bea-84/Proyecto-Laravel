@@ -145,11 +145,7 @@ const isOutsideClicked = (event) => {
 </script>
 
 <style lang="scss"  scopped>
-//estilo para contenedor vistas admin
-.layout-main-container{
-    margin-left: 300px !important;
-    
-}
+
 
 .p-breadcrumb .p-breadcrumb-list {
     margin: 0 !important; 

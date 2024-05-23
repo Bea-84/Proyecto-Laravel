@@ -9,7 +9,6 @@
                    
 
                     <DataTable :value="producto" tableStyle="min-width: 50rem">
-                        <Column field="id" header="#"></Column>
                         <Column field="nombre" header="Nombre"></Column>
                         <Column field="descripcion" header="Descripcion"></Column>
                         <Column field="precio" header="Precio"></Column>

@@ -22,7 +22,10 @@
                             <router-link :to="{ name : 'horarios'}" class="nav-link">Horarios</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="{ name : 'producto'}" class="nav-link">Nuestros productos</router-link>
+                            <router-link :to="{ name : 'producto-user'}" class="nav-link">Nuestros productos</router-link>
+                        </li>
+                        <li v-if="user?.name" class="nav-item">
+                            <router-link :to="{ name : 'alumno'}" class="nav-link">Regístrate a una clase!!</router-link>
                         </li>
                     <template v-if="!user?.name">
                         <li class="nav-item">
@@ -46,14 +49,10 @@
                     </li>
                     <!-- Opción de Perfil con menú desplegable -->
                     <li v-if="user?.name && user.roles && !user.roles.some(role => role.name === 'admin')" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mi Perfil
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <router-link class="dropdown-item" :to="{ name: 'clase.index' }">Registro de Clase</router-link>
-                            </li>
-                          
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="javascript:void(0)" @click="logout">Logout</a></li>
                         </ul>

@@ -55,8 +55,13 @@ export default [
             },
             {
                 path: 'producto',
-                name: 'producto',
+                name: 'producto-user',
                 component: () => import('../views/productoNav/producto.vue'),
+            },
+            {
+                path: 'alumno',
+                name: 'alumno',
+                component: () => import('../views/alumno/clase/index.vue'),
             },
             {
                 path: 'horarios',
