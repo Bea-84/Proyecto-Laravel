@@ -60,9 +60,15 @@ onMounted(() => {
     margin-top: 15%; /*Espacio entre la tabla y el footer*/ 
 }
 
-.table {
-    margin-left: 10%; /* Centrar la tabla dejando margen izquierdo*/
-    width: 80%; /* Ancho de la tabla*/
+/* .table {
+    margin-left: 10%; 
+    width: 80%; 
+} */
+
+.card {
+    margin-top: 10%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 </style>

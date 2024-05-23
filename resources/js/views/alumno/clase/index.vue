@@ -6,14 +6,14 @@
                <div class="card-body">
                    <div class="d-flex justify-content-between pb-2 mb-2">
                        <h5 class="card-title">Mis clases</h5>
-                       <div>
+                       <div class="boton">
                         
                         <router-link :to="{name: 'clase.create'}" class="btn btn-success btn-custom" type="button">Apuntarme a nueva clase</router-link>
                          
                        </div>
                    </div>
           
-                   <DataTable :value="clase" tableStyle="min-width: 50rem">
+                   <DataTable class="table" :value="clase" tableStyle="min-width: 50rem">
                         <Column field="actividad.nombre" header="Actividad"></Column>
                         <Column field="fecha" header="Fecha"  ></Column>
                         <Column header="Acciones">
@@ -35,12 +35,16 @@
            </div>
        </div>
    </div>
+   <AppFooter />
  </template>
  
  
  <script setup>
+
+ 
   
   import {ref, onMounted,inject} from "vue"
+
   const swal = inject('$swal')
 
   const clase=ref()
@@ -113,6 +117,24 @@
     background-color: black;
     color: white;
 }
+
+.footer {
+    margin-top: 15%; /*Espacio entre la tabla y el footer*/ 
+}
+
+.table {
+    margin-left: 10%; /* Centrar la tabla dejando margen izquierdo*/
+    width: 80%; /* Ancho de la tabla*/
+}
+
+h5 {
+    margin-left: 10%;
+}
+
+.boton {
+    margin-right: 10%;
+}
+
 
 
 
