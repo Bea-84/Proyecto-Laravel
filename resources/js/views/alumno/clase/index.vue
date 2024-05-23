@@ -122,9 +122,12 @@
     margin-top: 15%; /*Espacio entre la tabla y el footer*/ 
 }
 
-.table {
+
+
+.card {
     margin-left: 10%; /* Centrar la tabla dejando margen izquierdo*/
     width: 80%; /* Ancho de la tabla*/
+    margin-top: 10%; /* Altura entre tabla y menu superior */
 }
 
 h5 {
